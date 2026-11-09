@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kỷ yếu NAK34CHA_U</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&amp;display=swap">
+<style>
+*{font-synthesis:none}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#EFE6CF}
+a{color:#111111}a:hover{color:#D7262E}
+button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;letter-spacing:.03em;cursor:pointer}
+.m3,.m2{display:none !important}
+.g-tile{transition:transform .2s ease}
+.g-tile:hover{transform:rotate(0) scale(1.04) !important;z-index:3}
+.g-tile:hover > button{box-shadow:8px 8px 0 #111111 !important}
+@keyframes g-nudge{0%,82%,100%{transform:none}85%{transform:scale(1.14) rotate(-5deg)}88%{transform:scale(1.14) rotate(5deg)}91%{transform:scale(1.1) rotate(-3deg)}94%{transform:scale(1.04) rotate(0)}}
+@keyframes g-pop{0%,70%,100%{opacity:0;transform:translateY(6px) scale(.9)}76%,94%{opacity:1;transform:none}}
+.g-up{animation:g-nudge 7s ease-in-out infinite}
+.g-bubble{animation:g-pop 7s ease-in-out infinite;opacity:0}
+.g-up:hover{animation-play-state:paused;transform:scale(1.06)}
+@media (prefers-reduced-motion: reduce){.g-up{animation:none}.g-bubble{animation:none;opacity:1}}
+@media (max-width: 760px){ .m4{display:none !important} .m3{display:flex !important; gap:8px !important} }
+@media (max-width: 760px){
+  .g-tile > button{border-width:2px !important; border-radius:10px !important}
+  .g-titlerow{gap:6px !important; margin-bottom:16px !important}
+  .g-titlerow > a{padding:0 10px !important; font-size:12px !important; min-height:36px !important}
+  .g-title{font-size:26px !important}
+  .g-logo{width:44px !important; height:44px !important}
+  .g-up{font-size:12px !important; min-height:36px !important}
+  .g-upwrap{bottom:12px !important}
+  .g-bubble{font-size:11px !important}
+}
+</style>
+</helmet>
+<div style="min-height: 100vh; background-color: #EFE6CF; background-image: radial-gradient(rgba(17,17,17,0.14) 1.2px, transparent 1.5px); background-size: 14px 14px; color: #111111; font-family: 'Archivo', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+
+<main style="max-width: 1240px; margin: 0 auto; padding: 28px 24px 140px">
+<div class="g-titlerow" style="margin: 0 0 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 12px">
+<a href="index.html" style="justify-self: start; white-space: nowrap; min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 3px solid #111111; border-radius: 999px; background: #FFFFFF; font-weight: 800; font-size: 14px; text-decoration: none; color: #111111; box-shadow: 3px 3px 0 #111111">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>Trang lớp</a>
+<h1 class="g-title" style="margin: 0; text-align: center; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; color: #1E7B34; text-shadow: 3px 3px 0 #FFC400">Kỷ yếu NAK34</h1>
+<img class="g-logo" src="img/logo-dlu.png" alt="Logo Trường Đại học Đà Lạt" style="justify-self: end; width: 72px; height: 72px; object-fit: contain">
+</div>
+<div class="m4" style="display: flex; gap: 18px; align-items: flex-start">
+<sc-for list="{{cols4}}" as="col" hint-placeholder-count="3">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<sc-for list="{{col.items}}" as="it" hint-placeholder-count="3">
+<figure class="g-tile" style="position: relative; margin: 0; {{it.tileStyle}}">
+<sc-if value="{{it.hasTape}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="position: absolute; top: -10px; left: 50%; width: 74px; height: 22px; margin-left: -37px; z-index: 2; border: 1.5px solid rgba(17,17,17,0.35); {{it.tapeStyle}}"></span></sc-if>
+<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 0; border: 3px solid #111111; border-radius: 16px; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
+<div style="position: relative; width: 100%; line-height: 0">
+<img src="{{it.src}}" alt="{{it.alt}}" style="display: block; width: 100%; height: auto">
+<sc-if value="{{it.isVideo}}" hint-placeholder-val="{{false}}">
+<span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; display: flex; align-items: center; gap: 6px; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 3px 10px 3px 6px; font-size: 12px; font-weight: 800">
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg>{{it.duration}}</span>
+</sc-if>
+</div>
+</button>
+</figure>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<div class="m3" style="display: flex; gap: 16px; align-items: flex-start">
+<sc-for list="{{cols3}}" as="col" hint-placeholder-count="3">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<sc-for list="{{col.items}}" as="it" hint-placeholder-count="3">
+<figure class="g-tile" style="position: relative; margin: 0; {{it.tileStyle}}">
+<sc-if value="{{it.hasTape}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="position: absolute; top: -10px; left: 50%; width: 74px; height: 22px; margin-left: -37px; z-index: 2; border: 1.5px solid rgba(17,17,17,0.35); {{it.tapeStyle}}"></span></sc-if>
+<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 0; border: 3px solid #111111; border-radius: 16px; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
+<div style="position: relative; width: 100%; line-height: 0">
+<img src="{{it.src}}" alt="{{it.alt}}" style="display: block; width: 100%; height: auto">
+<sc-if value="{{it.isVideo}}" hint-placeholder-val="{{false}}">
+<span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; display: flex; align-items: center; gap: 6px; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 3px 10px 3px 6px; font-size: 12px; font-weight: 800">
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg>{{it.duration}}</span>
+</sc-if>
+</div>
+</button>
+</figure>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<div class="m2" style="display: flex; gap: 10px; align-items: flex-start">
+<sc-for list="{{cols2}}" as="col" hint-placeholder-count="3">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{col.items}}" as="it" hint-placeholder-count="3">
+<figure class="g-tile" style="position: relative; margin: 0; {{it.tileStyle}}">
+<sc-if value="{{it.hasTape}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="position: absolute; top: -10px; left: 50%; width: 74px; height: 22px; margin-left: -37px; z-index: 2; border: 1.5px solid rgba(17,17,17,0.35); {{it.tapeStyle}}"></span></sc-if>
+<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 0; border: 3px solid #111111; border-radius: 16px; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
+<div style="position: relative; width: 100%; line-height: 0">
+<img src="{{it.src}}" alt="{{it.alt}}" style="display: block; width: 100%; height: auto">
+<sc-if value="{{it.isVideo}}" hint-placeholder-val="{{false}}">
+<span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; display: flex; align-items: center; gap: 6px; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 3px 10px 3px 6px; font-size: 12px; font-weight: 800">
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg>{{it.duration}}</span>
+</sc-if>
+</div>
+</button>
+</figure>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</main>
+
+<div class="g-upwrap" style="position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 45; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none">
+<span class="g-bubble" aria-hidden="true" style="position: relative; background: #FFFFFF; border: 2px solid #111111; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 800; white-space: nowrap; box-shadow: 2px 2px 0 #111111">Có ảnh đẹp? Góp ngay nè!</span>
+<button type="button" onClick="{{openUpload}}" aria-haspopup="dialog" class="g-up" style="pointer-events: auto; white-space: nowrap; min-height: 40px; padding: 0 14px; display: flex; align-items: center; gap: 6px; border: 2px solid #111111; border-radius: 999px; background: #1E7B34; font-weight: 800; font-size: 13px; color: #FFFFFF; box-shadow: 3px 3px 0 #111111">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Thêm ảnh thêm vui</button>
+</div>
+
+<!-- ===== Lightbox ===== -->
+<sc-if value="{{lbOpen}}" hint-placeholder-val="{{false}}">
+<div onClick="{{closeLb}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; background: rgba(17,17,17,0.85); display: flex; align-items: center; justify-content: center; padding: 16px">
+<div role="dialog" aria-modal="true" aria-label="{{lb.label}}" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; width: 100%; border: 3px solid #FFFFFF; border-radius: 18px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #111111">
+<img src="{{lb.src}}" alt="{{lb.alt}}" style="display: block; max-width: 100%; max-height: 72vh; width: auto; height: auto">
+<sc-if value="{{lb.isVideo}}" hint-placeholder-val="{{false}}">
+<span aria-hidden="true" style="position: absolute; width: 72px; height: 72px; border-radius: 999px; background: #111111; border: 3px solid #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg></span>
+</sc-if>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+<span></span>
+<div style="display: flex; gap: 10px">
+<button type="button" onClick="{{prevLb}}" aria-label="Ảnh trước" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 20px">‹</button>
+<button type="button" onClick="{{nextLb}}" aria-label="Ảnh sau" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 20px">›</button>
+<a href="#" download="" style="min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px; border: 3px solid #111111; border-radius: 12px; background: #FFC400; color: #111111; font-weight: 800; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7 10l5 5 5-5"></path><path d="M5 20h14"></path></svg>Tải về</a>
+</div>
+</div>
+</div>
+<button type="button" onClick="{{closeLb}}" aria-label="Đóng" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: #111111; display: flex; align-items: center; justify-content: center; padding: 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+</sc-if>
+
+<!-- ===== Upload ===== -->
+<sc-if value="{{upOpen}}" hint-placeholder-val="{{false}}">
+<div onClick="{{closeUpload}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; background: rgba(17,17,17,0.55); display: flex; align-items: center; justify-content: center; padding: 16px">
+<div role="dialog" aria-modal="true" aria-labelledby="up-note" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 460px; background: #FFFFFF; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111; padding: 24px; border-top: 12px solid #2C9041">
+<button type="button" onClick="{{closeUpload}}" aria-label="Đóng" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+
+<sc-if value="{{upLogin}}" hint-placeholder-val="{{true}}">
+<button type="button" onClick="{{signIn}}" style="margin-top: 48px; width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; font-weight: 800; font-size: 15px; color: #111111; box-shadow: 3px 3px 0 #111111">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path></svg>Đăng nhập với Google
+</button>
+<p id="up-note" style="margin: 14px 0 0; font-size: 14px; font-weight: 600; line-height: 1.5; text-align: center; color: #3A3A3A">Anh/chị vui lòng đăng nhập email cá nhân để có thể tải ảnh lên nhé!</p>
+</sc-if>
+
+<sc-if value="{{upForm}}" hint-placeholder-val="{{false}}">
+<h3 style="margin: 0; padding-right: 52px; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">Thêm ảnh thêm vui</h3>
+<p style="margin: 4px 0 0; font-size: 12px; font-weight: 600">Đang đăng nhập: [EMAIL NGƯỜI ĐĂNG]</p>
+<label for="up-file" style="margin-top: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 150px; border: 3px dashed #111111; border-radius: 16px; background: #FBF2D0; text-align: center; padding: 16px; cursor: pointer">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M5 20h14"></path></svg>
+<span style="font-weight: 800">Bấm để tải ảnh lên</span>
+<span style="font-size: 12px; font-weight: 600">Chỉ nhận ảnh (JPG, PNG, HEIC, WEBP) và video (MP4, MOV)</span>
+</label>
+<input id="up-file" type="file" accept="image/*,video/*" multiple style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">
+<p style="margin: 14px 0 0; font-size: 13px; font-weight: 500; line-height: 1.5">Ảnh và video được lưu trong <b>Google Drive của bạn</b>, thư mục "Kỷ yếu NAK34". Nếu bạn xóa file trên Drive, ảnh đó tự biến mất khỏi trang và các ảnh còn lại tự sắp xếp lại.</p>
+<button type="button" onClick="{{closeUpload}}" style="margin-top: 16px; width: 100%; min-height: 48px; border: 3px solid #111111; border-radius: 14px; background: #2C9041; font-weight: 800; font-size: 15px; color: #111111; box-shadow: 3px 3px 0 #111111">Đăng</button>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+/* Sample media, newest first. ratio = height / width. */
+var MEDIA = [
+  { src:'img/ky-yeu-10.png', alt:'Bánh kem mừng 20/11', kind:'image', ratio:1.2, date:'2026-11-09', bg:'#FBE3DF' },
+  { src:'img/ky-yeu-11.png', alt:'Mưa Đà Lạt, ô dù đi học', kind:'image', ratio:0.7, date:'2026-11-06', bg:'#C3D9E6' },
+  { src:'img/ky-yeu-12.png', alt:'Đêm ôn bài cùng laptop', kind:'image', ratio:1.0, date:'2026-10-25', bg:'#2B2D5C' },
+  { src:'img/ky-yeu-13.png', alt:'Bánh mì và cà phê sau giờ học', kind:'image', ratio:0.75, date:'2026-10-14', bg:'#F2C84B' },
+  { src:'img/ky-yeu-14.png', alt:'Giấy chứng nhận', kind:'image', ratio:1.3, date:'2026-09-15', bg:'#EEF6E3' },
+  { src:'img/ky-yeu-1.png', alt:'Đồi thông Đà Lạt lúc bình minh', kind:'image', ratio:1.25, date:'2026-11-08', bg:'#F29A8F' },
+  { src:'img/ky-yeu-2.png', alt:'Video: hồ nước và thiên nga đạp vịt', kind:'video', ratio:0.5625, date:'2026-11-08', bg:'#6DBB5E', duration:'0:42' },
+  { src:'img/ky-yeu-3.png', alt:'Cà phê cùng lớp', kind:'image', ratio:0.75, date:'2026-11-01', bg:'#F2C84B' },
+  { src:'img/ky-yeu-4.png', alt:'Bảng lớp NAK34', kind:'image', ratio:1.0, date:'2026-10-18', bg:'#BFE0B5' },
+  { src:'img/ky-yeu-5.png', alt:'Tung mũ tốt nghiệp', kind:'image', ratio:1.4, date:'2026-10-18', bg:'#C8CF55' },
+  { src:'img/ky-yeu-6.png', alt:'Video: hoa cẩm tú cầu', kind:'video', ratio:1.78, date:'2026-10-11', bg:'#F29A8F', duration:'0:15' },
+  { src:'img/ky-yeu-7.png', alt:'Chồng sách ôn thi', kind:'image', ratio:0.66, date:'2026-10-05', bg:'#6DBB5E' },
+  { src:'img/ky-yeu-8.png', alt:'Cả lớp đi dã ngoại', kind:'image', ratio:1.0, date:'2026-09-27', bg:'#F2C84B' },
+  { src:'img/ky-yeu-9.png', alt:'Vườn hoa Đà Lạt', kind:'image', ratio:0.8, date:'2026-09-20', bg:'#BFE0B5' }
+];
+var TILTS = [-2.2, 1.6, -1.1, 2.4, -1.8, 1.0, -2.6, 1.9, -0.8, 2.1];
+var POPS = ['#2C9041', '#6DBB5E', '#F2C84B', '#BFE0B5', '#C8CF55'];
+var TAPES = ['rgba(230,180,34,0.7)', 'rgba(109,187,94,0.65)', 'rgba(242,154,143,0.7)', 'rgba(200,207,85,0.7)'];
+function mediaStyle(m) {
+  return 'aspect-ratio:1/' + m.ratio + ';background-color:' + m.bg +
+    ';background-image:radial-gradient(rgba(17,17,17,0.18) 1.4px, transparent 1.6px);background-size:12px 12px';
+}
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lb: -1, up: null };
+  }
+  renderVals() {
+    var self = this, s = this.state;
+    var sorted = MEDIA.slice().sort(function (a, b) { return a.date < b.date ? 1 : (a.date > b.date ? -1 : 0); });
+    var items = sorted.map(function (m, i) {
+      var isVideo = m.kind === 'video';
+      return {
+        isVideo: isVideo, duration: m.duration || '',
+        placeholder: isVideo ? '[VIDEO KỶ YẾU]' : '[ẢNH KỶ YẾU]',
+        src: m.src, alt: m.alt,
+        mediaStyle: mediaStyle(m),
+        email: '[email người đăng]',
+        label: (isVideo ? 'Xem video ' : 'Xem ảnh ') + (i + 1),
+        /* playful scrapbook look: small tilt, coloured shadow, washi tape on some photos */
+        tileStyle: 'transform:rotate(' + TILTS[i % TILTS.length] + 'deg)',
+        shadowStyle: 'box-shadow:6px 6px 0 ' + POPS[i % POPS.length],
+        hasTape: i % 3 !== 1,
+        tapeStyle: 'background:' + TAPES[i % TAPES.length] + ';transform:rotate(' + (i % 2 ? 4 : -5) + 'deg)',
+        open: function () { self.setState({ lb: i }); }
+      };
+    });
+    function columns(n) {
+      var cols = [], hts = [];
+      for (var c = 0; c < n; c++) { cols.push({ items: [] }); hts.push(0); }
+      items.forEach(function (it, i) {
+        var k = 0;
+        for (var c = 1; c < n; c++) if (hts[c] < hts[k] - 0.001) k = c;
+        cols[k].items.push(it); hts[k] += sorted[i].ratio + 0.08;
+      });
+      return cols;
+    }
+    var cur = s.lb >= 0 ? sorted[s.lb] : null;
+    var n = sorted.length;
+    return {
+      items: items,
+      cols4: columns(4), cols3: columns(3), cols2: columns(2),
+      lbOpen: !!cur,
+      lb: cur ? {
+        isVideo: cur.kind === 'video',
+        placeholder: cur.kind === 'video' ? '[VIDEO KỶ YẾU]' : '[ẢNH KỶ YẾU]',
+        src: cur.src, alt: cur.alt,
+        mediaStyle: mediaStyle(cur) + ';max-height:70vh',
+        email: '[email người đăng]',
+        label: cur.kind === 'video' ? 'Video kỷ yếu' : 'Ảnh kỷ yếu'
+      } : { isVideo: false, placeholder: '', mediaStyle: '', email: '', label: '', src: '', alt: '' },
+      closeLb: function () { self.setState({ lb: -1 }); },
+      prevLb: function () { self.setState({ lb: (self.state.lb - 1 + n) % n }); },
+      nextLb: function () { self.setState({ lb: (self.state.lb + 1) % n }); },
+      stopClick: function (e) { if (e && e.stopPropagation) e.stopPropagation(); },
+      upOpen: !!s.up,
+      upLogin: s.up === 'login',
+      upForm: s.up === 'form',
+      openUpload: function () { self.setState({ up: 'login' }); },
+      signIn: function () { self.setState({ up: 'form' }); },
+      closeUpload: function () { self.setState({ up: null }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

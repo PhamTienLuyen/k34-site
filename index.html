@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAK34CHA_U – Lịch tuần, Kế hoạch, Tài liệu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&amp;display=swap">
+<style>
+*{font-synthesis:none}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#EFE6CF}
+a{color:#111111}a:hover{color:#D7262E}
+button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;letter-spacing:.03em;cursor:pointer}
+.g-label,[role=tab]{font-family:'Archivo',sans-serif !important;font-style:normal !important;letter-spacing:0 !important}
+button:disabled{cursor:default}
+.nav-link{font-family:'Barlow Condensed','Archivo',sans-serif !important;font-style:italic;font-size:16px !important;letter-spacing:.06em !important;border:2px solid transparent;transition:background-color .15s,transform .15s}
+.nav-link:hover,.nav-link:focus-visible{background:#FFC400;color:#111111;border-color:#111111;box-shadow:2px 2px 0 #111111;transform:rotate(-2deg)}
+.win{position:relative;z-index:1}
+.rays{display:block}
+@media (max-width: 760px){.rays{display:none}.win-wrap{padding:0 !important}.win-wrap > div{padding:30px 12px 14px !important}.win-body{padding:12px !important}.burst{width:50px !important;height:50px !important;top:-20px !important;right:-6px !important}.win-bar{padding:8px 10px !important}}
+.docs-inline{display:none}
+@media (max-width: 760px){.docs-inline{display:block}.docs-side{display:none}}
+.sched-grid *, .gantt * {overflow-wrap:anywhere}
+.sched-grid .s-badge, .sched-grid .s-line, .sched-grid .s-buoi {overflow-wrap:normal !important; word-break:keep-all}
+.gantt .g-day, .gantt .g-day * {overflow-wrap:normal !important; white-space:nowrap !important}
+@media (max-width: 1100px){
+  .sched-grid p, .sched-grid span {font-size:11px !important}
+  .sched-card {padding:6px 7px !important}
+  .sched-card .s-head[style*="-10px"] {margin:-6px -7px 6px !important}
+  .sched-grid .s-badge {font-size:8.5px !important}
+  .sched-grid .s-line {font-size:9px !important}
+  .sched-grid .s-off {font-size:18px !important}
+  .gantt .g-label {width:210px !important}
+  .gantt .g-day {font-size:9px !important}
+  .gantt .g-dow {font-size:7px !important}
+}
+@media (max-width: 760px){
+  .sched-grid p, .sched-grid span {font-size:8.5px !important; line-height:1.25 !important; letter-spacing:0 !important}
+  .sched-grid .sc-cell {min-height:0 !important; border-right-width:1px !important}
+  .sched-grid .sc-cell > div {padding:4px 3px !important; gap:5px !important}
+  .sched-grid .s-badge, .sched-grid .s-buoi {font-size:7px !important; padding:0 !important; height:12px !important; line-height:12px !important}
+  .sched-grid .s-line {font-size:7px !important}
+  .wk-title {font-size:26px !important}
+  .sched-grid .s-off {font-size:12px !important}
+  .sched-card .s-head[style*="-10px"] {margin:-3px -4px 4px !important}
+  .sched-card .s-head > span {border-radius:5px 5px 0 0 !important; padding:3px 4px !important}
+  .sched-card {padding:3px 4px !important; border-width:1px !important; border-radius:6px !important; box-shadow:none !important}
+  .gantt .g-label {width:92px !important; padding:4px 5px !important; gap:4px !important}
+  .gantt .g-label * {font-size:9px !important; line-height:1.2 !important; white-space:normal !important}
+  .gantt .g-label svg {width:10px !important; height:10px !important; top:3px !important; right:3px !important}
+  .gantt .g-label[aria-expanded] {padding-right:14px !important}
+  .gantt .g-label .g-meta {white-space:nowrap !important; font-size:8px !important}
+  .gantt .g-dow {display:none !important}
+  .gantt .g-day {font-size:7px !important; margin:0 !important; padding:2px 0 !important; border-radius:2px !important}
+  .gantt .g-star {zoom:0.55}
+}
+@media (max-width: 760px){
+  .site-head {padding:0 12px !important; gap:4px 8px !important}
+  .site-head nav {gap:2px 2px !important}
+  .site-head nav a {padding:0 7px !important}
+  .site-head nav a {font-size:14px !important; letter-spacing:0.04em !important}
+}
+/* Phone turned sideways: wide but short screen — keep the sticky bar slim */
+@media (orientation: landscape) and (max-height: 520px){
+  .site-head {padding:0 16px !important; gap:4px 8px !important}
+  .site-head nav a {min-height:24px !important}
+  .sched-grid .sc-cell {min-height:220px !important}
+}
+</style>
+</helmet>
+<div lang="{{langCode}}" style="min-height: 100vh; background-color: #EFE6CF; background-image: radial-gradient(rgba(17,17,17,0.14) 1.2px, transparent 1.5px); background-size: 16px 16px; color: #111111; font-family: 'Archivo', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<svg class="rays" aria-hidden="true" width="420" height="420" viewBox="0 0 420 420" style="position: fixed; top: 0; right: 0; z-index: 0; opacity: 0.45; pointer-events: none"><line x1="420" y1="0" x2="63" y2="129" stroke="#D2C49E" stroke-width="12" stroke-linecap="round"></line><line x1="420" y1="0" x2="121" y2="233" stroke="#D2C49E" stroke-width="8" stroke-linecap="round"></line><line x1="420" y1="0" x2="208" y2="315" stroke="#D2C49E" stroke-width="14" stroke-linecap="round"></line><line x1="420" y1="0" x2="316" y2="365" stroke="#D2C49E" stroke-width="8" stroke-linecap="round"></line></svg>
+<!-- ============ HEADER ============ -->
+<header id="top" style="position: sticky; top: 0; z-index: 40; background: #F6EEDA; border-bottom: 3px solid #111111">
+<div class="site-head" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: flex-end">
+<nav aria-label="{{T.navAria}}" style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 6px">
+<a href="#lich-hoc" onClick="{{goLichHoc}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">{{T.navWeek}}</a>
+<a href="#deadlines" onClick="{{goTienDo}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">{{T.navProg}}</a>
+<a href="#tai-lieu" onClick="{{goTaiLieu}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">{{T.navDocs}}</a>
+<a href="ky-yeu.html" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">Kỷ yếu</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- ============ WEEKLY SCHEDULE ============ -->
+<div class="win-wrap"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
+<section id="lich-hoc" aria-labelledby="h-week" class="win" style="scroll-margin-top: 40px; background: #F6EEDA; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
+<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(12deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#D7262E" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#FFC400" stroke="#111111" stroke-width="0.6">WEEK!</text></svg>
+<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #D7262E; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FFC400; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 13px; letter-spacing: 0.05em; color: #FFC400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / LỊCH TUẦN</span></div><div class="win-body" style="padding: 24px">
+<div style="margin-bottom: 14px">
+<div style="display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap">
+<h2 id="h-week" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FFC400">{{T.hWeek}}</h2>
+<div style="display: flex; align-items: center; gap: 6px; flex-wrap: nowrap">
+<button type="button" onClick="{{wPrev}}" disabled="{{wPrevDisabled}}" aria-label="{{T.prevWeek}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 15px; color: #111111; display: flex; align-items: center; gap: 4px; {{wPrevStyle}}">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+</button>
+<button type="button" onClick="{{wToday}}" title="Về tuần hiện tại" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFC400; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 15px; color: #111111">Tuần <span aria-live="polite" style="color: #7F1015">{{weekNo}}</span></button>
+<button type="button" onClick="{{wNext}}" disabled="{{wNextDisabled}}" aria-label="{{T.nextWeek}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 15px; color: #111111; display: flex; align-items: center; gap: 4px; {{wNextStyle}}">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+</button>
+</div>
+</div>
+</div>
+
+<div style="border: 3px solid #111111; border-radius: 16px; overflow: hidden">
+<div class="sched-grid" style="display: grid; {{weekCols}}">
+<sc-for list="{{week}}" as="d" hint-placeholder-count="7">
+<div class="sc-cell" style="min-width: 0; min-height: 400px; border-right: 2px solid #111111; display: flex; flex-direction: column; {{d.colStyle}}">
+<div style="text-align: center; padding: 10px 12px; border-bottom: 3px solid #111111; {{d.headStyle}}">
+<p style="margin: 0; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em">{{d.name}}</p>
+<p style="margin: 0; font-family: 'Anton', 'Archivo', sans-serif; font-size: 26px; font-weight: 800; line-height: 1.05">{{d.date}}</p>
+</div>
+<div style="flex: 1 1 auto; padding: 12px 10px; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{d.items}}" as="s" hint-placeholder-count="1">
+<div class="sched-card" style="border: 2px solid #111111; border-radius: 12px; padding: 10px 11px; box-shadow: 4px 4px 0 #111111; color: #111111; {{s.style}}">
+<sc-if value="{{s.hasBadge}}" hint-placeholder-val="{{false}}">
+<span class="s-badge" style="display: block; width: 100%; height: 18px; line-height: 18px; margin: 0 0 6px; text-align: center; font-size: 9px; font-weight: 700; letter-spacing: 0.04em; border-radius: 4px; padding: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box; {{s.badgeStyle}}">{{s.badge}}</span>
+</sc-if>
+<sc-if value="{{s.hasBadge}}" hint-placeholder-val="{{false}}"><p style="margin: 0; font-size: 12px; font-weight: 800">{{s.time}}</p></sc-if>
+<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><span style="display: inline-block; margin: 2px 0 0 4px; background: #D7262E; color: #FFFFFF; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; border-radius: 6px; padding: 1px 7px">{{s.changeTag}}</span></sc-if>
+<p class="s-head" style="font-size: 14px; font-weight: 800; line-height: 1.3; {{s.headStyle}}"><span style="display: block; {{s.titleStyle}}"><sc-if value="{{s.hasBuoi}}" hint-placeholder-val="{{true}}"><span class="s-buoi" style="display: block; height: 16px; line-height: 16px; margin-bottom: 4px; text-align: center; background: #FFFFFF; border-radius: 4px; font-size: 9px; font-weight: 800; letter-spacing: 0.06em; white-space: nowrap; overflow: hidden; {{s.buoiStyle}}">{{s.buoi}}</span><span class="s-line" style="display: block; font-size: 12px; font-weight: 800; white-space: nowrap; margin-bottom: 2px">{{s.time}}</span></sc-if>{{s.title}}</span></p>
+<p style="margin: 4px 0 0; font-size: 12px; font-weight: 600; white-space: pre-line">{{s.sub}}</p>
+<sc-if value="{{s.hasGv}}" hint-placeholder-val="{{true}}"><p class="s-line" title="{{s.gv}}" style="margin: 2px 0 0; font-size: 10px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{s.gv}}</p></sc-if>
+<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><p style="margin: 4px 0 0; font-size: 12px; font-weight: 700; color: #7F1015">{{s.changeNote}}</p></sc-if>
+<sc-if value="{{s.hasProgress}}" hint-placeholder-val="{{false}}">
+<p class="s-line" style="margin: 4px 0 0; font-size: 10px; font-weight: 700; color: #3A3A3A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{s.progress}}</p>
+</sc-if>
+</div>
+</sc-for>
+<sc-if value="{{d.empty}}" hint-placeholder-val="{{false}}">
+<p class="s-off" style="margin: auto; text-align: center; font-family: 'Anton', 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: #6B6B6B">Off</p>
+</sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-top: 16px">
+<a href="https://qlgd.dlu.edu.vn/" style="display: flex; align-items: center; gap: 8px; background: #FFC400; border: 2px solid #111111; border-radius: 999px; padding: 6px 14px; box-shadow: 3px 3px 0 #111111; transform: rotate(-1deg); font-size: 12px; font-weight: 700; text-decoration: none; color: #111111">
+<span style="width: 10px; height: 10px; border-radius: 999px; background: #2C9041; border: 2px solid #111111"></span>
+{{sourceText}}
+</a>
+</div>
+</div>
+</section>
+</div></div>
+
+<!-- ============ GANTT ============ -->
+<div class="win-wrap"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
+<section id="deadlines" aria-labelledby="h-gantt" class="win" style="scroll-margin-top: 40px; background: #F6EEDA; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
+<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(-10deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#FFC400" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#D7262E" stroke="#111111" stroke-width="0.6">PLAN!</text></svg>
+<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #D7262E; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FFC400; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 13px; letter-spacing: 0.05em; color: #FFC400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / KẾ HOẠCH</span></div><div class="win-body" style="padding: 24px">
+<div style="margin-bottom: 14px">
+<div style="display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap">
+<h2 id="h-gantt" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FFC400">{{T.hGantt}}</h2>
+<div style="display: flex; align-items: center; gap: 6px; flex-wrap: nowrap">
+<button type="button" onClick="{{gPrev}}" disabled="{{gPrevDisabled}}" aria-label="{{T.prevMonth}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 15px; color: #111111; display: flex; align-items: center; gap: 4px; {{gPrevStyle}}">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+</button>
+<button type="button" onClick="{{gThis}}" title="Về tháng hiện tại" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFC400; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 15px; color: #111111">Tháng <span aria-live="polite" style="color: #7F1015">{{monthNo}}</span></button>
+<button type="button" onClick="{{gNext}}" disabled="{{gNextDisabled}}" aria-label="{{T.nextMonth}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 15px; color: #111111; display: flex; align-items: center; gap: 4px; {{gNextStyle}}">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+</button>
+</div>
+</div>
+</div>
+
+<div style="border: 3px solid #111111; border-radius: 16px; overflow: hidden">
+<div class="gantt">
+<div style="display: flex; align-items: stretch; border-bottom: 3px solid #111111; background: #FBE3DF">
+<div class="g-label" style="flex: none; width: 300px; box-sizing: border-box; padding: 10px 14px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; justify-content: center; text-align: center; border-right: 3px solid #111111">{{T.colHead}}</div>
+<div style="flex: 1 1 auto; min-width: 0; display: grid; padding: 6px 0; {{gCols}}">
+<sc-for list="{{gDays}}" as="d" hint-placeholder-count="30">
+<span class="g-day" style="min-width: 0; overflow: hidden; white-space: nowrap; text-align: center; font-size: 10px; font-weight: 700; line-height: 1.2; padding: 3px 0; margin: 0 1px; border-radius: 6px; {{d.style}}"><span class="g-dow" style="display: block; font-size: 8px; font-weight: 600; white-space: nowrap">{{d.dow}}</span>{{d.num}}</span>
+</sc-for>
+</div>
+</div>
+
+<sc-for list="{{gCourses}}" as="c" hint-placeholder-count="3">
+<div>
+<div style="display: flex; align-items: stretch; min-height: 58px; border-bottom: 2px solid #111111; {{c.rowStyle}}">
+<button type="button" onClick="{{c.toggle}}" aria-expanded="{{c.expandedStr}}" class="g-label" style="position: relative; flex: none; width: 300px; box-sizing: border-box; display: flex; align-items: center; gap: 10px; border: 0; border-right: 3px solid #111111; text-align: left; padding: 8px 28px 8px 12px; min-height: 58px; {{c.labelStyle}}">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; top: 6px; right: 6px; flex: none; transition: transform .15s; {{c.chevStyle}}"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="min-width: 0"><span style="display: block; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 18px; line-height: 1.15">{{c.name}}</span><span class="g-meta" style="display: block; font-size: 11px; font-weight: 600; opacity: 0.9; white-space: nowrap">{{c.meta}}</span></span>
+</button>
+<div style="position: relative; flex: 1 1 auto; min-width: 0; {{c.trackStyle}}">
+<sc-if value="{{c.bar.show}}" hint-placeholder-val="{{true}}">
+<div title="{{c.bar.title}}" style="position: absolute; top: 50%; height: 16px; margin-top: -8px; box-sizing: border-box; border: 2px solid #111111; {{c.bar.style}}"></div>
+</sc-if>
+<sc-if value="{{c.showEnd}}" hint-placeholder-val="{{false}}">
+<div title="{{c.endTitle}}" role="img" aria-label="{{c.endTitle}}" style="position: absolute; top: 50%; width: 6px; height: 30px; margin: -15px 0 0 -3px; background: #111111; z-index: 2; {{c.endStyle}}"></div>
+</sc-if>
+<sc-if value="{{c.showToday}}" hint-placeholder-val="{{false}}">
+<div style="position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: #D7262E; {{c.todayStyle}}"></div>
+</sc-if>
+</div>
+</div>
+<sc-if value="{{c.expanded}}" hint-placeholder-val="{{true}}">
+<sc-for list="{{c.tasks}}" as="t" hint-placeholder-count="3">
+<div style="display: flex; align-items: stretch; min-height: 56px; border-bottom: 1px solid rgba(17,17,17,0.18)">
+<div class="g-label" style="flex: none; width: 300px; box-sizing: border-box; padding: 8px 12px 8px 46px; display: flex; flex-direction: column; justify-content: center; min-width: 0; border-right: 3px solid #111111">
+<span title="{{t.title}}" style="font-size: 13px; font-weight: 700; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{t.title}}</span>
+<span style="font-size: 12px; font-weight: 700; {{t.dueTextStyle}}">{{t.dueLabel}}</span>
+</div>
+<div style="position: relative; flex: 1 1 auto; min-width: 0; {{t.trackStyle}}">
+<sc-if value="{{t.bar.show}}" hint-placeholder-val="{{true}}">
+<div title="{{t.bar.title}}" style="position: absolute; top: 50%; height: 22px; margin-top: -11px; box-sizing: border-box; border: 2px solid #111111; box-shadow: 2px 2px 0 #111111; {{t.bar.style}}"></div>
+</sc-if>
+<sc-if value="{{t.showDiamond}}" hint-placeholder-val="{{false}}">
+<div class="g-star" title="{{t.deadlineTitle}}" role="img" aria-label="{{t.deadlineTitle}}" style="position: absolute; top: 50%; width: 26px; height: 32px; margin: -28px 0 0 -2px; z-index: 2; {{t.diamondStyle}}">
+<svg width="26" height="32" viewBox="0 0 26 32" aria-hidden="true"><path d="M3 2v29" stroke="#111111" stroke-width="3" stroke-linecap="round"></path><path d="M4.5 3L23 9.5 4.5 16z" fill="#D7262E" stroke="#111111" stroke-width="2" stroke-linejoin="round"></path></svg>
+</div>
+</sc-if>
+<sc-if value="{{t.showToday}}" hint-placeholder-val="{{false}}">
+<div style="position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: #D7262E; {{t.todayStyle}}"></div>
+</sc-if>
+<sc-for list="{{t.stars}}" as="g" hint-placeholder-count="0">
+<div class="g-star" title="{{g.title}}" role="img" aria-label="{{g.title}}" style="position: absolute; top: 50%; width: 34px; height: 34px; margin: -17px 0 0 -17px; z-index: 2; {{g.style}}">
+<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; top: 0; left: 0"><path d="M12 1.8l3.1 6.4 7 .9-5.1 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.9 9.1l7-.9z" fill="#FFC400" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+<span style="position: absolute; top: 9px; left: 0; width: 34px; text-align: center; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 13px; line-height: 1.2; color: #111111">{{g.label}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 14px; font-size: 13px; font-weight: 600">
+<span style="display: flex; align-items: center; gap: 6px"><svg width="16" height="20" viewBox="0 0 26 32" aria-hidden="true"><path d="M3 2v29" stroke="#111111" stroke-width="3" stroke-linecap="round"></path><path d="M4.5 3L23 9.5 4.5 16z" fill="#D7262E" stroke="#111111" stroke-width="2" stroke-linejoin="round"></path></svg>{{T.legendClass}}</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.4 7 .9-5.1 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.9 9.1l7-.9z" fill="#FFC400" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"></path></svg>{{T.legendGroup}}</span>
+</div>
+<div style="margin-top: 16px; border-top: 2px dashed #111111; padding-top: 12px">
+<button type="button" onClick="{{toggleDone}}" aria-expanded="{{doneOpenStr}}" style="min-height: 34px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 2px solid #111111; border-radius: 10px; background: #FFFFFF; box-shadow: 2px 2px 0 #111111; font-weight: 800; font-size: 16px; color: #111111">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transition: transform .15s; {{doneChev}}"><path d="M9 6l6 6-6 6"></path></svg>Xem nhiệm vụ đã hoàn thành ({{doneCount}})
+</button>
+<sc-if value="{{doneOpen}}" hint-placeholder-val="{{false}}">
+<div style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{doneList}}" as="d" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; border: 2px solid #111111; border-radius: 10px; padding: 8px 12px; background: #F6F6F1">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E7B34" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M4 12.5l5 5L20 6.5"></path></svg>
+<span style="flex: 1 1 220px; min-width: 0; font-size: 13px; font-weight: 700; color: #444444">{{d.title}}</span>
+<span style="font-size: 11px; font-weight: 800; color: #FFFFFF; border-radius: 6px; padding: 3px 8px; {{d.chip}}">{{d.course}}</span>
+<span style="font-size: 12px; font-weight: 700; color: #666666">{{d.due}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+</div></div>
+
+<!-- ============ MATERIALS ============ -->
+<div class="win-wrap"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
+<section id="tai-lieu" aria-labelledby="h-docs" class="win" style="scroll-margin-top: 40px; background: #F6EEDA; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
+<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(10deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#2C9041" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#FFFFFF" stroke="#111111" stroke-width="0.6">DOCS!</text></svg>
+<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #D7262E; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FFC400; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 13px; letter-spacing: 0.05em; color: #FFC400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / TÀI LIỆU</span></div><div class="win-body" style="padding: 24px">
+<div style="margin-bottom: 6px; text-align: center">
+<h2 id="h-docs" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FFC400">{{T.hDocs}}</h2>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div role="tablist" aria-label="{{T.docsAria}}" aria-orientation="vertical" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{docGroups}}" as="g" hint-placeholder-count="6">
+<button type="button" role="tab" aria-selected="{{g.selectedStr}}" onClick="{{g.pick}}" style="width: 100%; min-height: 46px; display: flex; align-items: center; gap: 10px; text-align: left; border: 2px solid #111111; border-radius: 12px; padding: 8px 12px; color: #111111; {{g.style}}">
+<span style="flex: none; width: 16px; height: 16px; border-radius: 5px; border: 2px solid #111111; {{g.dotStyle}}"></span>
+<span style="flex: 1 1 auto; min-width: 0; font-weight: 800; font-size: 14px; line-height: 1.3">{{g.name}}</span>
+<span style="flex: none; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 1px 9px; font-size: 12px; font-weight: 800">{{g.count}}</span>
+</button>
+<sc-if value="{{g.selected}}" hint-placeholder-val="{{false}}">
+<div class="docs-inline" role="region" aria-label="{{g.regionLabel}}" style="border: 3px solid #111111; border-radius: 16px; padding: 14px; {{g.panelStyle}}">
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{g.docs}}" as="d" hint-placeholder-count="4">
+<li style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #111111; border-radius: 10px; padding: 8px 10px; box-shadow: 2px 2px 0 #111111">
+<span style="flex: 1 1 auto; min-width: 0; font-weight: 700; font-size: 13px; line-height: 1.35">{{d.name}}</span>
+<sc-if value="{{d.hasUrl}}" hint-placeholder-val="{{true}}">
+<a href="{{d.url}}" target="_blank" rel="noopener" aria-label="{{d.openLabel}}" style="flex: none; min-height: 40px; display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid #111111; border-radius: 10px; background: #FFC400; font-weight: 800; font-size: 13px; text-decoration: none; color: #111111">{{T.open}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path></svg></a>
+</sc-if>
+<sc-if value="{{d.noUrl}}" hint-placeholder-val="{{false}}">
+<span style="flex: none; min-height: 40px; display: flex; align-items: center; padding: 0 12px; border: 2px dashed #111111; border-radius: 10px; background: #F2F2F2; font-weight: 700; font-size: 12px; color: #3A3A3A">{{T.noLink}}</span>
+</sc-if>
+</li>
+</sc-for>
+</ul>
+</div>
+</sc-if>
+</sc-for>
+</div>
+
+<div class="docs-side" role="tabpanel" aria-labelledby="h-docs-active" style="flex: 999 1 520px; min-width: 0; border: 2px solid #111111; border-radius: 14px; padding: 16px; {{docPanelStyle}}">
+<sc-if value="{{docHasActive}}" hint-placeholder-val="{{true}}">
+<p style="margin: 0; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em">{{docActive.kicker}}</p>
+<h3 id="h-docs-active" style="margin: 2px 0 12px; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 18px; line-height: 1.2">{{docActive.name}}</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{docActive.docs}}" as="d" hint-placeholder-count="4">
+<li style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #111111; border-radius: 10px; padding: 8px 10px; box-shadow: 2px 2px 0 #111111">
+<span style="flex: 1 1 auto; min-width: 0; font-weight: 700; font-size: 13px; line-height: 1.35">{{d.name}}</span>
+<sc-if value="{{d.hasUrl}}" hint-placeholder-val="{{true}}">
+<a href="{{d.url}}" target="_blank" rel="noopener" aria-label="{{d.openLabel}}" style="flex: none; min-height: 40px; display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid #111111; border-radius: 10px; background: #FFC400; font-weight: 800; font-size: 13px; text-decoration: none; color: #111111">{{T.open}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path></svg></a>
+</sc-if>
+<sc-if value="{{d.noUrl}}" hint-placeholder-val="{{false}}">
+<span style="flex: none; min-height: 40px; display: flex; align-items: center; padding: 0 12px; border: 2px dashed #111111; border-radius: 10px; background: #F2F2F2; font-weight: 700; font-size: 12px; color: #3A3A3A">{{T.noLink}}</span>
+</sc-if>
+</li>
+</sc-for>
+</ul>
+</sc-if>
+<sc-if value="{{docNoActive}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; padding: 24px 8px; text-align: center; font-size: 14px; font-weight: 700; color: #3A3A3A">Bấm vào một môn để xem tài liệu</p>
+</sc-if>
+</div>
+</div>
+</div>
+</section>
+</div></div>
+
+</main>
+
+<footer style="margin-top: 28px; border-top: 3px solid #111111; background: #1E5E2C; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: center; align-items: center">
+<button type="button" onClick="{{openUpdate}}" aria-haspopup="dialog" style="min-height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 2px solid #FFFFFF; border-radius: 999px; background: #FFFFFF; color: #1E5E2C; font-weight: 800; font-size: 17px; box-shadow: 3px 3px 0 #111111">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E5E2C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>{{T.navUpdate}}
+</button>
+</div>
+</footer>
+
+
+<sc-if value="{{updOpen}}" hint-placeholder-val="{{false}}">
+<div onClick="{{closeUpdate}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; background: rgba(17,17,17,0.55); display: flex; align-items: center; justify-content: center; padding: 16px">
+<div role="dialog" aria-modal="true" aria-labelledby="upd-title" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 440px; background: #FFFFFF; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111; padding: 24px; border-top: 12px solid #FFC400">
+<button type="button" onClick="{{closeUpdate}}" aria-label="{{T.close}}" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+<a href="admin.html" style="text-decoration: none; box-sizing: border-box; margin-top: 48px; width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; font-weight: 800; font-size: 15px; color: #111111; box-shadow: 3px 3px 0 #111111">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path></svg>{{T.google}}
+</a>
+<p id="upd-title" style="margin: 14px 0 0; font-size: 14px; font-weight: 600; line-height: 1.5; text-align: center; color: #3A3A3A">{{T.adminNote}}</p>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{modalOpen}}" hint-placeholder-val="{{false}}">
+<div onClick="{{closeNotice}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 50; background: rgba(17,17,17,0.55); display: flex; align-items: center; justify-content: center; padding: 16px">
+<div role="dialog" aria-modal="true" aria-labelledby="notice-title" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 520px; background: #FFFFFF; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111; padding: 24px; {{modal.topStyle}}">
+<button type="button" onClick="{{closeNotice}}" aria-label="{{T.close}}" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding-right: 52px">
+<span style="font-size: 13px; font-weight: 700">{{modal.date}}</span>
+</div>
+<h3 id="notice-title" style="margin: 12px 0 0; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">{{modal.title}}</h3>
+<p style="margin: 10px 0 0; font-size: 15px; font-weight: 500; line-height: 1.6; white-space: pre-line">{{modal.body}}</p>
+<button type="button" onClick="{{closeNotice}}" style="margin-top: 20px; min-height: 44px; padding: 0 20px; border: 2px solid #111111; border-radius: 12px; background: #FFC400; font-weight: 800; font-size: 14px; color: #111111; box-shadow: 3px 3px 0 #111111">Đã hiểu</button>
+</div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2960}}'>
+/* Day ordinal: 0 = Sunday, Nov 1, 2026. */
+/* ---------- i18n: default English, Vietnamese on request ---------- */
+var LANG = 'vi';
+function L(vi, en) { return LANG === 'en' ? en : vi; }
+var EN = {
+  'Triết học':'Philosophy',
+  'General Linguistics':'General Linguistics',
+  'Giao tiếp liên văn hóa':'Intercultural Communication',
+  'Phương pháp NCKH trong Ngôn ngữ học':'Research Methods in Linguistics',
+  'Phương pháp nghiên cứu khoa học trong Ngôn ngữ học':'Scientific Research Methods in Linguistics',
+  'Academic Writing':'Academic Writing for Research',
+  'Đọc & tóm tắt chương 2: Chủ nghĩa duy vật biện chứng':'Read & summarise Chapter 2: Dialectical materialism',
+  'Tiểu luận nhóm: Mối liên hệ phổ biến':'Group essay: Universal interconnection',
+  'Thuyết trình nhóm cuối kỳ':'Final group presentation',
+  'Ôn tập & thi giữa kỳ':'Review & midterm exam',
+  'Bài tập phiên âm IPA (âm vị học)':'IPA transcription exercise (phonology)',
+  'Phân tích hình vị: 20 từ Việt – Anh':'Morpheme analysis: 20 Vietnamese–English words',
+  'Thuyết trình nhóm: Ngữ nghĩa học':'Group presentation: Semantics',
+  'Nhật ký quan sát sốc văn hóa (3 tuần)':'Culture-shock observation journal (3 weeks)',
+  'Phỏng vấn người nước ngoài & viết báo cáo':'Interview a foreigner & write a report',
+  'Dự án cuối kỳ: Hofstede Việt Nam – Hoa Kỳ':'Final project: Hofstede, Vietnam vs. USA',
+  'Đề cương nghiên cứu cá nhân':'Individual research proposal',
+  'Thuyết trình nhóm: Thiết kế nghiên cứu':'Group presentation: Research design',
+  'Giáo trình Triết học (dành cho học viên cao học, không thuộc chuyên ngành Triết học)':'Philosophy textbook (for graduate students outside the Philosophy major)',
+  'Đề cương chi tiết học phần Triết học (TR6002)':'Detailed course syllabus: Philosophy (TR6002)',
+  'Bài giảng chương 1–4: Triết học và vai trò của triết học trong đời sống xã hội':'Lecture slides, chapters 1–4: Philosophy and its role in social life',
+  'Câu hỏi ôn tập và hướng dẫn viết tiểu luận cuối học phần':'Review questions and final essay guidelines',
+  'Đề cương chi tiết học phần General Linguistics (NA6201)':'Detailed course syllabus: General Linguistics (NA6201)',
+  'Bài giảng: Âm vị học và Hình thái học':'Lecture: Phonology and Morphology',
+  'Bảng ký hiệu phiên âm quốc tế IPA kèm bài tập phiên âm':'IPA chart with transcription exercises',
+  'Tuyển tập bài đọc: Ngữ nghĩa học và Ngữ dụng học':'Reader: Semantics and Pragmatics',
+  'Đề cương chi tiết học phần Giao tiếp liên văn hóa (NA6204)':'Detailed course syllabus: Intercultural Communication (NA6204)',
+  'Bài đọc: Lý thuyết các chiều văn hóa của Hofstede':"Reading: Hofstede's cultural dimensions theory",
+  'Tình huống nghiên cứu: Sốc văn hóa trong môi trường học thuật quốc tế':'Case study: Culture shock in international academic settings',
+  'Mẫu báo cáo phỏng vấn liên văn hóa':'Intercultural interview report template',
+  'Đề cương chi tiết học phần Phương pháp nghiên cứu khoa học trong Ngôn ngữ học (PP6101)':'Detailed course syllabus: Scientific Research Methods in Linguistics (PP6101)',
+  'Bài giảng: Thiết kế nghiên cứu định tính và định lượng trong Ngôn ngữ học':'Lecture: Qualitative and quantitative research design in linguistics',
+  'Mẫu đề cương luận văn thạc sĩ chuyên ngành Ngôn ngữ học':"Master's thesis proposal template (Linguistics)",
+  'Hướng dẫn trích dẫn và lập danh mục tài liệu tham khảo theo chuẩn APA 7':'Guide to citations and references in APA 7',
+  'Đề cương chi tiết học phần Academic Writing (PP6102)':'Detailed course syllabus: Academic Writing for Research (PP6102)',
+  'Bài giảng: Cấu trúc bài báo khoa học theo mô hình IMRaD':'Lecture: Structuring a research article with IMRaD',
+  'Danh sách cụm từ học thuật thông dụng trong bài viết nghiên cứu':'Common academic phrases for research writing',
+  'Bài tập viết tóm tắt (abstract) kèm đáp án gợi ý':'Abstract-writing exercises with model answers',
+  'Sổ tay học viên cao học năm học 2026–2027':'Graduate student handbook 2026–2027',
+  'Quy chế đào tạo trình độ thạc sĩ':"Master's programme regulations",
+  'Hướng dẫn sử dụng thư viện số và các cơ sở dữ liệu học thuật':'Guide to the digital library and academic databases',
+  'Mẫu đơn xin hoãn thi và đơn phúc khảo bài thi':'Forms: exam postponement and re-marking request',
+  'Hướng dẫn tham gia lớp học trực tuyến':'Guide to joining online classes',
+  'Tài liệu khác':'Other documents',
+  'Không thuộc môn học nào':'Not tied to a course',
+  'Online – cao học 1':'Online – graduate room 1'
+};
+function tr(x) { return LANG === 'en' && EN[x] ? EN[x] : x; }
+var MONTH_EN = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var MONTH_EN_LONG = ['','January','February','March','April','May','June','July','August','September','October','November','December'];
+var DOW_SHORT_EN = ['Mo','Tu','We','Th','Fr','Sa','Su'];
+var DOW_LONG_EN = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+function dowShort(i) { return LANG === 'en' ? DOW_SHORT_EN[i] : DOW_SHORT[i]; }
+function dowLong(i) { return LANG === 'en' ? DOW_LONG_EN[i] : DOW_LONG[i]; }
+function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
+
+var G_MONTHS = [
+  { label:'Tháng 11 · 2026', off:0,  days:30, m:11, y:2026 },
+  { label:'Tháng 12 · 2026', off:30, days:31, m:12, y:2026 },
+  { label:'Tháng 1 · 2027',  off:61, days:31, m:1,  y:2027 }
+];
+var LAST_ORD = 91;
+var G_TODAY = 8; /* Mon, Nov 9, 2026 */
+var DOW_SHORT = ['T2','T3','T4','T5','T6','T7','CN'];
+var DOW_LONG = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật'];
+function pad(n) { return n < 10 ? '0' + n : '' + n; }
+function ordInfo(o) {
+  if (o < 0) return { d: 31 + o + 1, m: 10, y: 2026 };
+  for (var i = G_MONTHS.length - 1; i >= 0; i--) {
+    if (o >= G_MONTHS[i].off) return { d: o - G_MONTHS[i].off + 1, m: G_MONTHS[i].m, y: G_MONTHS[i].y };
+  }
+  return { d: 1, m: 11, y: 2026 };
+}
+function dm(o) { var x = ordInfo(o); return LANG === 'en' ? MONTH_EN[x.m] + ' ' + x.d : pad(x.d) + '/' + pad(x.m); }
+function dowOf(o) { return (o + 6) % 7; } /* 0 = Mon */
+function gOrd(mi, d) { return G_MONTHS[mi].off + d - 1; }
+
+var DONE_TASKS = [
+  { c:'th', t:'Bài tập cá nhân: Phạm trù triết học', d:'12/10' },
+  { c:'th', t:'Thảo luận nhóm: Quy luật mâu thuẫn', d:'05/10' },
+  { c:'gtlvh', t:'Bài viết ngắn: Văn hóa cao – thấp ngữ cảnh', d:'26/10' },
+  { c:'nnh', t:'Quiz âm vị học (trên lớp)', d:'02/11' }
+];
+var COURSES = [
+  { id:'th', name:'Triết học', color:'#F29A8F', end: gOrd(0,1) - 14, tasks:[   /* kết thúc 18/10 */
+    { title:'Đọc & tóm tắt chương 2: Chủ nghĩa duy vật biện chứng', s:gOrd(0,2),  e:gOrd(0,16) },
+    { title:'Tiểu luận nhóm: Mối liên hệ phổ biến', s:gOrd(0,18), e:gOrd(1,14) },
+    { title:'Ôn tập & thi giữa kỳ', s:gOrd(1,15), e:gOrd(2,8) }
+  ]},
+  { id:'nnh', name:'General Linguistics', color:'#6DBB5E', end: gOrd(1,13), tasks:[
+    { title:'Bài tập phiên âm IPA (âm vị học)', e:gOrd(0,13) },   /* deadline only, no start */
+    { title:'Phân tích hình vị: 20 từ Việt – Anh', s:gOrd(0,20), e:gOrd(1,4) },
+    { title:'Thuyết trình nhóm: Ngữ nghĩa học', s:gOrd(1,7),  e:gOrd(2,15) }
+  ]},
+  { id:'gtlvh', name:'Giao tiếp liên văn hóa', color:'#F2C84B', end: gOrd(0,1), tasks:[
+    { title:'Nhật ký quan sát sốc văn hóa (3 tuần)', s:gOrd(0,1),  e:gOrd(0,21) },
+    { title:'Phỏng vấn người nước ngoài & viết báo cáo', s:gOrd(0,25), e:gOrd(1,18) },
+    { title:'Dự án cuối kỳ: Hofstede Việt Nam – Hoa Kỳ', s:gOrd(1,21), e:gOrd(2,25) }
+  ]},
+  { id:'pp', name:'Phương pháp NCKH trong Ngôn ngữ học', color:'#C8CF55', end: gOrd(1,28), tasks:[
+    { title:'Đề cương nghiên cứu cá nhân', e:gOrd(1,20) },   /* deadline only, no start */
+    { title:'Thuyết trình nhóm: Thiết kế nghiên cứu', s:gOrd(0,28),
+      groups:[['A', gOrd(1,5)], ['B', gOrd(1,12)], ['C', gOrd(1,19)]] }
+  ]}
+];
+/* Group-only deadlines: a task with `groups` = [[group name, deadline day], …] */
+COURSES[0].tasks.splice(2, 0, { title:'Thuyết trình nhóm cuối kỳ', s:gOrd(1,1),
+  groups:[['1', gOrd(1,7)], ['2', gOrd(1,14)], ['3', gOrd(1,21)]] });
+COURSES.forEach(function (c) { c.tasks.forEach(function (t) {
+  if (t.groups) t.e = Math.max.apply(null, t.groups.map(function (g) { return g[1]; }));
+}); });
+var ALL_GROUPS = [];
+COURSES.forEach(function (c) { c.tasks.forEach(function (t) {
+  (t.groups || []).forEach(function (g) { if (ALL_GROUPS.indexOf(g[0]) < 0) ALL_GROUPS.push(g[0]); });
+}); });
+/* Flatten a course's deadlines; group deadlines become one entry per group */
+function courseDeadlines(c, myGroups) {
+  var out = [];
+  c.tasks.forEach(function (t) {
+    if (t.groups) {
+      t.groups.forEach(function (g) {
+        if (!myGroups || !myGroups.length || myGroups.indexOf(g[0]) >= 0) out.push({ e: g[1], title: tr(t.title) + L(' – Nhóm ', ' – Group ') + g[0], group: g[0] });
+      });
+    } else out.push({ e: t.e, title: tr(t.title), group: '' });
+  });
+  return out;
+}
+var COURSE_DARK = { th:'#A3151C', nnh:'#1E7B34', gtlvh:'#8A6100', pp:'#5E6B12' };
+var COURSE_BY_ID = {};
+COURSES.forEach(function (c) { COURSE_BY_ID[c.id] = c; });
+
+/* ---- Real timetable: qlgd.dlu.edu.vn · Sau đại học · NAK34CHA_U · 2026-2027 HK1 ---- */
+/* Snapshot taken 09/11/2026 12:22. Week 1 starts Mon 22/06/2026; week 21 = 09–15/11/2026. */
+var SOURCE_SYNC = '09/11/2026 12:22';
+var SCHED_COURSES = {
+  TR6002: { name:'Triết học', gv:'Đinh Thị Hoàng Phương', color:'#F29A8F' },
+  NA6201: { name:'General Linguistics', gv:'Nguyễn Tất Thắng', color:'#6DBB5E' },
+  NA6204: { name:'Giao tiếp liên văn hóa', gv:'Nguyễn Tiến Phùng', color:'#F2C84B' },
+  PP6101: { name:'Phương pháp NCKH trong Ngôn ngữ học', gv:'Huỳnh Quang Minh', color:'#C8CF55' },
+  PP6102: { name:'Academic Writing', gv:'Trương Thị Mỹ Vân', color:'#BFE0B5' }
+};
+var SCHED_ORDER = ['TR6002','NA6201','NA6204','PP6101','PP6102'];
+var COURSE_INK = { TR6002:'#A3151C', NA6201:'#1E7B34', NA6204:'#8A6100', PP6101:'#5E6B12', PP6102:'#2F6B3A' };
+var OL = 'Online – cao học 1';
+/* week no → [dayIndex(0=Thứ 2), course code, tiết từ, tiết đến, phòng, đã học] */
+var SCHED = {
+  8:  [[6,'NA6201',7,10,'A7.8','0/45']],
+  9:  [[5,'PP6102',11,14,'A8.8.2','0/45'],[6,'NA6201',7,10,'A7.8','4/45']],
+  11: [[5,'PP6102',11,14,'A8.8.2','4/45'],[6,'NA6201',7,10,'A7.8','8/45']],
+  12: [[6,'NA6201',7,10,'A7.8','12/45']],
+  13: [[5,'PP6102',11,14,'A7.1','8/45'],[6,'NA6201',7,10,'A7.8','16/45']],
+  14: [[5,'PP6101',1,4,'A31.205','0/60'],[5,'PP6102',11,14,'A7.3','12/45'],[6,'NA6201',7,10,'A7.8','20/45']],
+  15: [[5,'TR6002',1,4,'A31.205','0/60'],[5,'TR6002',7,10,'A31.205','4/60'],[5,'PP6102',11,14,'A7.3','16/45'],
+       [6,'TR6002',1,4,'A31.205','8/60'],[6,'TR6002',7,10,'A31.205','12/60']],
+  16: [[0,'NA6204',11,14,'Online_008','0/45'],[1,'NA6204',11,14,'Online_008','4/45'],
+       [3,'TR6002',11,13,OL,'16/60'],[4,'TR6002',11,13,OL,'19/60'],
+       [5,'TR6002',1,4,'A31.205','22/60'],[5,'TR6002',7,10,'A31.205','26/60'],[5,'PP6102',11,14,'A7.3','20/45'],
+       [6,'TR6002',1,4,'A31.205','30/60'],[6,'TR6002',7,10,'A31.205','34/60']],
+  17: [[0,'NA6204',11,14,'Online_008','8/45'],[1,'NA6204',11,14,'Online_008','12/45'],
+       [3,'TR6002',11,13,OL,'38/60'],[4,'TR6002',11,13,OL,'41/60'],
+       [5,'TR6002',1,4,'A31.205','44/60'],[5,'TR6002',7,10,'A31.205','48/60'],[5,'PP6102',11,14,'A7.3','24/45'],
+       [6,'TR6002',1,4,'A31.205','52/60'],[6,'TR6002',7,10,'A31.205','56/60']],
+  18: [[1,'NA6204',11,14,'Online_008','16/45'],[3,'NA6204',11,14,'Online_008','20/45']],
+  19: [[5,'NA6204',1,5,'A8.8.2','24/45'],[5,'NA6204',7,11,'A8.8.2','29/45'],
+       [6,'NA6204',1,5,'A8.8.2','34/45'],[6,'NA6204',7,11,'A8.8.2','39/45']],
+  20: [[5,'PP6101',1,4,'A32.T3.B03','4/60'],[5,'PP6102',11,14,'A7.3','28/45'],[6,'NA6201',1,4,'A7.3','24/45']],
+  21: [[5,'PP6102',11,13,'A7.3','32/45'],[6,'NA6201',1,4,'A8.7.2','28/45']],
+  23: [[5,'PP6101',1,4,'A30.02','8/60'],[6,'NA6201',1,4,'A7.8','32/45'],[6,'PP6101',7,10,'A32.T3.B03','12/60']],
+  24: [[5,'PP6101',1,4,'A32.T3.B03','16/60'],[5,'PP6102',11,12,'A7.3','35/45'],
+       [6,'NA6201',1,4,'A7.8','36/45'],[6,'PP6101',7,10,'A32.T3.B03','20/60']],
+  25: [[5,'PP6101',1,4,'A32.T3.B03','24/60'],[5,'PP6102',11,14,'A7.1','37/45'],
+       [6,'NA6201',1,5,'A7.8','40/45'],[6,'PP6101',7,10,'A32.T3.B03','28/60']],
+  26: [[5,'PP6101',1,4,'A32.T3.B03','32/60'],[5,'PP6102',7,10,'A7.5','41/45'],[6,'PP6101',1,4,'A32.T3.B03','36/60']],
+  27: [[5,'PP6101',1,4,'A32.T3.B03','40/60'],[5,'PP6101',7,10,'A32.T3.B03','44/60'],
+       [6,'PP6101',1,4,'A32.T3.B03','48/60'],[6,'PP6101',7,10,'A32.T3.B03','52/60']],
+  28: [[0,'PP6101',11,14,OL,'56/60']]
+};
+/* Admin changes shown to the class (filled from the admin page):
+   key 'week-index' → { room, periods:[from,to], note, tag } ; ADDED[week] = [[day, code, from, to, room, note, tag]] */
+var CHANGES = {};
+var ADDED = {};
+/* Lời nhắn cho ngày trống lịch – mỗi ngày một câu, cố định theo ngày */
+var EMPTY_MSGS = [
+  'Không có lớp, relax thôi!',
+  'Không có deadline, cùng chill nào!',
+  'Lịch trống, sạc pin thôi!',
+  'Rảnh rang, đọc thêm vài trang nhé!',
+  'Không lớp, không bài, chỉ có vui!',
+  'Ngày nghỉ, đi cà phê chút nhé!',
+  'Trống lịch, ôn bài nhẹ nhàng thôi!',
+  'Hôm nay là của bạn!',
+  'Nghỉ ngơi để mai bứt phá!',
+  'Lịch trống, ngủ thêm 5 phút nhé!',
+  'Không có gì gấp, hít thở sâu nào!',
+  'Free day, tận hưởng thôi!'
+];
+var WEEK_COUNT = 30;   /* tuần 1 → 30 (22/06/2026 – 17/01/2027) */
+var TODAY_WEEK = 20;   /* index of tuần 21 */
+function dmDate(dt) { return LANG === 'en' ? MONTH_EN[dt.getMonth() + 1] + ' ' + dt.getDate() : pad(dt.getDate()) + '/' + pad(dt.getMonth() + 1); }
+SCHED_COURSES.PP6101.fullName = 'Phương pháp nghiên cứu khoa học trong Ngôn ngữ học';
+
+/* ---- Study materials (sample names) ----
+   Each entry: [type, name, Google Drive link]. Paste a share link as the 3rd item; empty = "Chưa có link". */
+var DOC_TYPE_STYLE = {
+  PDF:  'background:#FBE3DF',
+  DOCX: 'background:#EAF3DC',
+  PPTX: 'background:#FBEFD0',
+  LINK: 'background:#EEF6E3'
+};
+var DOCS = {
+  TR6002: [
+    ['PDF',  'Giáo trình Triết học (dành cho học viên cao học, không thuộc chuyên ngành Triết học)'],
+    ['PDF',  'Đề cương chi tiết học phần Triết học (TR6002)'],
+    ['PPTX', 'Bài giảng chương 1–4: Triết học và vai trò của triết học trong đời sống xã hội'],
+    ['DOCX', 'Câu hỏi ôn tập và hướng dẫn viết tiểu luận cuối học phần']
+  ],
+  NA6201: [
+    ['LINK', 'Tài liệu gốc', 'https://drive.google.com/drive/folders/1fEu4xwsSnLiL9abyFUA2q8mA433Nx18B?hl=vi'],
+    ['PDF',  'Đề cương chi tiết học phần General Linguistics (NA6201)'],
+    ['PPTX', 'Bài giảng: Âm vị học và Hình thái học'],
+    ['PDF',  'Bảng ký hiệu phiên âm quốc tế IPA kèm bài tập phiên âm'],
+    ['PDF',  'Tuyển tập bài đọc: Ngữ nghĩa học và Ngữ dụng học']
+  ],
+  NA6204: [
+    ['PDF',  'Đề cương chi tiết học phần Giao tiếp liên văn hóa (NA6204)'],
+    ['PDF',  'Bài đọc: Lý thuyết các chiều văn hóa của Hofstede'],
+    ['DOCX', 'Tình huống nghiên cứu: Sốc văn hóa trong môi trường học thuật quốc tế'],
+    ['DOCX', 'Mẫu báo cáo phỏng vấn liên văn hóa']
+  ],
+  PP6101: [
+    ['PDF',  'Đề cương chi tiết học phần Phương pháp nghiên cứu khoa học trong Ngôn ngữ học (PP6101)'],
+    ['PPTX', 'Bài giảng: Thiết kế nghiên cứu định tính và định lượng trong Ngôn ngữ học'],
+    ['DOCX', 'Mẫu đề cương luận văn thạc sĩ chuyên ngành Ngôn ngữ học'],
+    ['PDF',  'Hướng dẫn trích dẫn và lập danh mục tài liệu tham khảo theo chuẩn APA 7']
+  ],
+  PP6102: [
+    ['PDF',  'Đề cương chi tiết học phần Academic Writing (PP6102)'],
+    ['PPTX', 'Bài giảng: Cấu trúc bài báo khoa học theo mô hình IMRaD'],
+    ['PDF',  'Danh sách cụm từ học thuật thông dụng trong bài viết nghiên cứu'],
+    ['DOCX', 'Bài tập viết tóm tắt (abstract) kèm đáp án gợi ý']
+  ],
+  OTHER: [
+    ['PDF',  'Sổ tay học viên cao học năm học 2026–2027'],
+    ['PDF',  'Quy chế đào tạo trình độ thạc sĩ'],
+    ['PDF',  'Hướng dẫn sử dụng thư viện số và các cơ sở dữ liệu học thuật'],
+    ['DOCX', 'Mẫu đơn xin hoãn thi và đơn phúc khảo bài thi'],
+    ['PDF',  'Hướng dẫn tham gia lớp học trực tuyến']
+  ]
+};
+var DOC_ORDER = ['TR6002','NA6201','NA6204','PP6101','PP6102','OTHER'];
+
+/* ---- Class notices (derived from the qlgd.dlu.edu.vn timetable) ---- */
+var NOTICES = [
+  { date:'09/11', tag:'LỊCH HỌC', bg:'#EAF3DC', title:'Tuần 22 (16/11 – 22/11) lớp không có buổi học',
+    body:'Thời khóa biểu tuần 22 đang trống. Lớp học lại từ Thứ Bảy 28/11.' },
+  { date:'09/11', tag:'ĐỔI PHÒNG', bg:'#FBEFD0', title:'Thứ Bảy 28/11: PP6101 học tại phòng A30.02',
+    body:'Buổi sáng tiết 1–4 học phòng A30.02 thay vì A32.T3.B03. Buổi chiều Chủ nhật 29/11 vẫn ở A32.T3.B03.' },
+  { date:'08/11', tag:'TIẾN ĐỘ', bg:'#EEF6E3', title:'Academic Writing: đã học 32/45 tiết',
+    body:'Các buổi còn lại: 14/11, 05/12, 12/12 và 19/12 (buổi cuối học phòng A7.5, tiết 7–10).' },
+  { date:'02/11', tag:'LỊCH HỌC', bg:'#EAF3DC', title:'General Linguistics chuyển sang học buổi sáng Chủ nhật',
+    body:'Từ tuần 20, môn NA6201 học tiết 1–4 sáng Chủ nhật (trước đây là tiết 7–10 buổi chiều). Phòng học thay đổi theo tuần: A7.3, A8.7.2, A7.8.' },
+  { date:'01/11', tag:'LỊCH HỌC', bg:'#FBF2D0', title:'Giao tiếp liên văn hóa học 2 ngày cuối tuần tại A8.8.2',
+    body:'Thứ Bảy 31/10 và Chủ nhật 01/11, tiết 1–5 và 7–11, học trực tiếp tại phòng A8.8.2 thay vì học online.' },
+  { date:'18/10', tag:'HOÀN THÀNH', bg:'#FBE3DF', title:'Triết học đã học đủ 60/60 tiết',
+    body:'Buổi cuối diễn ra ngày 18/10. Theo dõi thông báo lịch thi từ Phòng Quản lý Đào tạo Sau Đại học.' },
+  { date:'05/10', tag:'MÔN MỚI', bg:'#EEF6E3', title:'Bắt đầu môn Giao tiếp liên văn hóa (NA6204)',
+    body:'Học online tại phòng Online_008, tiết 11–14 buổi tối. GV: Nguyễn Tiến Phùng.' }
+];
+var NOTICE_LIMIT = 3;
+function docGroupInfo(k) {
+  if (k === 'OTHER') return { name: tr('Tài liệu khác'), kicker: tr('Không thuộc môn học nào'), color: '#FFFFFF' };
+  var c = SCHED_COURSES[k];
+  return { name: tr(c.fullName || c.name), kicker: L('Môn học · ', 'Course · ') + k, color: c.color };
+}
+
+function gBar(s, e, M, fill) {
+  var ms = M.off, me = M.off + M.days - 1;
+  var vs = Math.max(s, ms), ve = Math.min(e, me);
+  if (vs > ve) return { show:false, style:'', title:'' };
+  var left = (vs - ms) / M.days * 100;
+  var width = (ve - vs + 1) / M.days * 100;
+  var rl = '0', rr = '0'; /* square ends */
+  return {
+    show: true,
+    title: s < -100 ? 'Đến ' + dm(e) : dm(s) + ' – ' + dm(e),
+    style: 'left:' + left + '%;width:' + width + '%;background:' + fill + ';border-radius:' + rl + ' ' + rr + ' ' + rr + ' ' + rl
+  };
+}
+
+/* Smooth-scroll to a section; falls back to the normal #anchor jump */
+function scrollToId(e, id) {
+  try {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (e && e.preventDefault) e.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (err) {}
+}
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { gMonth: 0, collapsed: {}, week: TODAY_WEEK, docGroup: DOC_ORDER[0], noticesExpanded: false, doneOpen: false, modal: null, myGroups: [], upd: null, updEmail: '', updError: false, lang: 'vi' };
+  }
+
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    LANG = 'vi'; /* Vietnamese only */
+    var myGroups = []; /* everyone sees every deadline */
+    function submitUpd() {
+      var em = (self.state.updEmail || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { self.setState({ updError: true }); return; }
+      self.setState({ upd: 'sent', updEmail: em });
+    }
+
+    /* ---------- Gantt ---------- */
+    var gi = s.gMonth;
+    var M = G_MONTHS[gi];
+    var trackBg = 'background-image:linear-gradient(to right,rgba(17,17,17,0.12) 1px,transparent 1px);background-size:calc(100% / ' + M.days + ') 100%';
+    var todayIn = G_TODAY >= M.off && G_TODAY < M.off + M.days;
+    var todayStyle = todayIn ? 'left:' + ((G_TODAY - M.off + 0.5) / M.days * 100) + '%' : '';
+    var gDays = [];
+    for (var k = 0; k < M.days; k++) {
+      var o = M.off + k, dw = dowOf(o);
+      var st = o === G_TODAY ? 'background:#D7262E;color:#FFFFFF'
+        : (dw >= 5 ? 'background:#F4C7C1;color:#111111' : 'color:#111111');
+      gDays.push({ num: k + 1, dow: dowShort(dw), style: st });
+    }
+    var gCourses = COURSES.map(function (c) {
+      var expanded = !s.collapsed[c.id];
+      var minS = Infinity, maxE = -Infinity, nextDue = Infinity;
+      courseDeadlines(c, myGroups).forEach(function (d) { if (d.e >= G_TODAY) nextDue = Math.min(nextDue, d.e); });
+      /* finished tasks (deadline already passed for everyone) disappear from the chart */
+      var tasks = c.tasks.filter(function (t) { return t.e >= G_TODAY; }).map(function (t) {
+        minS = Math.min(minS, t.s == null ? t.e : t.s); maxE = Math.max(maxE, t.e);
+        var mine = t.groups ? t.groups.filter(function (g) { return myGroups.indexOf(g[0]) >= 0; }) : [];
+        var keyE = mine.length ? mine[0][1] : t.e;
+        var diff = keyE - G_TODAY, label, color;
+        if (diff < 0) { label = L('Hạn ' + dm(keyE) + ' · trễ ' + (-diff) + ' ngày', 'Due ' + dm(keyE) + ' · ' + plural(-diff, 'day', 'days') + ' late'); color = '#A3151C'; }
+        else if (diff === 0) { label = L('Hạn hôm nay!', 'Due today!'); color = '#A3151C'; }
+        else if (diff === 1) { label = L('Hạn ngày mai · ', 'Due tomorrow · ') + dm(keyE); color = '#A3151C'; }
+        else { label = L('Hạn ' + dm(keyE) + ' · còn ' + diff + ' ngày', 'Due ' + dm(keyE) + ' · in ' + plural(diff, 'day', 'days')); color = diff <= 7 ? '#A3151C' : '#3A3A3A'; }
+        if (t.groups) {
+          if (mine.length) label = L('Nhóm ' + mine[0][0] + ' của bạn · ', 'Your group ' + mine[0][0] + ' · ') + label;
+          else { label = t.groups.map(function (g) { return L('Nhóm ', 'Group ') + g[0] + ': ' + dm(g[1]); }).join(' · '); color = '#3A3A3A'; }
+        }
+        var deIn = !t.groups && t.e >= M.off && t.e < M.off + M.days;
+        var stars = (t.groups || []).filter(function (g) { return g[1] >= M.off && g[1] < M.off + M.days; }).map(function (g) {
+          var isMine = myGroups.indexOf(g[0]) >= 0;
+          var dimmed = myGroups.length && !isMine;
+          return {
+            label: g[0],
+            title: L('Nhóm ', 'Group ') + g[0] + ' · ' + tr(t.title) + L(' · hạn ', ' · due ') + dm(g[1]),
+            style: 'left:' + ((g[1] - M.off + 0.5) / M.days * 100) + '%' + (dimmed ? ';opacity:0.3' : ''),
+            fillStyle: 'fill:' + (isMine ? '#2C9041' : '#FFC400')
+          };
+        });
+        return {
+          title: tr(t.title),
+          stars: stars,
+          dueLabel: label,
+          dueTextStyle: 'color:' + color,
+          bar: t.s == null ? { show: false, style: '', title: '' } : gBar(t.s, t.e, M, c.color),
+          showDiamond: deIn,
+          diamondStyle: deIn ? 'left:' + ((t.e - M.off + 0.5) / M.days * 100) + '%' : '',
+          deadlineTitle: L('Hạn: ', 'Deadline: ') + dm(t.e),
+          trackStyle: trackBg,
+          showToday: todayIn,
+          todayStyle: todayStyle
+        };
+      });
+      var hatch = 'repeating-linear-gradient(45deg,' + c.color + ' 0 6px,#FFFFFF 6px 11px)';
+      return {
+        name: tr(c.name),
+        meta: (c.end == null ? 'Chưa có ngày kết thúc' : (c.end < G_TODAY ? 'Đã kết thúc: ' : 'Kết thúc: ') + dm(c.end)),
+        dotStyle: 'background:' + c.color,
+        rowStyle: 'background:#FDFBF0',
+        bar: c.end == null ? { show: false, style: '', title: '' } : gBar(-9999, c.end, M, hatch),
+        ended: c.end != null && c.end < G_TODAY,
+        labelStyle: 'background:' + (COURSE_DARK[c.id] || '#111111') + ';color:#FFFFFF',
+        showEnd: c.end != null && c.end >= M.off && c.end < M.off + M.days,
+        endStyle: c.end != null ? 'left:' + ((c.end - M.off + 1) / M.days * 100) + '%' : '',
+        endTitle: c.end != null ? 'Kết thúc môn: ' + dm(c.end) : '',
+        expanded: expanded,
+        expandedStr: expanded ? 'true' : 'false',
+        chevStyle: expanded ? 'transform:rotate(90deg)' : 'transform:rotate(0deg)',
+        toggle: function () {
+          var next = Object.assign({}, self.state.collapsed);
+          next[c.id] = !next[c.id];
+          self.setState({ collapsed: next });
+        },
+        trackStyle: trackBg,
+        showToday: todayIn,
+        todayStyle: todayStyle,
+        tasks: tasks
+      };
+    });
+    /* finished courses go to the bottom, others keep their order */
+    gCourses = gCourses.map(function (c, k) { return { c: c, k: k }; })
+      .sort(function (a, b) { return (a.c.ended - b.c.ended) || (a.k - b.k); })
+      .map(function (x) { return x.c; });
+
+    /* ---------- Weekly schedule ---------- */
+    var wk = s.week, wNo = wk + 1;
+    var sessions = (SCHED[wNo] || []).map(function (x, idx) {
+      var ch = CHANGES[wNo + '-' + idx];
+      if (!ch) return x;
+      return [x[0], x[1], ch.periods ? ch.periods[0] : x[2], ch.periods ? ch.periods[1] : x[3], ch.room || x[4], x[5], ch.note || '', ch.tag || 'ĐỔI LỊCH'];
+    }).concat((ADDED[wNo] || []).map(function (a) { return [a[0], a[1], a[2], a[3], a[4], '', a[5] || '', a[6] || 'HỌC BÙ']; }));
+    var week = [];
+    for (var i = 0; i < 7; i++) {
+      var dt = new Date(2026, 5, 22 + wk * 7 + i);
+      var od = G_TODAY + (wNo - 21) * 7 + i; /* Gantt day ordinal */
+      var isToday = od === G_TODAY;
+      var items = sessions.filter(function (x) { return x[0] === i; }).map(function (x) {
+        var c = SCHED_COURSES[x[1]];
+        var buoi = x[2] <= 6 ? L('SÁNG', 'MORNING') : (x[2] <= 10 ? L('CHIỀU', 'AFTERNOON') : L('TỐI', 'EVENING'));
+        return {
+          hasBadge: false, badge: '', hasBuoi: true, buoi: buoi, buoiStyle: 'color:' + COURSE_INK[x[1]],
+          time: L('Tiết ', 'Periods ') + x[2] + '–' + x[3],
+          title: tr(c.fullName || c.name) + ' (' + x[1] + ')',
+          sub: L('Phòng: ', 'Room: ') + tr(x[4]),
+          hasGv: true, gv: L('GV: ', 'Lecturer: ') + c.gv,
+          hasProgress: !!x[5], progress: L('Đã học ' + x[5] + ' tiết', x[5] + ' periods done'),
+          hasChange: !!x[7], changeTag: x[7] || '', changeNote: x[6] || '',
+          style: 'background:#FFFFFF;color:#111111',
+          badgeStyle: 'background:#FFFFFF;color:' + COURSE_INK[x[1]] + ';border:1.5px solid ' + COURSE_INK[x[1]],
+          headStyle: 'margin:-10px -11px 8px',
+          titleStyle: 'background:' + c.color + ';border-bottom:2px solid #111111;border-radius:10px 10px 0 0;padding:6px 8px 7px'
+        };
+      });
+      if (od >= 0 && od <= LAST_ORD) {
+        COURSES.forEach(function (c) {
+          courseDeadlines(c, myGroups).forEach(function (t) {
+            if (t.e === od) items.push({ hasBuoi: false, buoi: '', buoiStyle: '', hasBadge: true, badge: L('HẠN NỘP', 'DUE'), time: '23:59', title: t.title, sub: tr(c.name),
+              hasProgress: false, progress: '', hasGv: false, gv: '', headStyle: 'margin:4px 0 0', titleStyle: '', badgeStyle: 'background:#FFFFFF;color:#A3151C;border:1.5px solid #FFFFFF', style: 'background:#A3151C;color:#FFFFFF' });
+          });
+        });
+      }
+      week.push({
+        name: dowShort(i),
+        date: dmDate(dt),
+        isToday: isToday,
+        items: items,
+        empty: items.length === 0,
+        emptyMsg: EMPTY_MSGS[(wk * 7 + i) % EMPTY_MSGS.length],
+        colStyle: isToday ? 'background:#FBE1DE' : (i >= 5 ? 'background:#FAF7EC' : 'background:#FFFFFF'),
+        headStyle: isToday ? 'background:#F29A8F' : 'background:#FFFFFF'
+      });
+    }
+    var wsD = new Date(2026, 5, 22 + wk * 7), weD = new Date(2026, 5, 28 + wk * 7);
+    var weekLabel = L('Tuần ', 'Week ') + wNo;
+    /* ---------- Bulletin board ---------- */
+    var bwStart = G_TODAY - dowOf(G_TODAY);       /* Monday of the current week */
+    function dlBetween(a, b) {
+      var list = [];
+      COURSES.forEach(function (c) { courseDeadlines(c, myGroups).forEach(function (t) {
+        if (t.e >= a && t.e <= b) {
+          var diff = t.e - G_TODAY;
+          list.push({
+            e: t.e, title: t.title, course: c.name,
+            dow: DOW_LONG[dowOf(t.e)], date: dm(t.e),
+            left: diff < 0 ? 'Trễ ' + (-diff) + ' ngày' : (diff === 0 ? 'Hôm nay' : (diff === 1 ? 'Ngày mai' : 'Còn ' + diff + ' ngày')),
+            rowStyle: 'background:' + c.color,
+            group: t.group, color: c.color, diff: diff
+          });
+        }
+      }); });
+      return list.sort(function (x, y) { return x.e - y.e; });
+    }
+    var dlThisWeek = dlBetween(bwStart, bwStart + 6).map(function (d) {
+      return Object.assign({}, d, { open: function () {
+        self.setState({ modal: {
+          title: d.title,
+          date: 'Hạn ' + d.dow + ', ' + d.date + '/' + ordInfo(d.e).y + ' · ' + d.left.toLowerCase(),
+          body: 'Môn: ' + d.course + '\nHình thức: ' + (d.group ? 'Nhóm ' + d.group + ' (deadline riêng của nhóm)' : 'Cá nhân – cả lớp cùng nộp'),
+          top: d.color
+        } });
+      } });
+    });
+    var dlNextWeek = dlBetween(bwStart + 7, bwStart + 13);
+    var boardWeekLabel = 'Tuần ' + (TODAY_WEEK + 1) + ' · ' + dm(bwStart) + ' – ' + dm(bwStart + 6) + '/' + ordInfo(bwStart + 6).y;
+    var dlThisSummary = dlThisWeek.length
+      ? dlThisWeek.length + ' việc cần nộp trước ' + DOW_LONG[6] + ' ' + dm(bwStart + 6)
+      : 'Không có việc cần nộp';
+    var shown = s.noticesExpanded ? NOTICES : NOTICES.slice(0, NOTICE_LIMIT);
+    var notices = shown.map(function (n, idx) {
+      return Object.assign({}, n, { open: function () {
+        self.setState({ modal: { title: n.title, date: 'Đăng ngày ' + n.date + '/2026', body: n.body, top: n.bg } });
+      } });
+    });
+    var m = s.modal;
+    var modal = m
+      ? { date: m.date, title: m.title, body: m.body, topStyle: 'border-top:12px solid ' + m.top }
+      : { date: '', title: '', body: '', topStyle: '' };
+
+    /* ---------- Materials ---------- */
+    var totalDocs = 0;
+    var docGroups = DOC_ORDER.map(function (k) {
+      var info = docGroupInfo(k);
+      var on = s.docGroup === k;
+      totalDocs += DOCS[k].length;
+      return {
+        name: info.name,
+        count: DOCS[k].length,
+        dotStyle: 'background:' + info.color,
+        selectedStr: on ? 'true' : 'false',
+        style: on ? 'background:' + (k === 'OTHER' ? '#FFC400' : info.color) + ';box-shadow:3px 3px 0 #111111;transform:translate(-1px,-1px)'
+                  : 'background:#FFFFFF;box-shadow:none',
+        pick: function () { self.setState({ docGroup: self.state.docGroup === k ? null : k }); },
+        selected: on,
+        regionLabel: L('Tài liệu: ', 'Documents: ') + info.name,
+        panelStyle: 'background-color:#FDFBF0;background-image:radial-gradient(rgba(17,17,17,0.08) 1.2px, transparent 1.4px);background-size:12px 12px',
+        docs: on ? DOCS[k].map(function (d) {
+          var url = d[2] || '';
+          return { type: d[0], name: tr(d[1]), url: url, hasUrl: !!url, noUrl: !url, typeStyle: DOC_TYPE_STYLE[d[0]], openLabel: L('Mở trên Google Drive: ', 'Open in Google Drive: ') + tr(d[1]) };
+        }) : []
+      };
+    });
+    var hasActive = !!s.docGroup && !!DOCS[s.docGroup];
+    var aInfo = hasActive ? docGroupInfo(s.docGroup) : { name: '', kicker: '' };
+    var docActive = hasActive ? {
+      name: aInfo.name,
+      kicker: aInfo.kicker + ' · ' + L(DOCS[s.docGroup].length + ' tài liệu', plural(DOCS[s.docGroup].length, 'document', 'documents')),
+      docs: DOCS[s.docGroup].map(function (d) {
+        var url = d[2] || '';
+        return { type: d[0], name: tr(d[1]), url: url, hasUrl: !!url, noUrl: !url, typeStyle: DOC_TYPE_STYLE[d[0]], openLabel: L('Mở trên Google Drive: ', 'Open in Google Drive: ') + tr(d[1]) };
+      })
+    } : { name: '', kicker: '', docs: [] };
+    var docPanelStyle = 'background-color:#FDFBF0;background-image:radial-gradient(rgba(17,17,17,0.08) 1.2px, transparent 1.4px);background-size:12px 12px';
+    var docsSummary = L((DOC_ORDER.length - 1) + ' môn học + tài liệu chung · ' + totalDocs + ' tài liệu', (DOC_ORDER.length - 1) + ' courses + general documents · ' + totalDocs + ' documents');
+
+    var schedLegend = SCHED_ORDER.map(function (k) { return { name: tr(SCHED_COURSES[k].fullName || SCHED_COURSES[k].name), dotStyle: 'background:' + SCHED_COURSES[k].color }; });
+
+    var dimmed = 'opacity:0.35;box-shadow:none';
+    var ti = ordInfo(G_TODAY);
+
+    return {
+      todayText: DOW_LONG[dowOf(G_TODAY)] + ', ' + pad(ti.d) + '/' + pad(ti.m) + '/' + ti.y,
+      goTop: function (e) { scrollToId(e, 'top'); },
+      goBanTin: function (e) { scrollToId(e, 'ban-tin'); },
+      goLichHoc: function (e) { scrollToId(e, 'lich-hoc'); },
+      goTienDo: function (e) { scrollToId(e, 'deadlines'); },
+      goTaiLieu: function (e) { scrollToId(e, 'tai-lieu'); },
+      updOpen: !!s.upd,
+      updIsLogin: s.upd === 'login',
+      updIsSent: s.upd === 'sent',
+      updEmail: s.updEmail,
+      updError: s.updError,
+      openUpdate: function () { self.setState({ upd: 'login', updError: false }); },
+      closeUpdate: function () { self.setState({ upd: null }); },
+      onUpdEmail: function (e) { self.setState({ updEmail: e.target.value, updError: false }); },
+      onUpdKey: function (e) { if (e.key === 'Enter') submitUpd(); },
+      submitUpdate: function () { submitUpd(); },
+      langCode: LANG,
+      T: {
+        navAria: L('Các phần của trang', 'Page sections'),
+        navWeek: L('Lịch tuần', 'Timetable'),
+        navProg: L('Kế hoạch', 'Progress'),
+        navDocs: L('Tài liệu', 'Documents'),
+        navUpdate: L('Cập nhật', 'Update'),
+        chipWeek: L('01 · LỊCH TUẦN', '01 · TIMETABLE'),
+        chipProg: L('02 · DEADLINE', '02 · DEADLINES'),
+        chipDocs: L('03 · TÀI LIỆU', '03 · DOCUMENTS'),
+        hWeek: L('Lịch tuần', 'Timetable'),
+        prevWeek: L('Tuần trước', 'Previous week'),
+        thisWeek: L('Tuần này', 'This week'),
+        nextWeek: L('Tuần sau', 'Next week'),
+        todayBadge: L('HÔM NAY', 'TODAY'),
+        noClass: L('Không có lớp · nghỉ ngơi nhé!', 'No class · take a break!'),
+        legendDue: L('Hạn nộp task', 'Task due'),
+        hGantt: L('Kế hoạch', 'Progress'),
+        ganttSub: L('4 môn · 12 task · 11/2026 – 01/2027', '4 courses · 12 tasks · Nov 2026 – Jan 2027'),
+        prevMonth: L('Tháng trước', 'Previous month'),
+        nextMonth: L('Tháng sau', 'Next month'),
+        groupAria: L('Chọn nhóm thuyết trình', 'Choose your presentation group'),
+        yourGroup: L('Nhóm của bạn:', 'Your group:'),
+        colHead: L('Tasks', 'Tasks'),
+        legendClass: L('Deadline cả lớp', 'Class deadline'),
+        legendGroup: L('Deadline nhóm', 'Group deadline'),
+        legendToday: L('Hôm nay', 'Today'),
+        hDocs: L('Tài liệu', 'Documents'),
+        docsAria: L('Môn học', 'Courses'),
+        noLink: L('Chưa có', 'Not yet'),
+        open: L('Truy cập', 'Open'),
+        footerSrc: L('Lịch học lấy từ Hệ thống Quản lý Giảng đường – Trường Đại học Đà Lạt', 'Timetable from the Lecture Hall Management System – Dalat University'),
+        toTop: L('Lên đầu trang', 'Back to top'),
+        close: L('Đóng', 'Close'),
+        google: L('Đăng nhập với Google', 'Sign in with Google'),
+        adminNote: L('Chỉ email quản trị viên mới có thể cập nhật.', 'Only the administrator\'s email can update this page.'),
+        langAria: L('Ngôn ngữ', 'Language')
+      },
+      enPressed: LANG === 'en' ? 'true' : 'false',
+      viPressed: LANG === 'vi' ? 'true' : 'false',
+      enStyle: LANG === 'en' ? 'background:#111111;color:#FFC400' : 'background:#FFFFFF;color:#111111',
+      viStyle: LANG === 'vi' ? 'background:#111111;color:#FFC400' : 'background:#FFFFFF;color:#111111',
+      setEN: function () { self.setState({ lang: 'en' }); },
+      setVI: function () { self.setState({ lang: 'vi' }); },
+      monthNo: M.m,
+      gThis: function () { self.setState({ gMonth: 0 }); },
+      gMonthLabel: LANG === 'en' ? MONTH_EN_LONG[M.m] + ' ' + M.y : M.label,
+      groupChips: [{ label: L('Tất cả', 'All'), key: '' }].concat(ALL_GROUPS.map(function (g) { return { label: g, key: g }; })).map(function (gc) {
+        var on = gc.key === '' ? myGroups.length === 0 : myGroups.indexOf(gc.key) >= 0;
+        return {
+          label: gc.key === '' ? gc.label : L('Nhóm ', 'Group ') + gc.label,
+          pressedStr: on ? 'true' : 'false',
+          style: on ? 'background:#111111;color:#FFC400;box-shadow:2px 2px 0 #2C9041' : 'background:#FFFFFF',
+          pick: function () {
+            if (gc.key === '') { self.setState({ myGroups: [] }); return; }
+            var cur = (self.state.myGroups || []).slice();
+            var i = cur.indexOf(gc.key);
+            if (i >= 0) cur.splice(i, 1); else cur.push(gc.key);
+            self.setState({ myGroups: cur });
+          }
+        };
+      }),
+      groupHint: myGroups.length ? L('Đang làm nổi nhóm ' + myGroups.join(', ') + ' (sao hồng). Lịch học chỉ nhắc deadline của nhóm này.', 'Highlighting group ' + myGroups.join(', ') + ' (pink star). The timetable only shows this group\'s deadlines.') : L('Chọn nhóm của bạn ở từng môn (có thể chọn nhiều) để làm nổi deadline của nhóm.', 'Pick your group in each course (you can pick several) to highlight its deadlines.'),
+      gCols: 'grid-template-columns:repeat(' + M.days + ', minmax(0, 1fr))',
+      gDays: gDays,
+      gCourses: gCourses,
+      gPrevDisabled: gi === 0,
+      gNextDisabled: gi === G_MONTHS.length - 1,
+      gPrevStyle: gi === 0 ? dimmed : '',
+      gNextStyle: gi === G_MONTHS.length - 1 ? dimmed : '',
+      gPrev: function () { if (self.state.gMonth > 0) self.setState({ gMonth: self.state.gMonth - 1 }); },
+      gNext: function () { if (self.state.gMonth < G_MONTHS.length - 1) self.setState({ gMonth: self.state.gMonth + 1 }); },
+      week: week,
+      /* empty days take half the width; the rest is shared by busy days */
+      weekCols: 'grid-template-columns:' + week.map(function (d) { return d.empty ? 'minmax(0, 0.5fr)' : 'minmax(0, 1fr)'; }).join(' '),
+      weekLabel: weekLabel,
+      weekNo: wNo,
+      schedLegend: schedLegend,
+      boardWeekLabel: boardWeekLabel,
+      dlThisWeek: dlThisWeek,
+      dlThisEmpty: dlThisWeek.length === 0,
+      dlThisSummary: dlThisSummary,
+      dlNextWeek: dlNextWeek,
+      dlNextEmpty: dlNextWeek.length === 0,
+      dlNextLabel: dm(bwStart + 7) + ' – ' + dm(bwStart + 13),
+      notices: notices,
+      noticesHasMore: NOTICES.length > NOTICE_LIMIT,
+      noticesExpandedStr: s.noticesExpanded ? 'true' : 'false',
+      noticesToggleLabel: s.noticesExpanded ? 'Thu gọn' : 'Xem thêm ' + (NOTICES.length - NOTICE_LIMIT) + ' tin cũ',
+      toggleNotices: function () { self.setState({ noticesExpanded: !self.state.noticesExpanded }); },
+      modalOpen: !!m,
+      modal: modal,
+      closeNotice: function () { self.setState({ modal: null }); },
+      stopClick: function (e) { if (e && e.stopPropagation) e.stopPropagation(); },
+      toggleDone: function () { self.setState({ doneOpen: !self.state.doneOpen }); },
+      doneOpen: s.doneOpen, doneOpenStr: s.doneOpen ? 'true' : 'false',
+      doneChev: s.doneOpen ? 'transform: rotate(90deg)' : '',
+      doneCount: DONE_TASKS.length,
+      doneList: DONE_TASKS.map(function (d) { var c = COURSES.filter(function (x) { return x.id === d.c; })[0]; return { title: d.t, course: c.name, chip: 'background:' + COURSE_DARK[d.c], due: 'Hạn ' + d.d }; }),
+      docGroups: docGroups,
+      docActive: docActive,
+      docHasActive: hasActive,
+      docNoActive: !hasActive,
+      docPanelStyle: docPanelStyle,
+      docsSummary: docsSummary,
+      sourceText: L('Tự động cập nhật 7h sáng hằng ngày từ https://qlgd.dlu.edu.vn', 'Timetable updates automatically from Dalat University\'s system | Source: qlgd.dlu.edu.vn - NAK34CHA_U - updated daily at 7 a.m.'),
+      wPrevDisabled: wk === 0,
+      wNextDisabled: wk === WEEK_COUNT - 1,
+      wPrevStyle: wk === 0 ? dimmed : '',
+      wNextStyle: wk === WEEK_COUNT - 1 ? dimmed : '',
+      wPrev: function () { if (self.state.week > 0) self.setState({ week: self.state.week - 1 }); },
+      wNext: function () { if (self.state.week < WEEK_COUNT - 1) self.setState({ week: self.state.week + 1 }); },
+      wToday: function () { self.setState({ week: TODAY_WEEK }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
