@@ -439,6 +439,7 @@ var G_MONTHS = [
 var LAST_ORD = 91;
 var G_TODAY = 8; /* Mon, Nov 9, 2026 */
 var DOW_SHORT = ['T2','T3','T4','T5','T6','T7','CN'];
+var DOW_HEAD = ['THỨ 2','THỨ 3','THỨ 4','THỨ 5','THỨ 6','THỨ 7','CN'];
 var DOW_LONG = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật'];
 function pad(n) { return n < 10 ? '0' + n : '' + n; }
 function ordInfo(o) {
@@ -816,7 +817,7 @@ class Component extends DCLogic {
         });
       }
       week.push({
-        name: dowShort(i),
+        name: LANG === 'en' ? dowShort(i) : DOW_HEAD[i],
         date: dmDate(dt),
         isToday: isToday,
         items: items,
