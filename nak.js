@@ -93,9 +93,9 @@
     if (!NAK.admin) return;
     var cur = (NAK.data.notes || {})[key] || '';
     var wrap = el('div', 'padding-top:34px');
-    wrap.appendChild(el('h3', "margin:0 0 4px;font-family:Anton,Archivo,sans-serif;font-size:22px;font-weight:800", 'GHI CHÚ'));
-    wrap.appendChild(el('p', 'margin:0 0 12px;font-size:13px;font-weight:700;color:#3A3A3A', title));
-    var ta = el('textarea', 'width:100%;box-sizing:border-box;min-height:120px;padding:10px 12px;border:2px solid #111;border-radius:12px;font:600 15px Archivo,system-ui,sans-serif;resize:vertical');
+    wrap.appendChild(el('h3', "margin:0 0 4px;font-family:Anton,Archivo,sans-serif;font-size:24px;font-weight:800", 'GHI CHÚ'));
+    wrap.appendChild(el('p', 'margin:0 0 12px;font-size:14px;font-weight:700;color:#3A3A3A', title));
+    var ta = el('textarea', 'width:100%;box-sizing:border-box;min-height:120px;padding:10px 12px;border:2px solid #111;border-radius:12px;font:600 14px Archivo,system-ui,sans-serif;resize:vertical');
     ta.className = 'nak-note'; ta.value = cur; ta.maxLength = 1500; ta.placeholder = 'Ví dụ: Nộp bài tập IPA trước 23:59… (Ctrl+K để chèn link)';
     wrap.appendChild(ta);
     var row = el('div', 'display:flex;gap:10px;margin-top:14px;flex-wrap:wrap');
@@ -152,17 +152,17 @@
 
   NAK.showNote = function (title, text) {
     var wrap = el('div', 'padding-top:34px');
-    wrap.appendChild(el('h3', "margin:0 0 6px;font-family:Anton,Archivo,sans-serif;font-size:22px;font-weight:800", 'GHI CHÚ'));
+    wrap.appendChild(el('h3', "margin:0 0 6px;font-family:Anton,Archivo,sans-serif;font-size:24px;font-weight:800", 'GHI CHÚ'));
     wrap.appendChild(el('p', 'margin:0 0 12px;font-size:14px;font-weight:800;color:#3A3A3A', title));
-    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:15px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text));
+    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:14px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text));
     overlay(wrap);
   };
 
   NAK.showNews = function (title, when, text) {
     var wrap = el('div', 'padding-top:34px');
-    wrap.appendChild(el('p', 'margin:0 0 4px;font-size:13px;font-weight:800;color:#A3151C;letter-spacing:.06em', 'BULLETIN BOARD · ' + when));
+    wrap.appendChild(el('p', 'margin:0 0 4px;font-size:14px;font-weight:800;color:#A3151C;letter-spacing:.06em', 'BULLETIN BOARD · ' + when));
     wrap.appendChild(el('h3', "margin:0 0 12px;font-family:Anton,Archivo,sans-serif;font-size:24px;font-weight:400;line-height:1.2", title));
-    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:15px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text || '(Không có nội dung chi tiết.)'));
+    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:14px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text || '(Không có nội dung chi tiết.)'));
     overlay(wrap);
   };
 

@@ -40,7 +40,7 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 }
 </style>
 </helmet>
-<div style="min-height: 100vh; background-color: #EFE6CF; background-image: radial-gradient(rgba(17,17,17,0.14) 1.2px, transparent 1.5px); background-size: 14px 14px; color: #111111; font-family: 'Archivo', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+<div style="min-height: 100vh; background-color: #EFE6CF; background-image: radial-gradient(rgba(17,17,17,0.14) 1.2px, transparent 1.5px); background-size: 14px 14px; color: #111111; font-family: 'Archivo', system-ui, sans-serif; font-size: 14px; line-height: 1.5">
 
 
 <main style="max-width: 1240px; margin: 0 auto; padding: 28px 24px 140px">
@@ -115,7 +115,7 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 
 <div class="g-upwrap" style="position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 45; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none">
 <span class="g-bubble" aria-hidden="true" style="position: relative; background: #FFFFFF; border: 2px solid #111111; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 800; white-space: nowrap; box-shadow: 2px 2px 0 #111111">Có ảnh đẹp? Góp ngay nè!</span>
-<button type="button" onClick="{{openUpload}}" aria-haspopup="dialog" class="g-up" style="pointer-events: auto; white-space: nowrap; min-height: 40px; padding: 0 14px; display: flex; align-items: center; gap: 6px; border: 2px solid #111111; border-radius: 999px; background: #1E7B34; font-weight: 800; font-size: 13px; color: #FFFFFF; box-shadow: 3px 3px 0 #111111">
+<button type="button" onClick="{{openUpload}}" aria-haspopup="dialog" class="g-up" style="pointer-events: auto; white-space: nowrap; min-height: 40px; padding: 0 14px; display: flex; align-items: center; gap: 6px; border: 2px solid #111111; border-radius: 999px; background: #1E7B34; font-weight: 800; font-size: 14px; color: #FFFFFF; box-shadow: 3px 3px 0 #111111">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Thêm ảnh thêm vui</button>
 </div>
 
@@ -132,8 +132,8 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
 <span></span>
 <div style="display: flex; gap: 10px">
-<button type="button" onClick="{{prevLb}}" aria-label="Ảnh trước" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 20px">‹</button>
-<button type="button" onClick="{{nextLb}}" aria-label="Ảnh sau" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 20px">›</button>
+<button type="button" onClick="{{prevLb}}" aria-label="Ảnh trước" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 18px">‹</button>
+<button type="button" onClick="{{nextLb}}" aria-label="Ảnh sau" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 18px">›</button>
 <sc-if value="{{lb.canDelete}}" hint-placeholder-val="{{false}}"><button type="button" onClick="{{delPhoto}}" style="min-height: 44px; padding: 0 16px; border: 3px solid #111111; border-radius: 12px; background: #FFFFFF; color: #A3151C; font-weight: 800; font-size: 14px">Xóa ảnh</button></sc-if>
 <a href="{{lb.src}}" download="{{lb.fileName}}" style="min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px; border: 3px solid #111111; border-radius: 12px; background: #FFC400; color: #111111; font-weight: 800; font-size: 14px; text-decoration: none">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7 10l5 5 5-5"></path><path d="M5 20h14"></path></svg>Tải về</a>
@@ -156,14 +156,14 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 </button>
 </sc-if>
 <h3 style="margin: 0 0 10px; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: #1E7B34">Kỷ yếu NAK34</h3>
-<p id="gate-msg" style="margin: 0; font-size: 15px; font-weight: 700; line-height: 1.5; color: #111111">{{gateMsg}}</p>
+<p id="gate-msg" style="margin: 0; font-size: 14px; font-weight: 700; line-height: 1.5; color: #111111">{{gateMsg}}</p>
 <sc-if value="{{hasEmailNote}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; padding: 10px 12px; background: #FBF2D0; border: 2px solid #111111; border-radius: 10px; font-size: 14px; font-weight: 700; word-break: break-all">{{emailNote}}</p></sc-if>
 <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap">
-<button type="button" onClick="{{showMyEmail}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 12px; background: #FFFFFF; color: #111111; font-weight: 800; font-size: 15px; box-shadow: 3px 3px 0 #111111">Xem email của tôi</button>
-<button type="button" onClick="{{loginNow}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 12px; background: #2C9041; color: #FFFFFF; font-weight: 800; font-size: 15px; box-shadow: 3px 3px 0 #111111">Đăng nhập ngay</button>
+<button type="button" onClick="{{showMyEmail}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 12px; background: #FFFFFF; color: #111111; font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 #111111">Xem email của tôi</button>
+<button type="button" onClick="{{loginNow}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 12px; background: #2C9041; color: #FFFFFF; font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 #111111">Đăng nhập ngay</button>
 </div>
 <sc-if value="{{hasLoginErr}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; font-size: 14px; font-weight: 700; color: #A3151C">{{loginErr}}</p></sc-if>
-<a href="index.html" style="display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700">← Về trang lớp</a>
+<a href="index.html" style="display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 700">← Về trang lớp</a>
 </div>
 </div>
 </sc-if>
@@ -194,8 +194,8 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 </ul>
 </sc-if>
 <sc-if value="{{hasUpMsg}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; font-size: 14px; font-weight: 700; color: #3A3A3A">{{upMsg}}</p></sc-if>
-<p style="margin: 12px 0 0; font-size: 13px; font-weight: 500; line-height: 1.5">Ảnh được thu nhỏ tự động và lưu trên trang lớp. Chỉ những người đã đăng nhập Google mới xem được.</p>
-<button type="button" onClick="{{doUpload}}" disabled="{{upBusy}}" style="margin-top: 16px; width: 100%; min-height: 48px; border: 3px solid #111111; border-radius: 14px; background: #2C9041; font-weight: 800; font-size: 15px; color: #111111; box-shadow: 3px 3px 0 #111111">Đăng</button>
+<p style="margin: 12px 0 0; font-size: 14px; font-weight: 500; line-height: 1.5">Ảnh được thu nhỏ tự động và lưu trên trang lớp. Chỉ những người đã đăng nhập Google mới xem được.</p>
+<button type="button" onClick="{{doUpload}}" disabled="{{upBusy}}" style="margin-top: 16px; width: 100%; min-height: 48px; border: 3px solid #111111; border-radius: 14px; background: #2C9041; font-weight: 800; font-size: 14px; color: #111111; box-shadow: 3px 3px 0 #111111">Đăng</button>
 </div>
 </div>
 </sc-if>
@@ -238,9 +238,8 @@ class Component extends DCLogic {
     var self = this;
     this.refresh = function () {
       return jget('/api/gallery/me').then(function (m) {
-        if (!m.email) { self.setState({ auth: 'out', email: null, canUpload: false, photos: [] }); return; }
         return jget('/api/photos').then(function (p) {
-          self.setState({ auth: 'in', email: m.email, canUpload: !!m.canUpload, photos: p.photos || [], loginErr: '' });
+          self.setState({ auth: m.email ? 'in' : 'out', email: m.email || null, canUpload: !!m.canUpload, photos: p.photos || [], loginErr: '' });
         });
       }).catch(function () { self.setState({ auth: 'out' }); });
     };
@@ -274,14 +273,14 @@ class Component extends DCLogic {
     }
     var cur = s.lb >= 0 ? sorted[s.lb] : null;
     var n = sorted.length;
-    var out = s.auth === 'out', noperm = s.dlg === 'noperm', loggedIn = s.auth === 'in';
+    var noperm = s.dlg === 'noperm', needLogin = s.dlg === 'login', loggedIn = s.auth === 'in';
     var gateMsg = noperm
       ? 'Email của bạn chưa được cấp quyền tải ảnh lên. Hãy nhờ quản trị viên thêm email này, hoặc đăng nhập bằng email cá nhân khác.'
       : 'Vui lòng đăng nhập bằng email cá nhân của bạn.';
     return {
       items: items,
       cols4: columns(4), cols3: columns(3), cols2: columns(2),
-      emptyMsgOn: loggedIn && n === 0,
+      emptyMsgOn: s.auth !== 'loading' && n === 0,
       emptyMsg: s.canUpload ? 'Chưa có ảnh nào. Bấm "Thêm ảnh thêm vui" để đăng tấm đầu tiên nhé!' : 'Chưa có ảnh nào.',
       lbOpen: !!cur,
       lb: cur ? {
@@ -297,16 +296,15 @@ class Component extends DCLogic {
       },
       stopClick: function (e) { if (e && e.stopPropagation) e.stopPropagation(); },
       /* cổng đăng nhập */
-      gateOpen: out || noperm,
-      gateClosable: noperm,
+      gateOpen: noperm || needLogin,
+      gateClosable: true,
       gateMsg: gateMsg,
       hasEmailNote: !!s.emailNote, emailNote: s.emailNote,
       hasLoginErr: !!s.loginErr, loginErr: s.loginErr,
-      gateBackdrop: function () { if (self.state.dlg === 'noperm') self.setState({ dlg: null, emailNote: '' }); },
+      gateBackdrop: function () { if (self.state.dlg === 'noperm' || self.state.dlg === 'login') self.setState({ dlg: null, emailNote: '' }); },
       closeGate: function () { self.setState({ dlg: null, emailNote: '' }); },
       showMyEmail: function () {
-        var e = self.state.email;
-        self.setState({ emailNote: e ? 'Email bạn đang đăng nhập: ' + e : 'Bạn chưa đăng nhập. Bấm "Đăng nhập ngay" để chọn email Google của bạn.' });
+        window.open('https://docs.google.com/spreadsheets/d/1N6mZxy6n3RXKhAzCBuRmUbpiJvrQQHc07cTd9a1vpVA/edit?usp=sharing', '_blank', 'noopener');
       },
       loginNow: function () {
         if (!(window.google && google.accounts && google.accounts.oauth2)) { self.setState({ loginErr: 'Đang tải Google, hãy thử lại sau vài giây.' }); return; }
@@ -316,7 +314,7 @@ class Component extends DCLogic {
           callback: function (resp) {
             if (!resp || !resp.access_token) { self.setState({ loginErr: 'Đăng nhập chưa thành công. Hãy thử lại.' }); return; }
             jpost('/api/glogin', { accessToken: resp.access_token }).then(function (r) {
-              if (r.email) { self.setState({ dlg: null, emailNote: '' }); self.refresh(); } else self.setState({ loginErr: 'Không đăng nhập được. Hãy thử lại.' });
+              if (r.email) { self.refresh().then(function () { self.clearFiles(); self.setState({ dlg: self.state.canUpload ? 'form' : 'noperm', emailNote: '', upMsg: '', nFiles: 0, prev: [] }); }); } else self.setState({ loginErr: 'Không đăng nhập được. Hãy thử lại.' });
             });
           },
           error_callback: function () { self.setState({ loginErr: 'Cửa sổ đăng nhập Google đã bị đóng hoặc chặn.' }); }
@@ -327,7 +325,7 @@ class Component extends DCLogic {
       upOpen: s.dlg === 'form',
       myEmail: s.email || '',
       openUpload: function () {
-        if (self.state.auth !== 'in') return;
+        if (self.state.auth !== 'in') { self.setState({ dlg: 'login', emailNote: '', loginErr: '' }); return; }
         self.clearFiles(); self.setState({ dlg: self.state.canUpload ? 'form' : 'noperm', upMsg: '', nFiles: 0, emailNote: '', prev: [] });
       },
       closeUpload: function () { if (!self.state.upBusy) self.setState({ dlg: null }); },

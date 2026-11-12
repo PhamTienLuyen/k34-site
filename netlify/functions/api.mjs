@@ -44,21 +44,18 @@ export default async (req) => {
       return json({ email: email || null, canUpload: await canUpload(email) });
     }
     if (route === "photos" && method === "GET") {
-      const email = await memberEmail(req);
-      if (!email) return json({ error: "Chưa đăng nhập" }, 401);
+      const email = await memberEmail(req); /* ai cũng xem được; đăng nhập chỉ để biết ảnh của mình */
       const idx = await readIndex();
       const admin = email === ADMIN_EMAIL;
       return json({ photos: idx.slice().sort((a, b) => (a.at < b.at ? 1 : -1)).map((p) => ({ id: p.id, at: p.at, ratio: p.ratio || 1, mine: p.by === email, canDelete: admin || p.by === email })) });
     }
     if (route.startsWith("photo/") && method === "GET") {
-      const email = await memberEmail(req);
-      if (!email) return json({ error: "Chưa đăng nhập" }, 401);
       const id = route.slice(6);
       if (!/^[a-z0-9]{6,40}$/.test(id)) return json({ error: "Không tìm thấy" }, 404);
       const meta = (await readIndex()).find((p) => p.id === id);
       const data = meta ? await store("photos").get("img/" + id, { type: "arrayBuffer" }) : null;
       if (!data) return json({ error: "Không tìm thấy" }, 404);
-      return new Response(data, { status: 200, headers: { "content-type": meta.ct, "cache-control": "private, max-age=86400", "content-disposition": `inline; filename="nak34-${id}.${IMG_TYPES[meta.ct] || "jpg"}"` } });
+      return new Response(data, { status: 200, headers: { "content-type": meta.ct, "cache-control": "public, max-age=86400", "content-disposition": `inline; filename="nak34-${id}.${IMG_TYPES[meta.ct] || "jpg"}"` } });
     }
     if (route === "uploaders" && method === "GET") {
       if (!(await sessionEmail(req))) return json({ error: "Chưa đăng nhập quản trị" }, 401);
