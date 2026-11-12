@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NAK34CHA_U – Lịch tuần, Kế hoạch, Tài liệu</title>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="./nak.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -133,6 +135,8 @@ button:disabled{cursor:default}
 <sc-if value="{{s.hasProgress}}" hint-placeholder-val="{{false}}">
 <p class="s-line" style="margin: 4px 0 0; font-size: 10px; font-weight: 700; color: #3A3A3A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{s.progress}}</p>
 </sc-if>
+<sc-if value="{{s.hasNote}}" hint-placeholder-val="{{false}}"><p style="margin: 8px 0 0; padding: 6px 8px; background: #FFF3B0; border: 2px solid #111111; border-radius: 8px; font-size: 12px; font-weight: 700; line-height: 1.4; white-space: pre-line; color: #111111; word-break: break-word">📝 {{s.note}}</p></sc-if>
+<sc-if value="{{s.canNote}}" hint-placeholder-val="{{false}}"><div style="display: flex; justify-content: flex-end; margin-top: 8px"><button type="button" onClick="{{s.noteClick}}" title="Ghi chú" aria-label="Ghi chú buổi học" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; padding: 0; border: 2px solid #111111; border-radius: 8px; box-shadow: 2px 2px 0 #111111; cursor: pointer; {{s.noteIcon}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg></button></div></sc-if>
 </div>
 </sc-for>
 <sc-if value="{{d.empty}}" hint-placeholder-val="{{false}}">
@@ -437,7 +441,8 @@ var G_MONTHS = [
   { label:'Tháng 1 · 2027',  off:61, days:31, m:1,  y:2027 }
 ];
 var LAST_ORD = 91;
-var G_TODAY = 8; /* Mon, Nov 9, 2026 */
+var G_TODAY = (function () { var n = new Date(); return Math.round((Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) - Date.UTC(2026, 10, 1)) / 86400000); })(); /* ordinal 0 = 01/11/2026; hôm nay theo đồng hồ thật */
+var G_TODAY_MONTH = (function () { for (var i = G_MONTHS.length - 1; i >= 0; i--) { if (G_TODAY >= G_MONTHS[i].off) return i; } return 0; })();
 var DOW_SHORT = ['T2','T3','T4','T5','T6','T7','CN'];
 var DOW_HEAD = ['THỨ 2','THỨ 3','THỨ 4','THỨ 5','THỨ 6','THỨ 7','CN'];
 var DOW_LONG = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật'];
@@ -573,7 +578,7 @@ var EMPTY_MSGS = [
   'Free day, tận hưởng thôi!'
 ];
 var WEEK_COUNT = 30;   /* tuần 1 → 30 (22/06/2026 – 17/01/2027) */
-var TODAY_WEEK = 20;   /* index of tuần 21 */
+var TODAY_WEEK = Math.max(0, Math.min(WEEK_COUNT - 1, Math.floor((G_TODAY - 8) / 7) + 20));   /* tuần 21 bắt đầu 09/11/2026 (ordinal 8) */
 function dmDate(dt) { return LANG === 'en' ? MONTH_EN[dt.getMonth() + 1] + ' ' + dt.getDate() : pad(dt.getDate()) + '/' + pad(dt.getMonth() + 1); }
 SCHED_COURSES.PP6101.fullName = 'Phương pháp nghiên cứu khoa học trong Ngôn ngữ học';
 
@@ -675,10 +680,55 @@ function scrollToId(e, id) {
   } catch (err) {}
 }
 
+/* ---------- Dữ liệu động (Netlify) ---------- */
+function NAK_note(k) { return window.NAK ? window.NAK.note(k) : ''; }
+function NAK_admin() { return !!(window.NAK && window.NAK.admin); }
+var BASE = { tasks: COURSES.map(function (c) { return c.tasks.slice(); }), done: DONE_TASKS.slice(), docs: {}, changes: {}, added: JSON.parse(JSON.stringify(ADDED)) };
+Object.keys(DOCS).forEach(function (k) { BASE.docs[k] = DOCS[k].map(function (d) { return d.slice(); }); });
+Object.keys(CHANGES).forEach(function (k) { BASE.changes[k] = CHANGES[k]; });
+function applyRemote(d) {
+  d = d || {};
+  var ts = d.taskState || {}, done = BASE.done.slice();
+  COURSES.forEach(function (c, i) {
+    var list = [];
+    BASE.tasks[i].forEach(function (t) {
+      var st = ts[c.id + '|' + t.title];
+      if (st === 'hidden') return;
+      if (st === 'done') { done.push({ c: c.id, t: t.title, d: dm(t.e) }); return; }
+      list.push(t);
+    });
+    (d.tasks || []).forEach(function (t) {
+      if (t.c !== c.id) return;
+      if (t.done) { done.push({ c: c.id, t: t.title, d: dm(t.e) }); return; }
+      var o = { title: t.title, e: t.e }; if (t.s != null) o.s = t.s; list.push(o);
+    });
+    c.tasks = list;
+  });
+  DONE_TASKS.length = 0; done.forEach(function (x) { DONE_TASKS.push(x); });
+  Object.keys(DOCS).forEach(function (k) {
+    var out = BASE.docs[k].map(function (b) { var x = b.slice(); var l = (d.docLinks || {})[k + '|' + b[1]]; if (l) x[2] = l; return x; });
+    ((d.docs || {})[k] || []).forEach(function (n) { out.push([n.type, n.name, n.link]); });
+    DOCS[k] = out;
+  });
+  Object.keys(CHANGES).forEach(function (k) { delete CHANGES[k]; });
+  Object.keys(BASE.changes).forEach(function (k) { CHANGES[k] = BASE.changes[k]; });
+  Object.keys(d.changes || {}).forEach(function (k) { CHANGES[k] = d.changes[k]; });
+  Object.keys(ADDED).forEach(function (k) { delete ADDED[k]; });
+  Object.keys(BASE.added).forEach(function (k) { ADDED[k] = BASE.added[k].slice(); });
+  Object.keys(d.added || {}).forEach(function (k) { ADDED[k] = (ADDED[k] || []).concat(d.added[k]); });
+}
+/* Cho trang quản trị đọc dữ liệu gốc */
+window.NAK_BASE = function () { return { courses: COURSES.map(function (c, i) { return { id: c.id, name: c.name, tasks: BASE.tasks[i].map(function (t) { return { title: t.title, s: t.s == null ? null : t.s, e: t.e }; }) }; }), schedCourses: SCHED_COURSES, sched: SCHED, docs: BASE.docs, docOrder: DOC_ORDER, docNames: DOC_ORDER.map(function (k) { return docGroupInfo(k).name; }), weekCount: WEEK_COUNT }; };
+
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { gMonth: 0, collapsed: {}, week: TODAY_WEEK, docGroup: DOC_ORDER[0], noticesExpanded: false, doneOpen: false, modal: null, myGroups: [], upd: null, updEmail: '', updError: false, lang: 'vi' };
+    this.state = { dv: 0, gMonth: G_TODAY_MONTH, collapsed: {}, week: TODAY_WEEK, docGroup: DOC_ORDER[0], noticesExpanded: false, doneOpen: false, modal: null, myGroups: [], upd: null, updEmail: '', updError: false, lang: 'vi' };
+    var self0 = this;
+    if (window.NAK) {
+      window.NAK.onChange = function () { try { applyRemote(window.NAK.data); self0.setState({ dv: Date.now() }); } catch (e) { console.error(e); } };
+      window.NAK.load();
+    }
   }
 
   renderVals() {
@@ -783,13 +833,14 @@ class Component extends DCLogic {
     var wk = s.week, wNo = wk + 1;
     var sessions = (SCHED[wNo] || []).map(function (x, idx) {
       var ch = CHANGES[wNo + '-' + idx];
-      if (!ch) return x;
-      return [x[0], x[1], ch.periods ? ch.periods[0] : x[2], ch.periods ? ch.periods[1] : x[3], ch.room || x[4], x[5], ch.note || '', ch.tag || 'ĐỔI LỊCH'];
-    }).concat((ADDED[wNo] || []).map(function (a) { return [a[0], a[1], a[2], a[3], a[4], '', a[5] || '', a[6] || 'HỌC BÙ']; }));
+      var r = !ch ? x.slice() : [x[0], x[1], ch.periods ? ch.periods[0] : x[2], ch.periods ? ch.periods[1] : x[3], ch.room || x[4], x[5], ch.note || '', ch.tag || 'ĐỔI LỊCH'];
+      r.nk = wNo + '-' + x[0] + '-' + x[1] + '-' + x[2];
+      return r;
+    }).concat((ADDED[wNo] || []).map(function (a, ai) { var r = [a[0], a[1], a[2], a[3], a[4], '', a[5] || '', a[6] || 'HỌC BÙ']; r.nk = wNo + '-add' + ai; return r; }));
     var week = [];
     for (var i = 0; i < 7; i++) {
       var dt = new Date(2026, 5, 22 + wk * 7 + i);
-      var od = G_TODAY + (wNo - 21) * 7 + i; /* Gantt day ordinal */
+      var od = 8 + (wNo - 21) * 7 + i; /* Gantt day ordinal */
       var isToday = od === G_TODAY;
       var items = sessions.filter(function (x) { return x[0] === i; }).map(function (x) {
         var c = SCHED_COURSES[x[1]];
@@ -802,6 +853,8 @@ class Component extends DCLogic {
           hasGv: true, gv: L('GV: ', 'Lecturer: ') + c.gv,
           hasProgress: !!x[5], progress: L('Đã học ' + x[5] + ' tiết', x[5] + ' periods done'),
           hasChange: !!x[7], changeTag: x[7] || '', changeNote: x[6] || '',
+          hasNote: !!NAK_note(x.nk), note: NAK_note(x.nk), canNote: NAK_admin(), noteIcon: NAK_note(x.nk) ? 'background:#FFC400' : 'background:#FFFFFF',
+          noteClick: function (e) { if (e && e.stopPropagation) e.stopPropagation(); if (window.NAK) window.NAK.editNote(x.nk, L('Tuần ', 'Week ') + wNo + ' · ' + tr(c.fullName || c.name) + ' · ' + L('Tiết ', 'Periods ') + x[2] + '–' + x[3]); },
           style: 'background:#FFFFFF;color:#111111',
           badgeStyle: 'background:#FFFFFF;color:' + COURSE_INK[x[1]] + ';border:1.5px solid ' + COURSE_INK[x[1]],
           headStyle: 'margin:-10px -11px 8px',
@@ -812,7 +865,7 @@ class Component extends DCLogic {
         COURSES.forEach(function (c) {
           courseDeadlines(c, myGroups).forEach(function (t) {
             if (t.e === od) items.push({ hasBuoi: false, buoi: '', buoiStyle: '', hasBadge: true, badge: L('HẠN NỘP', 'DUE'), time: '23:59', title: t.title, sub: tr(c.name),
-              hasProgress: false, progress: '', hasGv: false, gv: '', headStyle: 'margin:4px 0 0', titleStyle: '', badgeStyle: 'background:#FFFFFF;color:#A3151C;border:1.5px solid #FFFFFF', style: 'background:#A3151C;color:#FFFFFF' });
+              hasProgress: false, progress: '', hasGv: false, gv: '', hasNote: false, note: '', canNote: false, noteIcon: '', noteClick: function () {}, headStyle: 'margin:4px 0 0', titleStyle: '', badgeStyle: 'background:#FFFFFF;color:#A3151C;border:1.5px solid #FFFFFF', style: 'background:#A3151C;color:#FFFFFF' });
           });
         });
       }
@@ -926,7 +979,7 @@ class Component extends DCLogic {
       updIsSent: s.upd === 'sent',
       updEmail: s.updEmail,
       updError: s.updError,
-      openUpdate: function () { self.setState({ upd: 'login', updError: false }); },
+      openUpdate: function () { if (window.NAK) { window.NAK.openLogin(); } },
       closeUpdate: function () { self.setState({ upd: null }); },
       onUpdEmail: function (e) { self.setState({ updEmail: e.target.value, updError: false }); },
       onUpdKey: function (e) { if (e.key === 'Enter') submitUpd(); },
@@ -976,7 +1029,7 @@ class Component extends DCLogic {
       setEN: function () { self.setState({ lang: 'en' }); },
       setVI: function () { self.setState({ lang: 'vi' }); },
       monthNo: M.m,
-      gThis: function () { self.setState({ gMonth: 0 }); },
+      gThis: function () { self.setState({ gMonth: G_TODAY_MONTH }); },
       gMonthLabel: LANG === 'en' ? MONTH_EN_LONG[M.m] + ' ' + M.y : M.label,
       groupChips: [{ label: L('Tất cả', 'All'), key: '' }].concat(ALL_GROUPS.map(function (g) { return { label: g, key: g }; })).map(function (gc) {
         var on = gc.key === '' ? myGroups.length === 0 : myGroups.indexOf(gc.key) >= 0;

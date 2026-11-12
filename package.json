@@ -1,0 +1,11 @@
+{
+  "name": "nak34-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev --port 3001"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
