@@ -36,8 +36,12 @@ button:disabled{cursor:default}
 @media (prefers-reduced-motion:reduce){.gantt .g-cloth,.gantt .g-pulse{animation:none}}
 .gantt .g-pulse{transform-box:fill-box;transform-origin:center;animation:starpulse 1.6s ease-in-out infinite}
 @keyframes starpulse{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.18) rotate(8deg)}}
+@media (hover:hover) and (pointer:fine){
 .gantt .g-note-star:hover::after,.gantt .g-note-star:focus::after,.gantt .g-flag:hover::after,.gantt .g-flag:focus::after{content:attr(data-tip);position:absolute;left:50%;bottom:100%;transform:translateX(-50%);margin-bottom:2px;background:#111;color:#fff;padding:4px 9px;border-radius:7px;font:800 12px/1.3 Archivo,system-ui,sans-serif;white-space:nowrap;z-index:20;pointer-events:none}
 .gantt .g-note-star:hover::after,.gantt .g-note-star:focus::after{left:100%;bottom:auto;top:50%;transform:translateY(-50%);margin:0 0 0 8px}
+}
+.gantt .g-flag,.gantt .g-note-star{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.gantt .g-flag::before,.gantt .g-note-star::before{content:"";position:absolute;top:-10px;right:-10px;bottom:-10px;left:-10px}
 .sched-grid .s-badge, .sched-grid .s-line, .sched-grid .s-buoi {overflow-wrap:normal !important; word-break:keep-all}
 .gantt .g-day, .gantt .g-day * {overflow-wrap:normal !important; white-space:nowrap !important}
 .gantt .g-name .g-meta {display:none}
