@@ -96,7 +96,7 @@
     wrap.appendChild(el('h3', "margin:0 0 4px;font-family:Anton,Archivo,sans-serif;font-size:22px;font-weight:800", 'GHI CHÚ'));
     wrap.appendChild(el('p', 'margin:0 0 12px;font-size:13px;font-weight:700;color:#3A3A3A', title));
     var ta = el('textarea', 'width:100%;box-sizing:border-box;min-height:120px;padding:10px 12px;border:2px solid #111;border-radius:12px;font:600 15px Archivo,system-ui,sans-serif;resize:vertical');
-    ta.value = cur; ta.maxLength = 1500; ta.placeholder = 'Ví dụ: Nộp bài tập IPA trước 23:59, mang laptop…';
+    ta.className = 'nak-note'; ta.value = cur; ta.maxLength = 1500; ta.placeholder = 'Ví dụ: Nộp bài tập IPA trước 23:59… (Ctrl+K để chèn link)';
     wrap.appendChild(ta);
     var row = el('div', 'display:flex;gap:10px;margin-top:14px;flex-wrap:wrap');
     var save = el('button', BTN + 'background:#FFC400', 'Lưu'); save.type = 'button';
@@ -113,6 +113,57 @@
     }
     save.onclick = function () { commit(ta.value.trim()); };
     del.onclick = function () { commit(''); };
+  };
+
+
+  /* ---------- Link trong ghi chú: [chữ](https://...) hoặc dán thẳng URL; Ctrl/Cmd+K để chèn ---------- */
+  NAK.linkify = function (node, text) {
+    node.textContent = '';
+    var re = /\[([^\]\n]{1,200})\]\((https?:\/\/[^\s)]{1,500})\)|(https?:\/\/[^\s<>"']{1,500})/g, last = 0, m;
+    function a(href, label) {
+      var x = document.createElement('a'); x.href = href; x.target = '_blank'; x.rel = 'noopener noreferrer'; x.textContent = label;
+      x.style.cssText = 'color:#0B57D0;font-weight:800;text-decoration:underline;word-break:break-all'; return x;
+    }
+    text = String(text || '');
+    while ((m = re.exec(text))) {
+      if (m.index > last) node.appendChild(document.createTextNode(text.slice(last, m.index)));
+      if (m[1]) node.appendChild(a(m[2], m[1]));
+      else { var u = m[3], tail = ''; while (/[.,;:!?)]$/.test(u)) { tail = u.slice(-1) + tail; u = u.slice(0, -1); } node.appendChild(a(u, u)); if (tail) node.appendChild(document.createTextNode(tail)); }
+      last = re.lastIndex - (m[3] ? 0 : 0);
+      if (m[3] && /[.,;:!?)]$/.test(m[3])) last = m.index + m[3].length;
+    }
+    if (last < text.length) node.appendChild(document.createTextNode(text.slice(last)));
+    return node;
+  };
+  document.addEventListener('keydown', function (e) {
+    if (!(e.ctrlKey || e.metaKey) || (e.key !== 'k' && e.key !== 'K')) return;
+    var t = e.target;
+    if (!t || !t.matches || !t.matches('textarea.nak-note,.tk-note,.sr-n,.wf-n,.gr-note,#nn-b,.ni-b,.nak-note')) return;
+    e.preventDefault();
+    var st = t.selectionStart || 0, en = t.selectionEnd || 0, sel = t.value.slice(st, en);
+    var url = window.prompt('Dán đường link (https://...)', 'https://'); if (!url) return;
+    url = url.trim(); if (!/^https?:\/\//i.test(url)) url = 'https://' + url.replace(/^\/+/, '');
+    var label = sel || window.prompt('Chữ hiển thị cho link', '') || url;
+    var ins = '[' + label.replace(/[\[\]]/g, '') + '](' + url.replace(/\)/g, '%29') + ')';
+    t.value = t.value.slice(0, st) + ins + t.value.slice(en);
+    t.selectionStart = t.selectionEnd = st + ins.length; t.focus();
+    t.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+
+  NAK.showNote = function (title, text) {
+    var wrap = el('div', 'padding-top:34px');
+    wrap.appendChild(el('h3', "margin:0 0 6px;font-family:Anton,Archivo,sans-serif;font-size:22px;font-weight:800", 'GHI CHÚ'));
+    wrap.appendChild(el('p', 'margin:0 0 12px;font-size:14px;font-weight:800;color:#3A3A3A', title));
+    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:15px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text));
+    overlay(wrap);
+  };
+
+  NAK.showNews = function (title, when, text) {
+    var wrap = el('div', 'padding-top:34px');
+    wrap.appendChild(el('p', 'margin:0 0 4px;font-size:13px;font-weight:800;color:#A3151C;letter-spacing:.06em', 'BULLETIN BOARD · ' + when));
+    wrap.appendChild(el('h3', "margin:0 0 12px;font-family:Anton,Archivo,sans-serif;font-size:24px;font-weight:400;line-height:1.2", title));
+    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:15px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text || '(Không có nội dung chi tiết.)'));
+    overlay(wrap);
   };
 
   NAK.note = function (key) { return ((NAK.data && NAK.data.notes) || {})[key] || ''; };
