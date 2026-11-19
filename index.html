@@ -123,6 +123,7 @@ button:disabled{cursor:default}
 .hero-btn{min-height:48px;display:flex;align-items:center;padding:0 22px;border:3px solid #111111;box-shadow:4px 4px 0 #111111;text-decoration:none;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:17px}
 .hero-btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #111111}
 .bolt{position:absolute;z-index:2;pointer-events:none}
+.hero-box > div{align-items:center}
 .bolt-l{top:-46px;left:-40px;transform:rotate(-18deg)}
 .bolt-r{bottom:-50px;right:-34px;transform:rotate(24deg)}
 @media (max-width: 760px){
@@ -170,6 +171,7 @@ button:disabled{cursor:default}
 <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center">
 <a href="#lich-hoc" onClick="{{goLichHoc}}" class="hero-btn" style="background: #DD227C; color: #FFFFFF">Xem lịch tuần này</a>
 <a href="#deadlines" onClick="{{goTienDo}}" class="hero-btn" style="background: #FFFFFF; color: #111111">Nhiệm vụ sắp tới</a>
+<img class="hero-logo" src="img/logo-dlu.png" alt="Logo Trường Đại học Đà Lạt" width="54" height="54" style="width: 54px; height: 54px; object-fit: contain; align-self: center">
 </div>
 </div>
 </div>
@@ -939,10 +941,10 @@ class Component extends DCLogic {
         var mine = t.groups ? t.groups.filter(function (g) { return myGroups.indexOf(g[0]) >= 0; }) : [];
         var keyE = mine.length ? mine[0][1] : t.e;
         var diff = keyE - G_TODAY, label, color;
-        if (diff < 0) { label = L(dm(keyE) + ' · trễ ' + (-diff) + ' ngày', 'Due ' + dm(keyE) + ' · ' + plural(-diff, 'day', 'days') + ' late'); color = '#5A0F23'; }
-        else if (diff === 0) { label = L('Hôm nay!', 'Due today!'); color = '#5A0F23'; }
-        else if (diff === 1) { label = L('Ngày mai · ', 'Due tomorrow · ') + dm(keyE); color = '#5A0F23'; }
-        else { label = L(dm(keyE) + ' · còn ' + diff + ' ngày', 'Due ' + dm(keyE) + ' · in ' + plural(diff, 'day', 'days')); color = diff <= 7 ? '#5A0F23' : '#3A3A3A'; }
+        if (diff < 0) { label = L(dm(keyE) + ' · trễ ' + (-diff) + ' ngày', 'Due ' + dm(keyE) + ' · ' + plural(-diff, 'day', 'days') + ' late'); color = '#E5141B'; }
+        else if (diff === 0) { label = L('Hôm nay!', 'Due today!'); color = '#E5141B'; }
+        else if (diff === 1) { label = L('Ngày mai · ', 'Due tomorrow · ') + dm(keyE); color = '#E5141B'; }
+        else { label = L(dm(keyE) + ' · còn ' + diff + ' ngày', 'Due ' + dm(keyE) + ' · in ' + plural(diff, 'day', 'days')); color = '#E5141B'; }
         if (t.groups) {
           if (mine.length) label = L('Nhóm ' + mine[0][0] + ' của bạn · ', 'Your group ' + mine[0][0] + ' · ') + label;
 
