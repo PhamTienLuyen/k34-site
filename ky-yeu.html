@@ -10,13 +10,13 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paytone+One&amp;family=Bitter:ital,wght@0,400;0,600;0,700;1,400&amp;family=Baloo+2:wght@500;600;700;800&amp;family=Archivo:wght@400;600;700;800&amp;display=swap">
 <style>
 *{font-synthesis:none}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{margin:0;background:#EFE6CF}
-a{color:#111111}a:hover{color:#D7262E}
-button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;letter-spacing:.03em;cursor:pointer}
+body{margin:0;background:#FDEFF4}
+a{color:#111111}a:hover{color:#DD227C}
+button{font-family:'Baloo 2','Archivo',sans-serif;font-style:normal;letter-spacing:.01em;cursor:pointer}
 .m3,.m2{display:none !important}
 .g-tile{transition:transform .2s ease}
 .g-tile:hover{transform:rotate(0) scale(1.04) !important;z-index:3}
@@ -29,10 +29,13 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 @media (prefers-reduced-motion: reduce){.g-up{animation:none}.g-bubble{animation:none;opacity:1}}
 @media (max-width: 760px){ .m4{display:none !important} .m3{display:flex !important; gap:8px !important} }
 @media (max-width: 760px){
-  .g-tile > button{border-width:2px !important; border-radius:10px !important}
+  .g-tile > button{border-width:2px !important; border-radius:0 !important; padding:6px !important}
+  .g-title{-webkit-text-stroke:1.5px #111111 !important; text-shadow:-3px 3px 0 #111111 !important}
   .g-titlerow{gap:6px !important; margin-bottom:16px !important}
   .g-titlerow > a{padding:0 10px !important; font-size:12px !important; min-height:36px !important}
-  .g-title{font-size:26px !important}
+  .g-title{font-size:22px !important}
+  .g-titlerow > a{font-size:0 !important; gap:0 !important; padding:0 10px !important}
+  .g-logo{width:40px !important; height:40px !important}
   .g-logo{width:44px !important; height:44px !important}
   .g-up{font-size:12px !important; min-height:36px !important}
   .g-upwrap{bottom:12px !important}
@@ -40,14 +43,14 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 }
 </style>
 </helmet>
-<div style="min-height: 100vh; background-color: #EFE6CF; background-image: radial-gradient(rgba(17,17,17,0.14) 1.2px, transparent 1.5px); background-size: 14px 14px; color: #111111; font-family: 'Archivo', system-ui, sans-serif; font-size: 14px; line-height: 1.5">
+<div style="min-height: 100vh; background-color: #FFFFFF; background-image: radial-gradient(#F7C6D6 30%, transparent 33%), radial-gradient(#FBD9E4 30%, transparent 33%); background-size: 24px 24px, 24px 24px; background-position: 0 0, 12px 12px; color: #111111; font-family: 'Bitter', Georgia, serif; font-size: 14px; line-height: 1.5">
 
 
 <main style="max-width: 1240px; margin: 0 auto; padding: 28px 24px 140px">
 <div class="g-titlerow" style="margin: 0 0 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 12px">
-<a href="index.html" style="justify-self: start; white-space: nowrap; min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 3px solid #111111; border-radius: 999px; background: #FFFFFF; font-weight: 800; font-size: 14px; text-decoration: none; color: #111111; box-shadow: 3px 3px 0 #111111">
+<a href="index.html" style="justify-self: start; white-space: nowrap; min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 3px solid #111111; border-radius: 0; background: #FFFFFF; font-weight: 800; font-size: 14px; text-decoration: none; color: #111111; box-shadow: 3px 3px 0 #111111">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>Trang lớp</a>
-<h1 class="g-title" style="margin: 0; text-align: center; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; color: #1E7B34; text-shadow: 3px 3px 0 #FFC400">Kỷ yếu NAK34</h1>
+<h1 class="g-title" style="margin: 0; text-align: center; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 400; font-size: 52px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; color: #FBBACE; -webkit-text-stroke: 2px #111111; paint-order: stroke fill; text-shadow: -5px 4px 0 #111111">Kỷ yếu NAK34</h1>
 <img class="g-logo" src="img/logo-dlu.png" alt="Logo Trường Đại học Đà Lạt" style="justify-self: end; width: 72px; height: 72px; object-fit: contain">
 </div>
 <div class="m4" style="display: flex; gap: 18px; align-items: flex-start">
@@ -56,12 +59,12 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <sc-for list="{{col.items}}" as="it" hint-placeholder-count="3">
 <figure class="g-tile" style="position: relative; margin: 0; {{it.tileStyle}}">
 <sc-if value="{{it.hasTape}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="position: absolute; top: -10px; left: 50%; width: 74px; height: 22px; margin-left: -37px; z-index: 2; border: 1.5px solid rgba(17,17,17,0.35); {{it.tapeStyle}}"></span></sc-if>
-<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 0; border: 3px solid #111111; border-radius: 16px; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
+<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 10px; border: 3px solid #111111; border-radius: 0; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
 <div style="position: relative; width: 100%; line-height: 0">
 <img src="{{it.src}}" alt="{{it.alt}}" style="display: block; width: 100%; height: auto">
 <sc-if value="{{it.isVideo}}" hint-placeholder-val="{{false}}">
 <span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; display: flex; align-items: center; gap: 6px; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 3px 10px 3px 6px; font-size: 12px; font-weight: 800">
-<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg>{{it.duration}}</span>
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FBBACE"></path></svg>{{it.duration}}</span>
 </sc-if>
 </div>
 </button>
@@ -76,12 +79,12 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <sc-for list="{{col.items}}" as="it" hint-placeholder-count="3">
 <figure class="g-tile" style="position: relative; margin: 0; {{it.tileStyle}}">
 <sc-if value="{{it.hasTape}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="position: absolute; top: -10px; left: 50%; width: 74px; height: 22px; margin-left: -37px; z-index: 2; border: 1.5px solid rgba(17,17,17,0.35); {{it.tapeStyle}}"></span></sc-if>
-<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 0; border: 3px solid #111111; border-radius: 16px; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
+<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 10px; border: 3px solid #111111; border-radius: 0; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
 <div style="position: relative; width: 100%; line-height: 0">
 <img src="{{it.src}}" alt="{{it.alt}}" style="display: block; width: 100%; height: auto">
 <sc-if value="{{it.isVideo}}" hint-placeholder-val="{{false}}">
 <span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; display: flex; align-items: center; gap: 6px; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 3px 10px 3px 6px; font-size: 12px; font-weight: 800">
-<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg>{{it.duration}}</span>
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FBBACE"></path></svg>{{it.duration}}</span>
 </sc-if>
 </div>
 </button>
@@ -96,12 +99,12 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <sc-for list="{{col.items}}" as="it" hint-placeholder-count="3">
 <figure class="g-tile" style="position: relative; margin: 0; {{it.tileStyle}}">
 <sc-if value="{{it.hasTape}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="position: absolute; top: -10px; left: 50%; width: 74px; height: 22px; margin-left: -37px; z-index: 2; border: 1.5px solid rgba(17,17,17,0.35); {{it.tapeStyle}}"></span></sc-if>
-<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 0; border: 3px solid #111111; border-radius: 16px; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
+<button type="button" onClick="{{it.open}}" aria-label="{{it.label}}" style="display: block; width: 100%; padding: 10px; border: 3px solid #111111; border-radius: 0; overflow: hidden; background: #FFFFFF; {{it.shadowStyle}}">
 <div style="position: relative; width: 100%; line-height: 0">
 <img src="{{it.src}}" alt="{{it.alt}}" style="display: block; width: 100%; height: auto">
 <sc-if value="{{it.isVideo}}" hint-placeholder-val="{{false}}">
 <span aria-hidden="true" style="position: absolute; left: 10px; bottom: 10px; display: flex; align-items: center; gap: 6px; background: #111111; color: #FFFFFF; border-radius: 999px; padding: 3px 10px 3px 6px; font-size: 12px; font-weight: 800">
-<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg>{{it.duration}}</span>
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#FBBACE"></path></svg>{{it.duration}}</span>
 </sc-if>
 </div>
 </button>
@@ -114,8 +117,8 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 </main>
 
 <div class="g-upwrap" style="position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 45; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none">
-<span class="g-bubble" aria-hidden="true" style="position: relative; background: #FFFFFF; border: 2px solid #111111; border-radius: 12px; padding: 4px 10px; font-size: 12px; font-weight: 800; white-space: nowrap; box-shadow: 2px 2px 0 #111111">Có ảnh đẹp? Góp ngay nè!</span>
-<button type="button" onClick="{{openUpload}}" aria-haspopup="dialog" class="g-up" style="pointer-events: auto; white-space: nowrap; min-height: 40px; padding: 0 14px; display: flex; align-items: center; gap: 6px; border: 2px solid #111111; border-radius: 999px; background: #1E7B34; font-weight: 800; font-size: 14px; color: #FFFFFF; box-shadow: 3px 3px 0 #111111">
+<span class="g-bubble" aria-hidden="true" style="position: relative; background: #FFFFFF; border: 2px solid #111111; border-radius: 0; padding: 4px 10px; font-size: 12px; font-weight: 800; white-space: nowrap; box-shadow: 2px 2px 0 #111111">Có ảnh đẹp? Góp ngay nè!</span>
+<button type="button" onClick="{{openUpload}}" aria-haspopup="dialog" class="g-up" style="pointer-events: auto; white-space: nowrap; min-height: 40px; padding: 0 14px; display: flex; align-items: center; gap: 6px; border: 2.5px solid #111111; border-radius: 0; background: #DD227C; font-weight: 800; font-size: 14px; color: #FFFFFF; box-shadow: 3px 3px 0 #111111">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Thêm ảnh thêm vui</button>
 </div>
 
@@ -123,24 +126,24 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <sc-if value="{{lbOpen}}" hint-placeholder-val="{{false}}">
 <div onClick="{{closeLb}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; background: rgba(17,17,17,0.85); display: flex; align-items: center; justify-content: center; padding: 16px">
 <div role="dialog" aria-modal="true" aria-label="{{lb.label}}" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 12px">
-<div style="position: relative; width: 100%; border: 3px solid #FFFFFF; border-radius: 18px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #111111">
+<div style="position: relative; width: 100%; border: 3px solid #FFFFFF; border-radius: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #111111">
 <img src="{{lb.src}}" alt="{{lb.alt}}" style="display: block; max-width: 100%; max-height: 72vh; width: auto; height: auto">
 <sc-if value="{{lb.isVideo}}" hint-placeholder-val="{{false}}">
-<span aria-hidden="true" style="position: absolute; width: 72px; height: 72px; border-radius: 999px; background: #111111; border: 3px solid #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#FFC400"></path></svg></span>
+<span aria-hidden="true" style="position: absolute; width: 72px; height: 72px; border-radius: 999px; background: #111111; border: 3px solid #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#FBBACE"></path></svg></span>
 </sc-if>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
 <span></span>
 <div style="display: flex; gap: 10px">
-<button type="button" onClick="{{prevLb}}" aria-label="Ảnh trước" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 18px">‹</button>
-<button type="button" onClick="{{nextLb}}" aria-label="Ảnh sau" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 18px">›</button>
-<sc-if value="{{lb.canDelete}}" hint-placeholder-val="{{false}}"><button type="button" onClick="{{delPhoto}}" style="min-height: 44px; padding: 0 16px; border: 3px solid #111111; border-radius: 12px; background: #FFFFFF; color: #A3151C; font-weight: 800; font-size: 14px">Xóa ảnh</button></sc-if>
-<a href="{{lb.src}}" download="{{lb.fileName}}" style="min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px; border: 3px solid #111111; border-radius: 12px; background: #FFC400; color: #111111; font-weight: 800; font-size: 14px; text-decoration: none">
+<button type="button" onClick="{{prevLb}}" aria-label="Ảnh trước" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 0; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 18px">‹</button>
+<button type="button" onClick="{{nextLb}}" aria-label="Ảnh sau" style="width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 0; background: transparent; color: #FFFFFF; font-weight: 800; font-size: 18px">›</button>
+<sc-if value="{{lb.canDelete}}" hint-placeholder-val="{{false}}"><button type="button" onClick="{{delPhoto}}" style="min-height: 44px; padding: 0 16px; border: 3px solid #111111; border-radius: 0; background: #FFFFFF; color: #B0175F; font-weight: 800; font-size: 14px">Xóa ảnh</button></sc-if>
+<a href="{{lb.src}}" download="{{lb.fileName}}" style="min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px; border: 3px solid #111111; border-radius: 0; background: #FBBACE; color: #111111; font-weight: 800; font-size: 14px; text-decoration: none">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7 10l5 5 5-5"></path><path d="M5 20h14"></path></svg>Tải về</a>
 </div>
 </div>
 </div>
-<button type="button" onClick="{{closeLb}}" aria-label="Đóng" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 12px; background: #111111; display: flex; align-items: center; justify-content: center; padding: 0">
+<button type="button" onClick="{{closeLb}}" aria-label="Đóng" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border: 2px solid #FFFFFF; border-radius: 0; background: #111111; display: flex; align-items: center; justify-content: center; padding: 0">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
 </button>
 </div>
@@ -149,20 +152,20 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <!-- ===== Đăng nhập / quyền tải ảnh ===== -->
 <sc-if value="{{gateOpen}}" hint-placeholder-val="{{false}}">
 <div onClick="{{gateBackdrop}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 70; background: rgba(17,17,17,0.6); display: flex; align-items: center; justify-content: center; padding: 16px">
-<div role="dialog" aria-modal="true" aria-labelledby="gate-msg" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 460px; background: #FFFFFF; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111; padding: 28px 24px 24px; border-top: 12px solid #2C9041">
+<div role="dialog" aria-modal="true" aria-labelledby="gate-msg" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 460px; background: #FFFFFF; border: 3px solid #111111; border-radius: 0; box-shadow: 8px 8px 0 #111111; padding: 28px 24px 24px; border-top: 12px solid #DD227C">
 <sc-if value="{{gateClosable}}" hint-placeholder-val="{{false}}">
-<button type="button" onClick="{{closeGate}}" aria-label="Đóng" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
+<button type="button" onClick="{{closeGate}}" aria-label="Đóng" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 0; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
 </button>
 </sc-if>
-<h3 style="margin: 0 0 10px; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.2; text-transform: uppercase; color: #1E7B34">Kỷ yếu NAK34</h3>
+<h3 style="margin: 0 0 10px; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 400; font-size: 30px; line-height: 1.1; text-transform: uppercase; color: #FBBACE; -webkit-text-stroke: 2px #111111; paint-order: stroke fill; text-shadow: -4px 4px 0 #111111; padding-right: 52px">Kỷ yếu NAK34</h3>
 <p id="gate-msg" style="margin: 0; font-size: 14px; font-weight: 700; line-height: 1.5; color: #111111">{{gateMsg}}</p>
-<sc-if value="{{hasEmailNote}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; padding: 10px 12px; background: #FBF2D0; border: 2px solid #111111; border-radius: 10px; font-size: 14px; font-weight: 700; word-break: break-all">{{emailNote}}</p></sc-if>
+<sc-if value="{{hasEmailNote}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; padding: 10px 12px; background: #FFF0F5; border: 2px solid #111111; border-radius: 0; font-size: 14px; font-weight: 700; word-break: break-all">{{emailNote}}</p></sc-if>
 <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap">
-<button type="button" onClick="{{showMyEmail}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 12px; background: #FFFFFF; color: #111111; font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 #111111">Xem email của tôi</button>
-<button type="button" onClick="{{loginNow}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 12px; background: #2C9041; color: #FFFFFF; font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 #111111">Đăng nhập ngay</button>
+<button type="button" onClick="{{showMyEmail}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 0; background: #FFFFFF; color: #111111; font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 #111111">Xem email của tôi</button>
+<button type="button" onClick="{{loginNow}}" style="flex: 1 1 140px; min-height: 50px; border: 3px solid #111111; border-radius: 0; background: #DD227C; color: #FFFFFF; font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 #111111">Đăng nhập ngay</button>
 </div>
-<sc-if value="{{hasLoginErr}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; font-size: 14px; font-weight: 700; color: #A3151C">{{loginErr}}</p></sc-if>
+<sc-if value="{{hasLoginErr}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; font-size: 14px; font-weight: 700; color: #B0175F">{{loginErr}}</p></sc-if>
 <a href="index.html" style="display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 700">← Về trang lớp</a>
 </div>
 </div>
@@ -171,13 +174,13 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <!-- ===== Upload ===== -->
 <sc-if value="{{upOpen}}" hint-placeholder-val="{{false}}">
 <div onClick="{{closeUpload}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; background: rgba(17,17,17,0.55); display: flex; align-items: center; justify-content: center; padding: 16px">
-<div role="dialog" aria-modal="true" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 460px; background: #FFFFFF; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111; padding: 24px; border-top: 12px solid #2C9041">
-<button type="button" onClick="{{closeUpload}}" aria-label="Đóng" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
+<div role="dialog" aria-modal="true" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 460px; background: #FFFFFF; border: 3px solid #111111; border-radius: 0; box-shadow: 8px 8px 0 #111111; padding: 24px; border-top: 12px solid #DD227C">
+<button type="button" onClick="{{closeUpload}}" aria-label="Đóng" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 0; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
 </button>
-<h3 style="margin: 0; padding-right: 52px; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">Thêm ảnh thêm vui</h3>
+<h3 style="margin: 0; padding-right: 52px; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.1; text-transform: uppercase; color: #FBBACE; -webkit-text-stroke: 2px #111111; paint-order: stroke fill; text-shadow: -4px 4px 0 #111111">Thêm ảnh thêm vui</h3>
 <p style="margin: 4px 0 0; font-size: 12px; font-weight: 600">Đang đăng nhập: {{myEmail}}</p>
-<label for="up-file" style="margin-top: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 150px; border: 3px dashed #111111; border-radius: 16px; background: #FBF2D0; text-align: center; padding: 16px; cursor: pointer">
+<label for="up-file" style="margin-top: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 150px; border: 3px dashed #111111; border-radius: 0; background: #FFF0F5; text-align: center; padding: 16px; cursor: pointer">
 <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M5 20h14"></path></svg>
 <span style="font-weight: 800">{{pickLabel}}</span>
 <span style="font-size: 12px; font-weight: 600">Chỉ nhận ảnh (JPG, PNG, WEBP, HEIC nếu trình duyệt đọc được)</span>
@@ -195,7 +198,7 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 </sc-if>
 <sc-if value="{{hasUpMsg}}" hint-placeholder-val="{{false}}"><p style="margin: 12px 0 0; font-size: 14px; font-weight: 700; color: #3A3A3A">{{upMsg}}</p></sc-if>
 <p style="margin: 12px 0 0; font-size: 14px; font-weight: 500; line-height: 1.5">Ảnh được thu nhỏ tự động và lưu trên trang lớp. Chỉ những người đã đăng nhập Google mới xem được.</p>
-<button type="button" onClick="{{doUpload}}" disabled="{{upBusy}}" style="margin-top: 16px; width: 100%; min-height: 48px; border: 3px solid #111111; border-radius: 14px; background: #2C9041; font-weight: 800; font-size: 14px; color: #111111; box-shadow: 3px 3px 0 #111111">Đăng</button>
+<button type="button" onClick="{{doUpload}}" disabled="{{upBusy}}" style="margin-top: 16px; width: 100%; min-height: 48px; border: 3px solid #111111; border-radius: 0; background: #DD227C; font-weight: 800; font-size: 14px; color: #111111; box-shadow: 3px 3px 0 #111111">Đăng</button>
 </div>
 </div>
 </sc-if>
@@ -205,9 +208,9 @@ button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;let
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
 var CLIENT_ID = '948831836917-dre6omu0ajvofphs4sbj1duflrb1sbhd.apps.googleusercontent.com';
 var TILTS = [-2.2, 1.6, -1.1, 2.4, -1.8, 1.0, -2.6, 1.9, -0.8, 2.1];
-var POPS = ['#2C9041', '#6DBB5E', '#F2C84B', '#BFE0B5', '#C8CF55'];
-var TAPES = ['rgba(230,180,34,0.7)', 'rgba(109,187,94,0.65)', 'rgba(242,154,143,0.7)', 'rgba(200,207,85,0.7)'];
-var BGS = ['#FBE3DF', '#C3D9E6', '#F2C84B', '#BFE0B5', '#EEF6E3'];
+var POPS = ['#DD227C', '#F48FB1', '#B39DDB', '#F6C945', '#FF8A65'];
+var TAPES = ['rgba(246,201,69,0.8)', 'rgba(221,34,124,0.55)', 'rgba(179,157,219,0.75)', 'rgba(255,138,101,0.7)'];
+var BGS = ['#FBD9E4', '#FDE3EC', '#FBBACE', '#F3E5F5', '#FFE0D6'];
 function mediaStyle(m, i) {
   return 'aspect-ratio:1/' + m.ratio + ';background-color:' + BGS[i % BGS.length] +
     ';background-image:radial-gradient(rgba(17,17,17,0.18) 1.4px, transparent 1.6px);background-size:12px 12px';
@@ -338,7 +341,7 @@ class Component extends DCLogic {
       },
       hasPrev: s.prev.length > 0,
       prevRows: s.prev.map(function (p, i) {
-        return { name: p.name, style: 'aspect-ratio:1/1;border:2px solid #111111;border-radius:10px;background-color:#E9E3CF;background-size:cover;background-position:center;background-image:url(' + p.url + ')',
+        return { name: p.name, style: 'aspect-ratio:1/1;border:2px solid #111111;border-radius:0;background-color:#FBD9E4;background-size:cover;background-position:center;background-image:url(' + p.url + ')',
           remove: function (ev) { if (ev && ev.stopPropagation) ev.stopPropagation(); if (self.state.upBusy) return; URL.revokeObjectURL(self._urls[i]); self._files.splice(i, 1); self._urls.splice(i, 1); self.syncPrev(''); } };
       }),
       hasUpMsg: !!s.upMsg, upMsg: s.upMsg, upBusy: s.upBusy,

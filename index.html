@@ -11,17 +11,17 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Paytone+One&amp;family=Bitter:ital,wght@0,400;0,600;0,700;1,400&amp;family=Baloo+2:wght@500;600;700;800&amp;family=Archivo:wght@400;600;700;800&amp;display=swap">
 <style>
 *{font-synthesis:none}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{margin:0;background:#EFE6CF}
-a{color:#111111}a:hover{color:#D7262E}
-button{font-family:'Barlow Condensed','Archivo',sans-serif;font-style:italic;letter-spacing:.03em;cursor:pointer}
-.g-label,[role=tab]{font-family:'Archivo',sans-serif !important;font-style:normal !important;letter-spacing:0 !important}
+body{margin:0;background:#FDEFF4}
+a{color:#111111}a:hover{color:#DD227C}
+button{font-family:'Baloo 2','Archivo',sans-serif;font-style:normal;letter-spacing:.01em;cursor:pointer}
+.g-label,[role=tab]{font-family:'Baloo 2','Archivo',sans-serif !important;font-style:normal !important;letter-spacing:0 !important}
 button:disabled{cursor:default}
-.nav-link{font-family:'Barlow Condensed','Archivo',sans-serif !important;font-style:italic;font-size:16px !important;letter-spacing:.06em !important;border:2px solid transparent;transition:background-color .15s,transform .15s}
-.nav-link:hover,.nav-link:focus-visible{background:#FFC400;color:#111111;border-color:#111111;box-shadow:2px 2px 0 #111111;transform:rotate(-2deg)}
+.nav-link{font-family:'Baloo 2','Archivo',sans-serif !important;font-style:normal;font-size:15px !important;letter-spacing:.03em !important;border:2.5px solid #111111;background:#FFFFFF;box-shadow:3px 3px 0 #111111;border-radius:0 !important;min-height:38px !important;transition:background-color .15s,transform .15s}
+.nav-link:hover,.nav-link:focus-visible{background:#FBBACE;color:#111111;border-color:#111111;box-shadow:2px 2px 0 #111111;transform:rotate(-2deg)}
 .win{position:relative;z-index:1}
 .rays{display:block}
 @media (max-width: 760px){.rays{display:none}.win-wrap{padding:0 !important}.win-wrap > div{padding:30px 12px 14px !important}.win-body{padding:12px !important}.burst{width:50px !important;height:50px !important;top:-20px !important;right:-6px !important}.win-bar{padding:8px 10px !important}}
@@ -96,20 +96,64 @@ button:disabled{cursor:default}
   .site-head nav a {min-height:24px !important}
   .sched-grid .sc-cl {min-height:220px !important}
 }
+
+/* ===== Comic Pop (hồng) ===== */
+.comic{font-family:'Paytone One','Baloo 2',sans-serif;text-transform:uppercase;color:#FBBACE;-webkit-text-stroke:2px #111111;paint-order:stroke fill;text-shadow:-4px 4px 0 #111111;letter-spacing:.02em;line-height:1.05}
+.site-logo .comic{-webkit-text-stroke:1.5px #111111;text-shadow:-3px 3px 0 #111111}
+.wk-title{font-family:'Paytone One','Baloo 2',sans-serif !important;color:#FBBACE !important;-webkit-text-stroke:2px #111111;paint-order:stroke fill;text-shadow:-5px 4px 0 #111111 !important;letter-spacing:.02em !important;font-weight:400 !important}
+.nav-link:hover,.nav-link:focus-visible{background:#FBBACE !important;color:#111111 !important;box-shadow:3px 3px 0 #111111 !important;transform:rotate(-2deg)}
+.nav-ky{background:#DD227C !important;color:#FFFFFF !important}
+.nav-ky:hover,.nav-ky:focus-visible{background:#B0175F !important;color:#FFFFFF !important}
+.rays{display:none !important}
+.burst,.win-bar{display:none !important}
+.win{background:#FFFFFF !important;border-radius:0 !important;box-shadow:none !important;border:3px solid #111111 !important}
+.win::after{content:"";position:absolute;top:-30px;left:-28px;width:58px;height:58px;z-index:3;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 4 L61 37 L96 38 L68 59 L78 94 L50 73 L22 94 L32 59 L4 38 L39 37 Z' fill='%23F6B73C' stroke='%23111111' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.win-wrap{border-bottom:4px solid #111111}
+.win-wrap > div{position:relative;padding:72px 24px 64px !important}
+.win-wrap > div::before{content:"";position:absolute;top:50px;left:2px;right:46px;bottom:86px;background-color:#8E8E8E;background-image:radial-gradient(#111111 1.1px,transparent 1.5px);background-size:4px 4px;z-index:0}
+.bg-s1{background-color:#FFFFFF;background-image:radial-gradient(#F7C6D6 28%,transparent 31%);background-size:26px 26px}
+.bg-s2{background-color:#F9D7E3;background-image:radial-gradient(rgba(90,15,35,.16) 1px,transparent 1.4px),radial-gradient(rgba(90,15,35,.10) 1px,transparent 1.4px);background-size:7px 7px,11px 11px;background-position:0 0,3px 5px}
+.bg-s3{background:repeating-conic-gradient(from -20deg at 100% 0%,#F9D3E0 0deg 7deg,#FFFFFF 7deg 14deg)}
+.bg-s4{background-color:#FFF6F9;background-image:radial-gradient(#FBD9E4 22%,transparent 25%);background-size:18px 18px}
+.win button,.win a,.win li,.sched-card,.win [role=tab]{border-radius:0 !important}
+.win .g-star,.win .g-note-star{border-radius:0}
+#hub li > button{box-shadow:4px 4px 0 #DD227C !important}
+.hero{overflow:hidden;border-bottom:4px solid #111111;padding:64px 24px;background:repeating-conic-gradient(from 3deg at 50% 50%,#5A0F23 0deg 1.6deg,transparent 1.6deg 13deg),radial-gradient(circle at 50% 50%,#FDEAF1 0%,#F6BFD2 100%)}
+.hero-title{font-size:72px;-webkit-text-stroke:2.5px #111111;text-shadow:-6px 6px 0 #111111}
+.hero-btn{min-height:48px;display:flex;align-items:center;padding:0 22px;border:3px solid #111111;box-shadow:4px 4px 0 #111111;text-decoration:none;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:17px}
+.hero-btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #111111}
+.bolt{position:absolute;z-index:2;pointer-events:none}
+.bolt-l{top:-46px;left:-40px;transform:rotate(-18deg)}
+.bolt-r{bottom:-50px;right:-34px;transform:rotate(24deg)}
+@media (max-width: 760px){
+  .hero{padding:36px 14px}
+  .hero-box{padding:30px 14px !important}
+  .hero-title{font-size:36px;-webkit-text-stroke:1.5px #111111;text-shadow:-3px 3px 0 #111111}
+  .bolt{width:56px;height:72px}
+  .bolt-l{top:-26px;left:-10px}.bolt-r{bottom:-28px;right:-4px}
+  .win-wrap > div{padding:40px 14px 30px !important}
+  .win-wrap > div::before{top:26px;left:0;right:28px;bottom:44px}
+  .win::after{width:40px;height:40px;top:-20px;left:-16px}
+  .site-logo{display:none}
+  .site-head{justify-content:center !important;padding:8px 6px !important}
+  .site-head nav{justify-content:center !important;flex-wrap:nowrap !important;gap:3px !important}
+  .site-head nav a.nav-link{font-size:11px !important;padding:0 5px !important;min-height:32px !important;box-shadow:2px 2px 0 #111111;border-width:2px;letter-spacing:0 !important;white-space:nowrap}
+}
 </style>
 </helmet>
-<div lang="{{langCode}}" style="min-height: 100vh; background-color: #EFE6CF; background-image: radial-gradient(rgba(17,17,17,0.14) 1.2px, transparent 1.5px); background-size: 16px 16px; color: #111111; font-family: 'Archivo', system-ui, sans-serif; font-size: 14px; line-height: 1.5">
+<div lang="{{langCode}}" style="min-height: 100vh; background-color: #FDEFF4; color: #111111; font-family: 'Bitter', Georgia, serif; font-size: 14px; line-height: 1.5">
 
-<svg class="rays" aria-hidden="true" width="420" height="420" viewBox="0 0 420 420" style="position: fixed; top: 0; right: 0; z-index: 0; opacity: 0.45; pointer-events: none"><line x1="420" y1="0" x2="63" y2="129" stroke="#D2C49E" stroke-width="12" stroke-linecap="round"></line><line x1="420" y1="0" x2="121" y2="233" stroke="#D2C49E" stroke-width="8" stroke-linecap="round"></line><line x1="420" y1="0" x2="208" y2="315" stroke="#D2C49E" stroke-width="14" stroke-linecap="round"></line><line x1="420" y1="0" x2="316" y2="365" stroke="#D2C49E" stroke-width="8" stroke-linecap="round"></line></svg>
+<svg class="rays" aria-hidden="true" width="420" height="420" viewBox="0 0 420 420" style="position: fixed; top: 0; right: 0; z-index: 0; opacity: 0.45; pointer-events: none"><line x1="420" y1="0" x2="63" y2="129" stroke="#F4B6CB" stroke-width="12" stroke-linecap="round"></line><line x1="420" y1="0" x2="121" y2="233" stroke="#F4B6CB" stroke-width="8" stroke-linecap="round"></line><line x1="420" y1="0" x2="208" y2="315" stroke="#F4B6CB" stroke-width="14" stroke-linecap="round"></line><line x1="420" y1="0" x2="316" y2="365" stroke="#F4B6CB" stroke-width="8" stroke-linecap="round"></line></svg>
 <!-- ============ HEADER ============ -->
-<header id="top" style="position: sticky; top: 0; z-index: 40; background: #F6EEDA; border-bottom: 3px solid #111111">
-<div class="site-head" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: flex-end">
+<header id="top" style="position: sticky; top: 0; z-index: 40; background: #FFFFFF; border-bottom: 3px solid #111111">
+<div class="site-head" style="max-width: 1240px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap">
+<a href="#top" class="site-logo" aria-label="NAK34 – về đầu trang" style="text-decoration: none"><span class="comic" style="font-size: 28px">NAK34</span></a>
 <nav aria-label="{{T.navAria}}" style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 6px">
 <a href="#hub" onClick="{{goHub}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">News</a>
 <a href="#lich-hoc" onClick="{{goLichHoc}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">{{T.navWeek}}</a>
 <a href="#deadlines" onClick="{{goTienDo}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">{{T.navProg}}</a>
 <a href="#tai-lieu" onClick="{{goTaiLieu}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">{{T.navDocs}}</a>
-<a href="ky-yeu.html" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">Kỷ yếu</a>
+<a href="ky-yeu.html" class="nav-link nav-ky" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">Kỷ yếu</a>
 </nav>
 </div>
 </header>
@@ -117,18 +161,31 @@ button:disabled{cursor:default}
 <main>
 
 <!-- ============ BULLETIN BOARD ============ -->
-<div class="win-wrap"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
-<section id="hub" aria-labelledby="h-hub" class="win" style="scroll-margin-top: 40px; background: #F6EEDA; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
-<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(12deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#D7262E" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#FFC400" stroke="#111111" stroke-width="0.6">NEWS!</text></svg>
-<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #D7262E; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FFC400; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FFC400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / BULLETIN BOARD</span></div><div class="win-body" style="padding: 24px">
+<section class="hero" aria-label="NAK34CHA_U">
+<div class="hero-in" style="position: relative; max-width: 980px; margin: 0 auto">
+<svg class="bolt bolt-l" width="110" height="140" viewBox="0 0 100 130" aria-hidden="true"><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#111111" transform="translate(-6 5)"></path><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#F6C945" stroke="#111111" stroke-width="5" stroke-linejoin="round"></path></svg>
+<svg class="bolt bolt-r" width="100" height="130" viewBox="0 0 100 130" aria-hidden="true"><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#111111" transform="translate(-6 5)"></path><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#F6C945" stroke="#111111" stroke-width="5" stroke-linejoin="round"></path></svg>
+<div class="hero-box" style="background: #FFFFFF; border: 5px solid #111111; padding: 56px 28px 48px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px">
+<h1 class="comic hero-title" style="margin: 0">NAK34CHA_U</h1>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center">
+<a href="#lich-hoc" onClick="{{goLichHoc}}" class="hero-btn" style="background: #DD227C; color: #FFFFFF">Xem lịch tuần này</a>
+<a href="#deadlines" onClick="{{goTienDo}}" class="hero-btn" style="background: #FFFFFF; color: #111111">Nhiệm vụ sắp tới</a>
+</div>
+</div>
+</div>
+</section>
+<div class="win-wrap bg-s1"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
+<section id="hub" aria-labelledby="h-hub" class="win" style="scroll-margin-top: 40px; background: #FFFFFF; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
+<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(12deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#DD227C" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#FBBACE" stroke="#111111" stroke-width="0.6">NEWS!</text></svg>
+<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #DD227C; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FBBACE; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Baloo 2', sans-serif;  font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FBBACE; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / BULLETIN BOARD</span></div><div class="win-body" style="padding: 24px">
 <div style="margin-bottom: 14px; text-align: center">
-<h2 id="h-hub" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FFC400">Bulletin Board</h2>
+<h2 id="h-hub" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FBBACE">Bulletin Board</h2>
 </div>
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
 <sc-for list="{{newsRows}}" as="n" hint-placeholder-count="3">
 <li>
 <button type="button" onClick="{{n.open}}" style="width: 100%; display: flex; align-items: center; gap: 12px; text-align: left; background: #FFFFFF; border: 2px solid #111111; border-radius: 12px; padding: 12px 14px; box-shadow: 3px 3px 0 #111111; color: #111111; cursor: pointer">
-<span style="flex: none; background: #FFC400; border: 2px solid #111111; border-radius: 8px; padding: 3px 8px; font-weight: 800; font-size: 12px; line-height: 1.3; white-space: nowrap">{{n.date}}</span>
+<span style="flex: none; background: #FBBACE; border: 2px solid #111111; border-radius: 8px; padding: 3px 8px; font-weight: 800; font-size: 12px; line-height: 1.3; white-space: nowrap">{{n.date}}</span>
 <span style="flex: 1 1 auto; min-width: 0; font-weight: 800; font-size: 16px; line-height: 1.35">{{n.title}}</span>
 <span aria-hidden="true" style="flex: none; font-weight: 800; font-size: 18px">›</span>
 </button>
@@ -146,18 +203,18 @@ button:disabled{cursor:default}
 </div></div>
 
 <!-- ============ WEEKLY SCHEDULE ============ -->
-<div class="win-wrap"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
-<section id="lich-hoc" aria-labelledby="h-week" class="win" style="scroll-margin-top: 40px; background: #F6EEDA; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
-<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(12deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#D7262E" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#FFC400" stroke="#111111" stroke-width="0.6">WEEK!</text></svg>
-<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #D7262E; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FFC400; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FFC400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / LỊCH TUẦN</span></div><div class="win-body" style="padding: 24px">
+<div class="win-wrap bg-s2"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
+<section id="lich-hoc" aria-labelledby="h-week" class="win" style="scroll-margin-top: 40px; background: #FFFFFF; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
+<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(12deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#DD227C" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#FBBACE" stroke="#111111" stroke-width="0.6">WEEK!</text></svg>
+<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #DD227C; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FBBACE; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Baloo 2', sans-serif;  font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FBBACE; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / LỊCH TUẦN</span></div><div class="win-body" style="padding: 24px">
 <div style="margin-bottom: 14px">
 <div style="display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap">
-<h2 id="h-week" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FFC400">{{T.hWeek}}</h2>
+<h2 id="h-week" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FBBACE">{{T.hWeek}}</h2>
 <div style="display: flex; align-items: center; gap: 6px; flex-wrap: nowrap">
 <button type="button" onClick="{{wPrev}}" disabled="{{wPrevDisabled}}" aria-label="{{T.prevWeek}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111; display: flex; align-items: center; gap: 4px; {{wPrevStyle}}">
 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
 </button>
-<button type="button" onClick="{{wToday}}" title="Về tuần hiện tại" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFC400; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111">Tuần <span aria-live="polite" style="color: #7F1015">{{weekNo}}</span></button>
+<button type="button" onClick="{{wToday}}" title="Về tuần hiện tại" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FBBACE; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111">Tuần <span aria-live="polite" style="color: #5A0F23">{{weekNo}}</span></button>
 <button type="button" onClick="{{wNext}}" disabled="{{wNextDisabled}}" aria-label="{{T.nextWeek}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111; display: flex; align-items: center; gap: 4px; {{wNextStyle}}">
 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
 </button>
@@ -170,7 +227,7 @@ button:disabled{cursor:default}
 <sc-for list="{{week}}" as="d" hint-placeholder-count="7">
 <div class="sc-cell sc-hd" style="min-width: 0; text-align: center; padding: 10px 12px; border-right: 2px solid #111111; border-bottom: 3px solid #111111; {{d.headStyle}}">
 <p style="margin: 0; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em">{{d.name}}</p>
-<p style="margin: 0; font-family: 'Anton', 'Archivo', sans-serif; font-size: 26px; font-weight: 800; line-height: 1.05">{{d.date}}</p>
+<p style="margin: 0; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-size: 26px; font-weight: 800; line-height: 1.05">{{d.date}}</p>
 </div>
 </sc-for>
 <sc-for list="{{week}}" as="d" hint-placeholder-count="7">
@@ -181,19 +238,19 @@ button:disabled{cursor:default}
 <span class="s-badge" style="display: block; width: 100%; height: 18px; line-height: 18px; margin: 0 0 6px; text-align: center; font-size: 9px; font-weight: 700; letter-spacing: 0.04em; border-radius: 4px; padding: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box; {{s.badgeStyle}}">{{s.badge}}</span>
 </sc-if>
 <sc-if value="{{s.hasBadge}}" hint-placeholder-val="{{false}}"><p style="margin: 0; font-size: 12px; font-weight: 800">{{s.time}}</p></sc-if>
-<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><span style="display: inline-block; margin: 2px 0 0 4px; background: #D7262E; color: #FFFFFF; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; border-radius: 6px; padding: 1px 7px">{{s.changeTag}}</span></sc-if>
+<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><span style="display: inline-block; margin: 2px 0 0 4px; background: #DD227C; color: #FFFFFF; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; border-radius: 6px; padding: 1px 7px">{{s.changeTag}}</span></sc-if>
 <p class="s-head" style="font-size: 14px; font-weight: 800; line-height: 1.3; {{s.headStyle}}"><span style="display: block; {{s.titleStyle}}"><sc-if value="{{s.hasBuoi}}" hint-placeholder-val="{{true}}"><span class="s-buoi" style="display: block; height: 16px; line-height: 16px; margin-bottom: 4px; text-align: center; background: #FFFFFF; border-radius: 4px; font-size: 9px; font-weight: 800; letter-spacing: 0.06em; white-space: nowrap; overflow: hidden; {{s.buoiStyle}}">{{s.buoi}}</span><span class="s-line" style="display: block; font-size: 12px; font-weight: 800; white-space: nowrap; margin-bottom: 2px">{{s.time}}</span></sc-if>{{s.title}}</span></p>
 <p style="margin: 4px 0 0; font-size: 12px; font-weight: 600; white-space: pre-line">{{s.sub}}</p>
 <sc-if value="{{s.hasGv}}" hint-placeholder-val="{{true}}"><p class="s-line" title="{{s.gv}}" style="margin: 2px 0 0; font-size: 10px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{s.gv}}</p></sc-if>
-<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><p style="margin: 4px 0 0; font-size: 12px; font-weight: 700; color: #7F1015">{{s.changeNote}}</p></sc-if>
+<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><p style="margin: 4px 0 0; font-size: 12px; font-weight: 700; color: #5A0F23">{{s.changeNote}}</p></sc-if>
 <sc-if value="{{s.hasProgress}}" hint-placeholder-val="{{false}}">
 <p class="s-line" style="margin: 4px 0 0; font-size: 10px; font-weight: 700; color: #3A3A3A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{s.progress}}</p>
 </sc-if>
-<sc-if value="{{s.hasNote}}" hint-placeholder-val="{{false}}"><div style="display: flex; justify-content: center; margin-top: 8px"><button type="button" class="s-more" onClick="{{s.noteClick}}" aria-label="{{T.viewDetail}}" style="min-height: 30px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; border: 2px solid #111111; border-radius: 8px; box-shadow: 2px 2px 0 #111111; cursor: pointer; font-family: inherit; font-weight: 800; font-size: 12px; background: #FFFFFF; color: #D7262E; white-space: nowrap">{{T.viewDetail}}</button></div></sc-if>
+<sc-if value="{{s.hasNote}}" hint-placeholder-val="{{false}}"><div style="display: flex; justify-content: center; margin-top: 8px"><button type="button" class="s-more" onClick="{{s.noteClick}}" aria-label="{{T.viewDetail}}" style="min-height: 30px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; border: 2px solid #111111; border-radius: 8px; box-shadow: 2px 2px 0 #111111; cursor: pointer; font-family: inherit; font-weight: 800; font-size: 12px; background: #FFFFFF; color: #DD227C; white-space: nowrap">{{T.viewDetail}}</button></div></sc-if>
 </div>
 </sc-for>
 <sc-if value="{{d.emptyC}}" hint-placeholder-val="{{false}}">
-<p class="s-off" style="margin: auto; text-align: center; font-family: 'Anton', 'Archivo', sans-serif; font-size: 24px; font-weight: 800; color: #6B6B6B">Off</p>
+<p class="s-off" style="margin: auto; text-align: center; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-size: 24px; font-weight: 800; color: #6B6B6B">Off</p>
 </sc-if>
 </div>
 </sc-for>
@@ -205,15 +262,15 @@ button:disabled{cursor:default}
 <span class="s-badge" style="display: block; width: 100%; height: 18px; line-height: 18px; margin: 0 0 6px; text-align: center; font-size: 9px; font-weight: 700; letter-spacing: 0.04em; border-radius: 4px; padding: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box; {{s.badgeStyle}}">{{s.badge}}</span>
 </sc-if>
 <sc-if value="{{s.hasBadge}}" hint-placeholder-val="{{false}}"><p style="margin: 0; font-size: 12px; font-weight: 800">{{s.time}}</p></sc-if>
-<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><span style="display: inline-block; margin: 2px 0 0 4px; background: #D7262E; color: #FFFFFF; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; border-radius: 6px; padding: 1px 7px">{{s.changeTag}}</span></sc-if>
+<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><span style="display: inline-block; margin: 2px 0 0 4px; background: #DD227C; color: #FFFFFF; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; border-radius: 6px; padding: 1px 7px">{{s.changeTag}}</span></sc-if>
 <p class="s-head" style="font-size: 14px; font-weight: 800; line-height: 1.3; {{s.headStyle}}"><span style="display: block; {{s.titleStyle}}"><sc-if value="{{s.hasBuoi}}" hint-placeholder-val="{{true}}"><span class="s-buoi" style="display: block; height: 16px; line-height: 16px; margin-bottom: 4px; text-align: center; background: #FFFFFF; border-radius: 4px; font-size: 9px; font-weight: 800; letter-spacing: 0.06em; white-space: nowrap; overflow: hidden; {{s.buoiStyle}}">{{s.buoi}}</span><span class="s-line" style="display: block; font-size: 12px; font-weight: 800; white-space: nowrap; margin-bottom: 2px">{{s.time}}</span></sc-if>{{s.title}}</span></p>
 <p style="margin: 4px 0 0; font-size: 12px; font-weight: 600; white-space: pre-line">{{s.sub}}</p>
 <sc-if value="{{s.hasGv}}" hint-placeholder-val="{{true}}"><p class="s-line" title="{{s.gv}}" style="margin: 2px 0 0; font-size: 10px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{s.gv}}</p></sc-if>
-<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><p style="margin: 4px 0 0; font-size: 12px; font-weight: 700; color: #7F1015">{{s.changeNote}}</p></sc-if>
+<sc-if value="{{s.hasChange}}" hint-placeholder-val="{{false}}"><p style="margin: 4px 0 0; font-size: 12px; font-weight: 700; color: #5A0F23">{{s.changeNote}}</p></sc-if>
 <sc-if value="{{s.hasProgress}}" hint-placeholder-val="{{false}}">
 <p class="s-line" style="margin: 4px 0 0; font-size: 10px; font-weight: 700; color: #3A3A3A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{s.progress}}</p>
 </sc-if>
-<sc-if value="{{s.hasNote}}" hint-placeholder-val="{{false}}"><div style="display: flex; justify-content: center; margin-top: 8px"><button type="button" class="s-more" onClick="{{s.noteClick}}" aria-label="{{T.viewDetail}}" style="min-height: 30px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; border: 2px solid #111111; border-radius: 8px; box-shadow: 2px 2px 0 #111111; cursor: pointer; font-family: inherit; font-weight: 800; font-size: 12px; background: #FFFFFF; color: #D7262E; white-space: nowrap">{{T.viewDetail}}</button></div></sc-if>
+<sc-if value="{{s.hasNote}}" hint-placeholder-val="{{false}}"><div style="display: flex; justify-content: center; margin-top: 8px"><button type="button" class="s-more" onClick="{{s.noteClick}}" aria-label="{{T.viewDetail}}" style="min-height: 30px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center; border: 2px solid #111111; border-radius: 8px; box-shadow: 2px 2px 0 #111111; cursor: pointer; font-family: inherit; font-weight: 800; font-size: 12px; background: #FFFFFF; color: #DD227C; white-space: nowrap">{{T.viewDetail}}</button></div></sc-if>
 </div>
 </sc-for>
 <sc-if value="{{d.emptyT}}" hint-placeholder-val="{{false}}">
@@ -229,18 +286,18 @@ button:disabled{cursor:default}
 </div></div>
 
 <!-- ============ GANTT ============ -->
-<div class="win-wrap"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
-<section id="deadlines" aria-labelledby="h-gantt" class="win" style="scroll-margin-top: 40px; background: #F6EEDA; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
-<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(-10deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#FFC400" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#D7262E" stroke="#111111" stroke-width="0.6">PLAN!</text></svg>
-<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #D7262E; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FFC400; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FFC400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / KẾ HOẠCH</span></div><div class="win-body" style="padding: 24px">
+<div class="win-wrap bg-s3"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
+<section id="deadlines" aria-labelledby="h-gantt" class="win" style="scroll-margin-top: 40px; background: #FFFFFF; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
+<svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(-10deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#FBBACE" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#DD227C" stroke="#111111" stroke-width="0.6">PLAN!</text></svg>
+<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #DD227C; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FBBACE; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Baloo 2', sans-serif;  font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FBBACE; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / KẾ HOẠCH</span></div><div class="win-body" style="padding: 24px">
 <div style="margin-bottom: 14px">
 <div style="display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap">
-<h2 id="h-gantt" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FFC400">{{T.hGantt}}</h2>
+<h2 id="h-gantt" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FBBACE">{{T.hGantt}}</h2>
 <div style="display: flex; align-items: center; gap: 6px; flex-wrap: nowrap">
 <button type="button" onClick="{{gPrev}}" disabled="{{gPrevDisabled}}" aria-label="{{T.prevMonth}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111; display: flex; align-items: center; gap: 4px; {{gPrevStyle}}">
 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
 </button>
-<button type="button" onClick="{{gThis}}" title="Về tháng hiện tại" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFC400; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111">Tháng <span aria-live="polite" style="color: #7F1015">{{monthNo}}</span></button>
+<button type="button" onClick="{{gThis}}" title="Về tháng hiện tại" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FBBACE; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111">Tháng <span aria-live="polite" style="color: #5A0F23">{{monthNo}}</span></button>
 <button type="button" onClick="{{gNext}}" disabled="{{gNextDisabled}}" aria-label="{{T.nextMonth}}" style="min-height: 30px; padding: 0 9px; border-radius: 8px; border: 2px solid #111111; background: #FFFFFF; box-shadow: 2.5px 2.5px 0 #111111; font-weight: 800; font-size: 14px; color: #111111; display: flex; align-items: center; gap: 4px; {{gNextStyle}}">
 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
 </button>
@@ -250,7 +307,7 @@ button:disabled{cursor:default}
 
 <div style="border: 3px solid #111111; border-radius: 16px; overflow: hidden">
 <div class="gantt">
-<div style="display: flex; align-items: stretch; border-bottom: 3px solid #111111; background: #FBE3DF">
+<div style="display: flex; align-items: stretch; border-bottom: 3px solid #111111; background: #FBD9E4">
 <div class="g-label g-head" style="flex: none; width: 400px; box-sizing: border-box; padding: 0; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: stretch; text-align: center; border-right: 3px solid #111111"><span class="g-h1" style="flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: center; padding: 10px 14px">{{T.colHead}}</span><span class="g-h2" style="flex: none; width: 160px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; padding: 10px 8px; border-left: 2px solid #111111">End Date</span></div>
 <div style="flex: 1 1 auto; min-width: 0; display: grid; padding: 6px 0; {{gCols}}">
 <sc-for list="{{gDays}}" as="d" hint-placeholder-count="30">
@@ -264,7 +321,7 @@ button:disabled{cursor:default}
 <div style="display: flex; align-items: stretch; min-height: 40px; border-bottom: 2px solid #111111; {{c.rowStyle}}">
 <button type="button" onClick="{{c.toggle}}" aria-expanded="{{c.expandedStr}}" class="g-label g-course" style="position: relative; flex: none; width: 400px; box-sizing: border-box; display: flex; align-items: stretch; gap: 0; border: 0; border-right: 3px solid #111111; text-align: left; padding: 0; min-height: 40px; {{c.labelStyle}}">
 <svg class="g-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; top: 6px; right: 166px; flex: none; transition: transform .15s; {{c.chevStyle}}"><path d="M9 6l6 6-6 6"></path></svg>
-<span class="g-name" style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 4px 28px 4px 12px"><span style="display: block; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 16px; line-height: 1.15">{{c.name}}</span><span class="g-meta" style="font-size: 11px; font-weight: 600; opacity: 0.9; white-space: nowrap">{{c.meta}}</span></span>
+<span class="g-name" style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 4px 28px 4px 12px"><span style="display: block; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 800; font-size: 16px; line-height: 1.15">{{c.name}}</span><span class="g-meta" style="font-size: 11px; font-weight: 600; opacity: 0.9; white-space: nowrap">{{c.meta}}</span></span>
 <span class="g-cend" style="flex: none; width: 160px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; padding: 4px 10px; border-left: 2px solid rgba(255,255,255,0.55); font-size: 14px; font-weight: 800">{{c.meta}}</span>
 </button>
 <div style="position: relative; flex: 1 1 auto; min-width: 0; {{c.trackStyle}}">
@@ -275,7 +332,7 @@ button:disabled{cursor:default}
 <div title="{{c.endTitle}}" role="img" aria-label="{{c.endTitle}}" style="position: absolute; top: 50%; width: 6px; height: 22px; margin: -11px 0 0 -3px; background: #111111; z-index: 2; {{c.endStyle}}"></div>
 </sc-if>
 <sc-if value="{{c.showToday}}" hint-placeholder-val="{{false}}">
-<div style="position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: #D7262E; {{c.todayStyle}}"></div>
+<div style="position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: #DD227C; {{c.todayStyle}}"></div>
 </sc-if>
 </div>
 </div>
@@ -284,7 +341,7 @@ button:disabled{cursor:default}
 <div style="display: flex; align-items: stretch; min-height: 40px; border-bottom: 1px solid rgba(17,17,17,0.18)">
 <div class="g-label g-task" style="flex: none; width: 400px; box-sizing: border-box; padding: 0; display: flex; align-items: stretch; min-width: 0; border-right: 3px solid #111111">
 <span class="g-tt" style="flex: 1 1 auto; min-width: 0; display: flex; align-items: center; padding: 4px 12px 4px 30px"><span title="{{t.title}}" style="font-size: 14px; font-weight: 700; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden">{{t.title}}</span><sc-if value="{{t.showNoteStar}}" hint-placeholder-val="{{false}}">
-<span class="g-star g-note-star" tabindex="0" role="button" onClick="{{t.flagClick}}" data-tip="{{t.noteTip}}" title="{{t.noteTip}}" aria-label="{{t.noteTip}}" style="position: relative; flex: none; display: inline-flex; width: 22px; height: 22px; margin-left: 8px; cursor: pointer; z-index: 3"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path class="g-pulse" d="M12 1.8l3.1 6.4 7 .9-5.1 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.9 9.1l7-.9z" fill="#FFC400" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"></path></svg></span>
+<span class="g-star g-note-star" tabindex="0" role="button" onClick="{{t.flagClick}}" data-tip="{{t.noteTip}}" title="{{t.noteTip}}" aria-label="{{t.noteTip}}" style="position: relative; flex: none; display: inline-flex; width: 22px; height: 22px; margin-left: 8px; cursor: pointer; z-index: 3"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path class="g-pulse" d="M12 1.8l3.1 6.4 7 .9-5.1 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.9 9.1l7-.9z" fill="#FBBACE" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"></path></svg></span>
 </sc-if></span>
 <span class="g-due" style="flex: none; width: 160px; box-sizing: border-box; display: flex; align-items: center; padding: 4px 10px; border-left: 2px solid #111111; font-size: 12px; font-weight: 700; line-height: 1.35; {{t.dueTextStyle}}">{{t.dueLabel}}</span>
 </div>
@@ -294,11 +351,11 @@ button:disabled{cursor:default}
 </sc-if>
 <sc-if value="{{t.showDiamond}}" hint-placeholder-val="{{false}}">
 <div class="g-star" title="{{t.deadlineTitle}}" role="img" aria-label="{{t.deadlineTitle}}" style="position: absolute; top: 50%; width: 26px; height: 32px; margin: -24px 0 0 -2px; z-index: 2; {{t.diamondStyle}}">
-<svg width="26" height="32" viewBox="0 0 26 32" aria-hidden="true"><path d="M3 2v29" stroke="#111111" stroke-width="3" stroke-linecap="round"></path><path class="g-cloth" d="M4.5 3L23 9.5 4.5 16z" fill="#D7262E" stroke="#111111" stroke-width="2" stroke-linejoin="round"></path></svg>
+<svg width="26" height="32" viewBox="0 0 26 32" aria-hidden="true"><path d="M3 2v29" stroke="#111111" stroke-width="3" stroke-linecap="round"></path><path class="g-cloth" d="M4.5 3L23 9.5 4.5 16z" fill="#DD227C" stroke="#111111" stroke-width="2" stroke-linejoin="round"></path></svg>
 </div>
 </sc-if>
 <sc-if value="{{t.showToday}}" hint-placeholder-val="{{false}}">
-<div style="position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: #D7262E; {{t.todayStyle}}"></div>
+<div style="position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: #DD227C; {{t.todayStyle}}"></div>
 </sc-if>
 <sc-for list="{{t.stars}}" as="g" hint-placeholder-count="0">
 <div class="g-star g-flag" tabindex="0" onClick="{{g.click}}" data-tip="{{g.tip}}" title="{{g.title}}" role="button" aria-label="{{g.title}}" style="position: absolute; top: 50%; width: 26px; height: 32px; margin: -24px 0 0 -2px; z-index: 3; {{g.style}}">
@@ -315,8 +372,8 @@ button:disabled{cursor:default}
 </div>
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 14px; font-size: 14px; font-weight: 600">
-<span style="display: flex; align-items: center; gap: 6px"><svg width="16" height="20" viewBox="0 0 26 32" aria-hidden="true"><path d="M3 2v29" stroke="#111111" stroke-width="3" stroke-linecap="round"></path><path d="M4.5 3L23 9.5 4.5 16z" fill="#D7262E" stroke="#111111" stroke-width="2" stroke-linejoin="round"></path></svg>{{T.legendClass}}</span>
-<span style="display: flex; align-items: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.4 7 .9-5.1 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.9 9.1l7-.9z" fill="#FFC400" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"></path></svg>{{T.legendNote}}</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg width="16" height="20" viewBox="0 0 26 32" aria-hidden="true"><path d="M3 2v29" stroke="#111111" stroke-width="3" stroke-linecap="round"></path><path d="M4.5 3L23 9.5 4.5 16z" fill="#DD227C" stroke="#111111" stroke-width="2" stroke-linejoin="round"></path></svg>{{T.legendClass}}</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.4 7 .9-5.1 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.9 9.1l7-.9z" fill="#FBBACE" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"></path></svg>{{T.legendNote}}</span>
 </div>
 <div style="margin-top: 16px; border-top: 2px dashed #111111; padding-top: 12px">
 <button type="button" onClick="{{toggleDone}}" aria-expanded="{{doneOpenStr}}" style="min-height: 34px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 2px solid #111111; border-radius: 10px; background: #FFFFFF; box-shadow: 2px 2px 0 #111111; font-weight: 800; font-size: 16px; color: #111111">
@@ -340,12 +397,12 @@ button:disabled{cursor:default}
 </div></div>
 
 <!-- ============ MATERIALS ============ -->
-<div class="win-wrap"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
-<section id="tai-lieu" aria-labelledby="h-docs" class="win" style="scroll-margin-top: 40px; background: #F6EEDA; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
+<div class="win-wrap bg-s4"><div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px 20px">
+<section id="tai-lieu" aria-labelledby="h-docs" class="win" style="scroll-margin-top: 40px; background: #FFFFFF; border: 3px solid #111111; border-radius: 16px; box-shadow: 12px 12px 0 #3A3A32">
 <svg class="burst" width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; top: -28px; right: -14px; transform: rotate(10deg); z-index: 3; pointer-events: none"><polygon points="50.0,2.0 58.8,17.2 74.0,8.4 74.0,26.0 91.6,26.0 82.8,41.2 98.0,50.0 82.8,58.8 91.6,74.0 74.0,74.0 74.0,91.6 58.8,82.8 50.0,98.0 41.2,82.8 26.0,91.6 26.0,74.0 8.4,74.0 17.2,58.8 2.0,50.0 17.2,41.2 8.4,26.0 26.0,26.0 26.0,8.4 41.2,17.2" fill="#2C9041" stroke="#111111" stroke-width="4" stroke-linejoin="round"></polygon><text x="50" y="60" text-anchor="middle" font-family="Anton, sans-serif" font-size="19" fill="#FFFFFF" stroke="#111111" stroke-width="0.6">DOCS!</text></svg>
-<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #D7262E; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FFC400; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FFC400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / TÀI LIỆU</span></div><div class="win-body" style="padding: 24px">
+<div class="win-bar" style="display: flex; align-items: center; gap: 12px; background: #1A1A17; padding: 10px 14px; border-radius: 12px 12px 0 0; border-bottom: 3px solid #111111"><span style="display: flex; gap: 7px; flex: none"><i style="width: 12px; height: 12px; border-radius: 50%; background: #DD227C; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #FBBACE; border: 1.5px solid #000"></i><i style="width: 12px; height: 12px; border-radius: 50%; background: #2C9041; border: 1.5px solid #000"></i></span><span style="flex: 1 1 auto; min-width: 0; background: #2B2B26; border: 1.5px solid #55554A; border-radius: 8px; padding: 3px 12px; font-family: 'Baloo 2', sans-serif;  font-weight: 800; font-size: 14px; letter-spacing: 0.05em; color: #FBBACE; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">NAK34CHA_U / TÀI LIỆU</span></div><div class="win-body" style="padding: 24px">
 <div style="margin-bottom: 6px; text-align: center">
-<h2 id="h-docs" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FFC400">{{T.hDocs}}</h2>
+<h2 id="h-docs" class="wk-title" style="margin: 0; white-space: nowrap; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 400; font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; text-shadow: 3px 3px 0 #FBBACE">{{T.hDocs}}</h2>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
@@ -363,10 +420,10 @@ button:disabled{cursor:default}
 <li style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #111111; border-radius: 10px; padding: 8px 10px; box-shadow: 2px 2px 0 #111111">
 <span style="flex: 1 1 auto; min-width: 0; font-weight: 700; font-size: 14px; line-height: 1.35">{{d.name}}</span>
 <sc-if value="{{d.hasUrl}}" hint-placeholder-val="{{true}}">
-<a href="{{d.url}}" target="_blank" rel="noopener" aria-label="{{d.openLabel}}" style="flex: none; min-height: 40px; display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid #111111; border-radius: 10px; background: #FFC400; font-weight: 800; font-size: 14px; text-decoration: none; color: #111111">{{T.open}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path></svg></a>
+<a href="{{d.url}}" target="_blank" rel="noopener" aria-label="{{d.openLabel}}" style="flex: none; min-height: 40px; display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid #111111; border-radius: 10px; background: #FBBACE; font-weight: 800; font-size: 14px; text-decoration: none; color: #111111">{{T.open}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path></svg></a>
 </sc-if>
 <sc-if value="{{d.noUrl}}" hint-placeholder-val="{{false}}">
-<span style="flex: none; min-height: 40px; display: flex; align-items: center; padding: 0 12px; border: 2px dashed #111111; border-radius: 10px; background: #F2F2F2; font-weight: 700; font-size: 12px; color: #3A3A3A">{{T.noLink}}</span>
+<span style="flex: none; min-height: 40px; display: flex; align-items: center; padding: 0 12px; border: 2px dashed #111111; border-radius: 10px; background: #FFF0F5; font-weight: 700; font-size: 12px; color: #3A3A3A">{{T.noLink}}</span>
 </sc-if>
 </li>
 </sc-for>
@@ -379,16 +436,16 @@ button:disabled{cursor:default}
 <div class="docs-side" role="tabpanel" aria-labelledby="h-docs-active" style="flex: 999 1 520px; min-width: 0; border: 2px solid #111111; border-radius: 14px; padding: 16px; {{docPanelStyle}}">
 <sc-if value="{{docHasActive}}" hint-placeholder-val="{{true}}">
 <p style="margin: 0; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em">{{docActive.kicker}}</p>
-<h3 id="h-docs-active" style="margin: 2px 0 12px; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 18px; line-height: 1.2">{{docActive.name}}</h3>
+<h3 id="h-docs-active" style="margin: 2px 0 12px; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; line-height: 1.2">{{docActive.name}}</h3>
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
 <sc-for list="{{docActive.docs}}" as="d" hint-placeholder-count="4">
 <li style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #111111; border-radius: 10px; padding: 8px 10px; box-shadow: 2px 2px 0 #111111">
 <span style="flex: 1 1 auto; min-width: 0; font-weight: 700; font-size: 14px; line-height: 1.35">{{d.name}}</span>
 <sc-if value="{{d.hasUrl}}" hint-placeholder-val="{{true}}">
-<a href="{{d.url}}" target="_blank" rel="noopener" aria-label="{{d.openLabel}}" style="flex: none; min-height: 40px; display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid #111111; border-radius: 10px; background: #FFC400; font-weight: 800; font-size: 14px; text-decoration: none; color: #111111">{{T.open}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path></svg></a>
+<a href="{{d.url}}" target="_blank" rel="noopener" aria-label="{{d.openLabel}}" style="flex: none; min-height: 40px; display: flex; align-items: center; gap: 6px; padding: 0 14px; border: 2px solid #111111; border-radius: 10px; background: #FBBACE; font-weight: 800; font-size: 14px; text-decoration: none; color: #111111">{{T.open}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path></svg></a>
 </sc-if>
 <sc-if value="{{d.noUrl}}" hint-placeholder-val="{{false}}">
-<span style="flex: none; min-height: 40px; display: flex; align-items: center; padding: 0 12px; border: 2px dashed #111111; border-radius: 10px; background: #F2F2F2; font-weight: 700; font-size: 12px; color: #3A3A3A">{{T.noLink}}</span>
+<span style="flex: none; min-height: 40px; display: flex; align-items: center; padding: 0 12px; border: 2px dashed #111111; border-radius: 10px; background: #FFF0F5; font-weight: 700; font-size: 12px; color: #3A3A3A">{{T.noLink}}</span>
 </sc-if>
 </li>
 </sc-for>
@@ -405,10 +462,11 @@ button:disabled{cursor:default}
 
 </main>
 
-<footer style="margin-top: 28px; border-top: 3px solid #111111; background: #1E5E2C; color: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: center; align-items: center">
-<button type="button" onClick="{{openUpdate}}" aria-haspopup="dialog" style="min-height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 2px solid #FFFFFF; border-radius: 999px; background: #FFFFFF; color: #1E5E2C; font-weight: 800; font-size: 16px; box-shadow: 3px 3px 0 #111111">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E5E2C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>{{T.navUpdate}}
+<footer style="border-top: 4px solid #111111; background: #0A0107; color: #F3DCE5">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: flex-end; align-items: center">
+<span style="font-size: 14px; color: #C9A3B1">© 2026 NAK34CHA_U</span>
+<button type="button" onClick="{{openUpdate}}" aria-haspopup="dialog" style="min-height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 2.5px solid #FBBACE; border-radius: 0; background: #FFFFFF; color: #111111; font-weight: 800; font-size: 16px; box-shadow: 3px 3px 0 #111111">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>{{T.navUpdate}}
 </button>
 </div>
 </footer>
@@ -416,7 +474,7 @@ button:disabled{cursor:default}
 
 <sc-if value="{{updOpen}}" hint-placeholder-val="{{false}}">
 <div onClick="{{closeUpdate}}" style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; background: rgba(17,17,17,0.55); display: flex; align-items: center; justify-content: center; padding: 16px">
-<div role="dialog" aria-modal="true" aria-labelledby="upd-title" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 440px; background: #FFFFFF; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111; padding: 24px; border-top: 12px solid #FFC400">
+<div role="dialog" aria-modal="true" aria-labelledby="upd-title" onClick="{{stopClick}}" style="position: relative; width: 100%; max-width: 440px; background: #FFFFFF; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111; padding: 24px; border-top: 12px solid #FBBACE">
 <button type="button" onClick="{{closeUpdate}}" aria-label="{{T.close}}" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 2px solid #111111; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; padding: 0">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
 </button>
@@ -437,9 +495,9 @@ button:disabled{cursor:default}
 <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding-right: 52px">
 <span style="font-size: 14px; font-weight: 700">{{modal.date}}</span>
 </div>
-<h3 id="notice-title" style="margin: 12px 0 0; font-family: 'Anton', 'Archivo', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">{{modal.title}}</h3>
+<h3 id="notice-title" style="margin: 12px 0 0; font-family: 'Paytone One', 'Baloo 2', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">{{modal.title}}</h3>
 <p style="margin: 10px 0 0; font-size: 14px; font-weight: 500; line-height: 1.6; white-space: pre-line">{{modal.body}}</p>
-<button type="button" onClick="{{closeNotice}}" style="margin-top: 20px; min-height: 44px; padding: 0 20px; border: 2px solid #111111; border-radius: 12px; background: #FFC400; font-weight: 800; font-size: 14px; color: #111111; box-shadow: 3px 3px 0 #111111">Đã hiểu</button>
+<button type="button" onClick="{{closeNotice}}" style="margin-top: 20px; min-height: 44px; padding: 0 20px; border: 2px solid #111111; border-radius: 12px; background: #FBBACE; font-weight: 800; font-size: 14px; color: #111111; box-shadow: 3px 3px 0 #111111">Đã hiểu</button>
 </div>
 </div>
 </sc-if>
@@ -538,7 +596,7 @@ var DONE_TASKS = [
   { c:'nnh', t:'Quiz âm vị học (trên lớp)', d:'02/11' }
 ];
 var COURSES = [
-  { id:'th', name:'Triết học', color:'#F29A8F', end: gOrd(0,1) - 14, tasks:[   /* kết thúc 18/10 */
+  { id:'th', name:'Triết học', color:'#F48FB1', end: gOrd(0,1) - 14, tasks:[   /* kết thúc 18/10 */
     { title:'Đọc & tóm tắt chương 2: Chủ nghĩa duy vật biện chứng', s:gOrd(0,2),  e:gOrd(0,16) },
     { title:'Tiểu luận nhóm: Mối liên hệ phổ biến', s:gOrd(0,18), e:gOrd(1,14) },
     { title:'Ôn tập & thi giữa kỳ', s:gOrd(1,15), e:gOrd(2,8) }
@@ -582,7 +640,7 @@ function courseDeadlines(c, myGroups) {
   });
   return out;
 }
-var COURSE_DARK = { th:'#A3151C', nnh:'#1E7B34', gtlvh:'#8A6100', pp:'#5E6B12' };
+var COURSE_DARK = { th:'#5A0F23', nnh:'#1E7B34', gtlvh:'#8A6100', pp:'#5E6B12' };
 var COURSE_BY_ID = {};
 COURSES.forEach(function (c) { COURSE_BY_ID[c.id] = c; });
 
@@ -590,14 +648,14 @@ COURSES.forEach(function (c) { COURSE_BY_ID[c.id] = c; });
 /* Snapshot taken 09/11/2026 12:22. Week 1 starts Mon 22/06/2026; week 21 = 09–15/11/2026. */
 var SOURCE_SYNC = '09/11/2026 12:22';
 var SCHED_COURSES = {
-  TR6002: { name:'Triết học', gv:'Đinh Thị Hoàng Phương', color:'#F29A8F' },
+  TR6002: { name:'Triết học', gv:'Đinh Thị Hoàng Phương', color:'#F48FB1' },
   NA6201: { name:'General Linguistics', gv:'Nguyễn Tất Thắng', color:'#6DBB5E' },
   NA6204: { name:'Giao tiếp liên văn hóa', gv:'Nguyễn Tiến Phùng', color:'#F2C84B' },
   PP6101: { name:'Phương pháp NCKH trong Ngôn ngữ học', gv:'Huỳnh Quang Minh', color:'#C8CF55' },
   PP6102: { name:'Academic Writing', gv:'Trương Thị Mỹ Vân', color:'#BFE0B5' }
 };
 var SCHED_ORDER = ['TR6002','NA6201','NA6204','PP6101','PP6102'];
-var COURSE_INK = { TR6002:'#A3151C', NA6201:'#1E7B34', NA6204:'#8A6100', PP6101:'#5E6B12', PP6102:'#2F6B3A' };
+var COURSE_INK = { TR6002:'#5A0F23', NA6201:'#1E7B34', NA6204:'#8A6100', PP6101:'#5E6B12', PP6102:'#2F6B3A' };
 var OL = 'Online – cao học 1';
 /* week no → [dayIndex(0=Thứ 2), course code, tiết từ, tiết đến, phòng, đã học] */
 var SCHED = {
@@ -641,7 +699,7 @@ var COURSE_SCHED = {};
 var NEWS = [];
 var NEWS_LIMIT = 4;
 var NOTE_BG = ['#F9C9DA', '#CFE8BF', '#BFE0F5', '#FFF19A'];
-var PIN_BG = ['#D7262E', '#2C9041', '#2F7FD7', '#FFC400'];
+var PIN_BG = ['#DD227C', '#2C9041', '#2F7FD7', '#FBBACE'];
 var NOTE_TILT = [-2.2, 1.6, -1.2, 2.3, -1.8, 1.1];
 var ADDED = {};
 /* Lời nhắn cho ngày trống lịch – mỗi ngày một câu, cố định theo ngày */
@@ -667,9 +725,9 @@ SCHED_COURSES.PP6101.fullName = 'Phương pháp nghiên cứu khoa học trong N
 /* ---- Study materials (sample names) ----
    Each entry: [type, name, Google Drive link]. Paste a share link as the 3rd item; empty = "Chưa có link". */
 var DOC_TYPE_STYLE = {
-  PDF:  'background:#FBE3DF',
+  PDF:  'background:#FBD9E4',
   DOCX: 'background:#EAF3DC',
-  PPTX: 'background:#FBEFD0',
+  PPTX: 'background:#FFF0F5',
   LINK: 'background:#EEF6E3'
 };
 var DOCS = {
@@ -718,15 +776,15 @@ var DOC_ORDER = ['TR6002','NA6201','NA6204','PP6101','PP6102','OTHER'];
 var NOTICES = [
   { date:'09/11', tag:'LỊCH HỌC', bg:'#EAF3DC', title:'Tuần 22 (16/11 – 22/11) lớp không có buổi học',
     body:'Thời khóa biểu tuần 22 đang trống. Lớp học lại từ Thứ Bảy 28/11.' },
-  { date:'09/11', tag:'ĐỔI PHÒNG', bg:'#FBEFD0', title:'Thứ Bảy 28/11: PP6101 học tại phòng A30.02',
+  { date:'09/11', tag:'ĐỔI PHÒNG', bg:'#FFF0F5', title:'Thứ Bảy 28/11: PP6101 học tại phòng A30.02',
     body:'Buổi sáng tiết 1–4 học phòng A30.02 thay vì A32.T3.B03. Buổi chiều Chủ nhật 29/11 vẫn ở A32.T3.B03.' },
   { date:'08/11', tag:'TIẾN ĐỘ', bg:'#EEF6E3', title:'Academic Writing: đã học 32/45 tiết',
     body:'Các buổi còn lại: 14/11, 05/12, 12/12 và 19/12 (buổi cuối học phòng A7.5, tiết 7–10).' },
   { date:'02/11', tag:'LỊCH HỌC', bg:'#EAF3DC', title:'General Linguistics chuyển sang học buổi sáng Chủ nhật',
     body:'Từ tuần 20, môn NA6201 học tiết 1–4 sáng Chủ nhật (trước đây là tiết 7–10 buổi chiều). Phòng học thay đổi theo tuần: A7.3, A8.7.2, A7.8.' },
-  { date:'01/11', tag:'LỊCH HỌC', bg:'#FBF2D0', title:'Giao tiếp liên văn hóa học 2 ngày cuối tuần tại A8.8.2',
+  { date:'01/11', tag:'LỊCH HỌC', bg:'#FFF0F5', title:'Giao tiếp liên văn hóa học 2 ngày cuối tuần tại A8.8.2',
     body:'Thứ Bảy 31/10 và Chủ nhật 01/11, tiết 1–5 và 7–11, học trực tiếp tại phòng A8.8.2 thay vì học online.' },
-  { date:'18/10', tag:'HOÀN THÀNH', bg:'#FBE3DF', title:'Triết học đã học đủ 60/60 tiết',
+  { date:'18/10', tag:'HOÀN THÀNH', bg:'#FBD9E4', title:'Triết học đã học đủ 60/60 tiết',
     body:'Buổi cuối diễn ra ngày 18/10. Theo dõi thông báo lịch thi từ Phòng Quản lý Đào tạo Sau Đại học.' },
   { date:'05/10', tag:'MÔN MỚI', bg:'#EEF6E3', title:'Bắt đầu môn Giao tiếp liên văn hóa (NA6204)',
     body:'Học online tại phòng Online_008, tiết 11–14 buổi tối. GV: Nguyễn Tiến Phùng.' }
@@ -867,7 +925,7 @@ class Component extends DCLogic {
     var gDays = [];
     for (var k = 0; k < M.days; k++) {
       var o = M.off + k, dw = dowOf(o);
-      var st = o === G_TODAY ? 'background:#D7262E;color:#FFFFFF'
+      var st = o === G_TODAY ? 'background:#DD227C;color:#FFFFFF'
         : (dw >= 5 ? 'background:#F4C7C1;color:#111111' : 'color:#111111');
       gDays.push({ num: k + 1, dow: dowShort(dw), style: st });
     }
@@ -881,10 +939,10 @@ class Component extends DCLogic {
         var mine = t.groups ? t.groups.filter(function (g) { return myGroups.indexOf(g[0]) >= 0; }) : [];
         var keyE = mine.length ? mine[0][1] : t.e;
         var diff = keyE - G_TODAY, label, color;
-        if (diff < 0) { label = L(dm(keyE) + ' · trễ ' + (-diff) + ' ngày', 'Due ' + dm(keyE) + ' · ' + plural(-diff, 'day', 'days') + ' late'); color = '#A3151C'; }
-        else if (diff === 0) { label = L('Hôm nay!', 'Due today!'); color = '#A3151C'; }
-        else if (diff === 1) { label = L('Ngày mai · ', 'Due tomorrow · ') + dm(keyE); color = '#A3151C'; }
-        else { label = L(dm(keyE) + ' · còn ' + diff + ' ngày', 'Due ' + dm(keyE) + ' · in ' + plural(diff, 'day', 'days')); color = diff <= 7 ? '#A3151C' : '#3A3A3A'; }
+        if (diff < 0) { label = L(dm(keyE) + ' · trễ ' + (-diff) + ' ngày', 'Due ' + dm(keyE) + ' · ' + plural(-diff, 'day', 'days') + ' late'); color = '#5A0F23'; }
+        else if (diff === 0) { label = L('Hôm nay!', 'Due today!'); color = '#5A0F23'; }
+        else if (diff === 1) { label = L('Ngày mai · ', 'Due tomorrow · ') + dm(keyE); color = '#5A0F23'; }
+        else { label = L(dm(keyE) + ' · còn ' + diff + ' ngày', 'Due ' + dm(keyE) + ' · in ' + plural(diff, 'day', 'days')); color = diff <= 7 ? '#5A0F23' : '#3A3A3A'; }
         if (t.groups) {
           if (mine.length) label = L('Nhóm ' + mine[0][0] + ' của bạn · ', 'Your group ' + mine[0][0] + ' · ') + label;
 
@@ -899,7 +957,7 @@ class Component extends DCLogic {
             style: 'left:' + ((g[1] - M.off + 0.5) / M.days * 100) + '%' + (dimmed ? ';opacity:0.3' : ''),
             tip: (g[2] === 'p' ? L('Cá nhân ', 'Individual ') : L('Nhóm ', 'Group ')) + g[0] + ' · ' + dm(g[1]),
             click: function () { if (window.NAK) window.NAK.showNote((g[2] === 'p' ? L('Nhiệm vụ cá nhân ', 'Individual task ') : L('Nhiệm vụ nhóm ', 'Group task ')) + g[0] + ' - ' + dowName(g[1]) + L(', ngày ', ', ') + dm(g[1]), g[3]); },
-            fillStyle: 'fill:' + (isMine ? '#2C9041' : '#D7262E')
+            fillStyle: 'fill:' + (isMine ? '#2C9041' : '#DD227C')
           };
         });
         return {
@@ -925,7 +983,7 @@ class Component extends DCLogic {
         name: tr(c.name),
         meta: (c.end == null ? '–' : dm(c.end)),
         dotStyle: 'background:' + c.color,
-        rowStyle: 'background:#FDFBF0',
+        rowStyle: 'background:#FFF6F9',
         bar: c.end == null ? { show: false, style: '', title: '' } : gBar(-9999, c.end, M, hatch),
         ended: c.end != null && c.end < G_TODAY,
         labelStyle: 'background:' + (COURSE_DARK[c.id] || '#111111') + ';color:#FFFFFF',
@@ -978,7 +1036,7 @@ class Component extends DCLogic {
           hasGv: !!(x[8] || c.gv), gv: L('GV: ', 'Lecturer: ') + (x[8] || c.gv),
           hasProgress: !!x[5], progress: L('Đã học ' + x[5] + ' tiết', x[5] + ' periods done'),
           hasChange: !!x[7], changeTag: x[7] || '', changeNote: x[6] || '',
-          hasNote: !!(x.addNote || NAK_note(x.nk)), note: x.addNote || NAK_note(x.nk), canNote: false, noteIcon: 'background:#FFC400',
+          hasNote: !!(x.addNote || NAK_note(x.nk)), note: x.addNote || NAK_note(x.nk), canNote: false, noteIcon: 'background:#FBBACE',
           noteClick: function (e) { if (e && e.stopPropagation) e.stopPropagation(); if (window.NAK) window.NAK.showNote(tr(c.fullName || c.name) + ' · ' + L('Tiết ', 'Periods ') + x[2] + '–' + x[3], x.addNote || NAK_note(x.nk)); },
           style: 'background:#FFFFFF;color:#111111',
           badgeStyle: 'background:#FFFFFF;color:' + COURSE_INK[x[1]] + ';border:1.5px solid ' + COURSE_INK[x[1]],
@@ -991,7 +1049,7 @@ class Component extends DCLogic {
         COURSES.forEach(function (c) {
           courseDeadlines(c, myGroups).forEach(function (t) {
             if (t.e === od) taskItems.push({ hasBuoi: false, buoi: '', buoiStyle: '', hasBadge: true, badge: L('NHIỆM VỤ', 'TASK'), time: '', title: t.title, sub: tr(c.name),
-              hasProgress: false, progress: '', hasGv: false, gv: '', hasNote: !!t.note, note: t.note || '', canNote: false, noteIcon: 'background:#FFC400', noteClick: function (e) { if (e && e.stopPropagation) e.stopPropagation(); if (window.NAK) window.NAK.showNote(tr(t.title) + ' · ' + tr(c.fullName || c.name), t.note || ''); }, headStyle: 'margin:4px 0 0', titleStyle: '', badgeStyle: 'background:#FFFFFF;color:#A3151C;border:1.5px solid #FFFFFF', style: 'background:#A3151C;color:#FFFFFF' });
+              hasProgress: false, progress: '', hasGv: false, gv: '', hasNote: !!t.note, note: t.note || '', canNote: false, noteIcon: 'background:#FBBACE', noteClick: function (e) { if (e && e.stopPropagation) e.stopPropagation(); if (window.NAK) window.NAK.showNote(tr(t.title) + ' · ' + tr(c.fullName || c.name), t.note || ''); }, headStyle: 'margin:4px 0 0', titleStyle: '', badgeStyle: 'background:#FFFFFF;color:#5A0F23;border:1.5px solid #FFFFFF', style: 'background:#5A0F23;color:#FFFFFF' });
           });
         });
       }
@@ -1002,8 +1060,8 @@ class Component extends DCLogic {
         items: items, tasks: taskItems,
         empty: items.length === 0 && taskItems.length === 0, emptyC: items.length === 0, emptyT: taskItems.length === 0,
         emptyMsg: EMPTY_MSGS[(wk * 7 + i) % EMPTY_MSGS.length],
-        colStyle: isToday ? 'background:#FBE1DE' : (i >= 5 ? 'background:#FAF7EC' : 'background:#FFFFFF'),
-        headStyle: isToday ? 'background:#F29A8F' : 'background:#FFFFFF'
+        colStyle: isToday ? 'background:#FDE3EC' : (i >= 5 ? 'background:#FFF6F9' : 'background:#FFFFFF'),
+        headStyle: isToday ? 'background:#F48FB1' : 'background:#FFFFFF'
       });
     }
     var wsD = new Date(2026, 5, 22 + wk * 7), weD = new Date(2026, 5, 28 + wk * 7);
@@ -1054,7 +1112,7 @@ class Component extends DCLogic {
 
     /* ---------- Materials ---------- */
     var totalDocs = 0;
-    var docPanelStyle = 'background-color:#FDFBF0;background-image:radial-gradient(rgba(17,17,17,0.08) 1.2px, transparent 1.4px);background-size:12px 12px';
+    var docPanelStyle = 'background-color:#FFF6F9;background-image:radial-gradient(rgba(17,17,17,0.08) 1.2px, transparent 1.4px);background-size:12px 12px';
     var docCourses = COURSES.map(function (c) { return { id: c.id, name: tr(c.fullName || c.name), color: c.color, docs: (COURSE_DOCS[c.id] || []).map(function (x) { return ['LINK', x.name, x.link || '']; }) }; });
     var docCur = s.docGroup === '__first' ? (docCourses[0] ? docCourses[0].id : null) : s.docGroup;
     function docRows(list) {
@@ -1162,8 +1220,8 @@ class Component extends DCLogic {
       },
       enPressed: LANG === 'en' ? 'true' : 'false',
       viPressed: LANG === 'vi' ? 'true' : 'false',
-      enStyle: LANG === 'en' ? 'background:#111111;color:#FFC400' : 'background:#FFFFFF;color:#111111',
-      viStyle: LANG === 'vi' ? 'background:#111111;color:#FFC400' : 'background:#FFFFFF;color:#111111',
+      enStyle: LANG === 'en' ? 'background:#111111;color:#FBBACE' : 'background:#FFFFFF;color:#111111',
+      viStyle: LANG === 'vi' ? 'background:#111111;color:#FBBACE' : 'background:#FFFFFF;color:#111111',
       setEN: function () { self.setState({ lang: 'en' }); },
       setVI: function () { self.setState({ lang: 'vi' }); },
       monthNo: M.m,
@@ -1174,7 +1232,7 @@ class Component extends DCLogic {
         return {
           label: gc.key === '' ? gc.label : L('Nhóm ', 'Group ') + gc.label,
           pressedStr: on ? 'true' : 'false',
-          style: on ? 'background:#111111;color:#FFC400;box-shadow:2px 2px 0 #2C9041' : 'background:#FFFFFF',
+          style: on ? 'background:#111111;color:#FBBACE;box-shadow:2px 2px 0 #2C9041' : 'background:#FFFFFF',
           pick: function () {
             if (gc.key === '') { self.setState({ myGroups: [] }); return; }
             var cur = (self.state.myGroups || []).slice();

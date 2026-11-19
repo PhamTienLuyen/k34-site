@@ -37,31 +37,40 @@
   /* ---------- Giao diện chung ---------- */
   function overlay(inner, onClose) {
     var ov = document.createElement('div');
-    ov.style.cssText = 'position:fixed;inset:0;z-index:200;background:rgba(17,17,17,.55);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Archivo,system-ui,sans-serif';
+    ov.style.cssText = 'position:fixed;inset:0;z-index:200;background:rgba(90,15,35,.55);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Bitter,Georgia,serif;color:#111';
+    var frame = document.createElement('div');
+    frame.style.cssText = 'position:relative;width:100%;max-width:480px;padding:18px 0 0 18px;box-sizing:border-box';
+    var ht = document.createElement('div');
+    ht.style.cssText = 'position:absolute;top:0;left:0;right:18px;bottom:18px;background-color:#8E8E8E;background-image:radial-gradient(#111 1.1px,transparent 1.5px);background-size:4px 4px';
+    var star = document.createElement('div');
+    star.setAttribute('aria-hidden', 'true');
+    star.style.cssText = 'position:absolute;top:-14px;left:-10px;width:50px;height:50px;z-index:3;pointer-events:none';
+    star.innerHTML = '<svg width="50" height="50" viewBox="0 0 100 100"><path d="M50 4 L61 37 L96 38 L68 59 L78 94 L50 73 L22 94 L32 59 L4 38 L39 37 Z" fill="#F6B73C" stroke="#111" stroke-width="6" stroke-linejoin="round"/></svg>';
     var box = document.createElement('div');
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-modal', 'true');
-    box.style.cssText = 'position:relative;width:100%;max-width:460px;background:#fff;border:3px solid #111;border-radius:20px;box-shadow:8px 8px 0 #111;padding:24px;border-top:12px solid #FFC400;max-height:90vh;overflow:auto';
+    box.style.cssText = 'position:relative;background:#fff;border:3px solid #111;border-radius:0;padding:26px 24px 24px;max-height:82vh;overflow:auto;box-sizing:border-box';
     var x = document.createElement('button');
     x.type = 'button'; x.setAttribute('aria-label', 'Đóng'); x.innerHTML = '&#10005;';
-    x.style.cssText = 'position:absolute;top:10px;right:10px;width:40px;height:40px;border:2px solid #111;border-radius:12px;background:#fff;font-size:16px;font-weight:800;cursor:pointer';
+    x.style.cssText = 'position:absolute;top:10px;right:10px;width:44px;height:44px;border:2.5px solid #111;border-radius:0;background:#fff;box-shadow:2px 2px 0 #111;font-size:16px;font-weight:800;cursor:pointer;color:#111';
     function close() { document.body.removeChild(ov); document.removeEventListener('keydown', esc); if (onClose) onClose(); }
     function esc(e) { if (e.key === 'Escape') close(); }
     x.onclick = close;
-    ov.onclick = function (e) { if (e.target === ov) close(); };
+    ov.onclick = function (e) { if (e.target === ov || e.target === frame) close(); };
     document.addEventListener('keydown', esc);
-    box.appendChild(x); box.appendChild(inner); ov.appendChild(box);
+    box.appendChild(x); box.appendChild(inner);
+    frame.appendChild(ht); frame.appendChild(box); frame.appendChild(star); ov.appendChild(frame);
     document.body.appendChild(ov);
     return { close: close, box: box };
   }
   function el(tag, css, text) { var e = document.createElement(tag); if (css) e.style.cssText = css; if (text) e.textContent = text; return e; }
-  var BTN = 'min-height:44px;padding:0 18px;border:2px solid #111;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:3px 3px 0 #111;';
+  var BTN = 'min-height:44px;padding:0 18px;border:2.5px solid #111;border-radius:0;font-family:"Baloo 2",Archivo,sans-serif;font-weight:800;font-size:15px;cursor:pointer;box-shadow:3px 3px 0 #111;';
 
   /* ---------- Đăng nhập Google ---------- */
   NAK.openLogin = function () {
     if (NAK.admin) { location.href = '/admin.html'; return; }
     var wrap = el('div', 'padding-top:34px;text-align:center');
-    wrap.appendChild(el('h3', "margin:0 0 6px;font-family:Anton,Archivo,sans-serif;font-size:26px;font-weight:800;color:#1E7B34", 'CẬP NHẬT'));
+    wrap.appendChild(el('h3', "margin:0 0 6px;font-family:\'Paytone One\',\'Baloo 2\',sans-serif;font-size:26px;font-weight:800;color:#1E7B34", 'CẬP NHẬT'));
     wrap.appendChild(el('p', 'margin:0 0 18px;font-size:14px;font-weight:600;line-height:1.5;color:#3A3A3A', 'Chỉ email quản trị viên mới được cập nhật trang này.'));
     var btnBox = el('div', 'display:flex;justify-content:center;min-height:44px');
     var msg = el('p', 'margin:14px 0 0;font-size:14px;font-weight:700;color:#A3151C;min-height:20px');
@@ -93,7 +102,7 @@
     if (!NAK.admin) return;
     var cur = (NAK.data.notes || {})[key] || '';
     var wrap = el('div', 'padding-top:34px');
-    wrap.appendChild(el('h3', "margin:0 0 4px;font-family:Anton,Archivo,sans-serif;font-size:24px;font-weight:800", 'GHI CHÚ'));
+    wrap.appendChild(el('h3', "margin:0 0 4px;font-family:\'Paytone One\',\'Baloo 2\',sans-serif;font-size:24px;font-weight:800", 'GHI CHÚ'));
     wrap.appendChild(el('p', 'margin:0 0 12px;font-size:14px;font-weight:700;color:#3A3A3A', title));
     var ta = el('textarea', 'width:100%;box-sizing:border-box;min-height:120px;padding:10px 12px;border:2px solid #111;border-radius:12px;font:600 14px Archivo,system-ui,sans-serif;resize:vertical');
     ta.className = 'nak-note'; ta.value = cur; ta.maxLength = 1500; ta.placeholder = 'Ví dụ: Nộp bài tập IPA trước 23:59… (Ctrl+K để chèn link)';
@@ -122,7 +131,7 @@
     var re = /\[([^\]\n]{1,200})\]\((https?:\/\/[^\s)]{1,500})\)|(https?:\/\/[^\s<>"']{1,500})/g, last = 0, m;
     function a(href, label) {
       var x = document.createElement('a'); x.href = href; x.target = '_blank'; x.rel = 'noopener noreferrer'; x.textContent = label;
-      x.style.cssText = 'color:#0B57D0;font-weight:800;text-decoration:underline;word-break:break-all'; return x;
+      x.style.cssText = 'color:#B0175F;font-weight:800;text-decoration:underline;word-break:break-all'; return x;
     }
     text = String(text || '');
     while ((m = re.exec(text))) {
@@ -151,18 +160,18 @@
   });
 
   NAK.showNote = function (title, text) {
-    var wrap = el('div', 'padding-top:34px');
-    wrap.appendChild(el('h3', "margin:0 0 6px;font-family:Anton,Archivo,sans-serif;font-size:24px;font-weight:800", 'GHI CHÚ'));
-    wrap.appendChild(el('p', 'margin:0 0 12px;font-size:14px;font-weight:800;color:#3A3A3A', title));
-    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:14px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text));
+    var wrap = el('div', '');
+    wrap.appendChild(el('h3', "margin:0 0 10px;font-family:'Paytone One','Baloo 2',sans-serif;font-size:30px;font-weight:400;text-transform:uppercase;color:#FBBACE;-webkit-text-stroke:2px #111;paint-order:stroke fill;text-shadow:-4px 4px 0 #111;letter-spacing:.02em;line-height:1.05;padding-right:50px", 'Ghi chú'));
+    wrap.appendChild(el('p', 'display:inline-block;margin:0 0 12px;font-family:\'Baloo 2\',sans-serif;font-size:15px;font-weight:800;background:#FBBACE;border:2px solid #111;padding:2px 10px', title));
+    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:15px;font-weight:400;line-height:1.6;background:#FFF0F5;border:2px solid #111;border-radius:0;padding:14px 16px'), text));
     overlay(wrap);
   };
 
   NAK.showNews = function (title, when, text) {
-    var wrap = el('div', 'padding-top:34px');
-    wrap.appendChild(el('p', 'margin:0 0 4px;font-size:14px;font-weight:800;color:#A3151C;letter-spacing:.06em', 'BULLETIN BOARD · ' + when));
-    wrap.appendChild(el('h3', "margin:0 0 12px;font-family:Anton,Archivo,sans-serif;font-size:24px;font-weight:400;line-height:1.2", title));
-    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:14px;font-weight:600;line-height:1.55;background:#FFF9DB;border:2px solid #111;border-radius:12px;padding:12px 14px'), text || '(Không có nội dung chi tiết.)'));
+    var wrap = el('div', '');
+    wrap.appendChild(el('p', 'display:inline-block;margin:0 50px 12px 0;font-family:\'Baloo 2\',sans-serif;font-size:13px;font-weight:800;letter-spacing:.06em;background:#DD227C;color:#fff;border:2px solid #111;padding:1px 10px', 'BULLETIN BOARD · ' + when));
+    wrap.appendChild(el('h3', "margin:0 0 14px;font-family:'Paytone One','Baloo 2',sans-serif;font-size:24px;font-weight:400;line-height:1.25", title));
+    wrap.appendChild(NAK.linkify(el('div', 'white-space:pre-line;font-size:15px;font-weight:400;line-height:1.6;background:#FFF0F5;border:2px solid #111;border-radius:0;padding:14px 16px'), text || '(Không có nội dung chi tiết.)'));
     overlay(wrap);
   };
 
