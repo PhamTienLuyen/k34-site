@@ -829,6 +829,9 @@ function NAK_admin() { return !!(window.NAK && window.NAK.admin); }
 var SEED_SCHED = JSON.parse(JSON.stringify(SCHED)), SEED_COURSES = JSON.parse(JSON.stringify(SCHED_COURSES)), SEED_INK = JSON.parse(JSON.stringify(COURSE_INK)); /* bản gốc để admin nhập vào */
 Object.keys(SCHED).forEach(function (k) { delete SCHED[k]; }); /* lịch tuần do admin quản lý, không hiển thị dữ liệu mẫu */
 var ORIG_SCHED = JSON.parse(JSON.stringify(SCHED));
+/* Bảng màu cũ (tông đất) -> bảng màu pop hợp nền hồng; dữ liệu cũ tự đổi khi hiển thị */
+var POP_COLORS = {'#F29A8F':'#FF9AA8','#A3151C':'#C8173F','#6DBB5E':'#F48FB1','#1E7B34':'#B0175F','#F2C84B':'#F6C945','#8A6100':'#8A6100','#C8CF55':'#9FE0C9','#5E6B12':'#17765C','#7FC8B8':'#80CBC4','#1F6B5C':'#00707A','#B9A2E0':'#B39DDB','#5B3F99':'#5E35B1','#F5A962':'#FF9E8F','#B24E0A':'#C0392B','#8DB8F0':'#9EC5F5','#1F4F99':'#2F5FB3'};
+function popColor(h) { return (h && POP_COLORS[String(h).toUpperCase()]) || h; }
 var BASE_COURSES = COURSES.slice();
 var BASE = { tasks: {},  done: DONE_TASKS.slice(), docs: {}, changes: {}, added: JSON.parse(JSON.stringify(ADDED)) };
 BASE_COURSES.forEach(function (c) { BASE.tasks[c.id] = c.tasks.slice(); });
@@ -847,8 +850,8 @@ function applyRemote(d) {
   COURSES.length = 0;
   BASE_COURSES.forEach(function (c) { if (!hid[c.id]) COURSES.push(c); });
   (d.courses || []).forEach(function (n) {
-    var c = { id: n.id, name: n.name, color: n.color, end: n.end, gv: n.gv || '', tasks: [] };
-    COURSES.push(c); BASE.tasks[n.id] = []; COURSE_DARK[n.id] = n.dark; COURSE_BY_ID[n.id] = c;
+    var c = { id: n.id, name: n.name, color: popColor(n.color), end: n.end, gv: n.gv || '', tasks: [] };
+    COURSES.push(c); BASE.tasks[n.id] = []; COURSE_DARK[n.id] = popColor(n.dark); COURSE_BY_ID[n.id] = c;
   });
   var done = BASE.done.filter(function (x) { return COURSES.some(function (c) { return c.id === x.c; }); });
   COURSES.forEach(function (c) {

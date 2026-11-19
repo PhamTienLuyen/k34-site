@@ -145,10 +145,12 @@ input[type=text],input[type=url],textarea{width:100%}
   function cname(code) { var c = BASE.schedCourses[code]; return c ? (c.fullName || c.name) : code; }
 
   /* ---------- Kế hoạch ---------- */
-  var PALETTE = [['Đỏ hồng','#F29A8F','#A3151C'],['Xanh lá','#6DBB5E','#1E7B34'],['Vàng','#F2C84B','#8A6100'],['Vàng chanh','#C8CF55','#5E6B12'],['Xanh ngọc','#7FC8B8','#1F6B5C'],['Tím','#B9A2E0','#5B3F99'],['Cam','#F5A962','#B24E0A'],['Xanh dương','#8DB8F0','#1F4F99']];
+  var PALETTE = [['Hồng dâu','#FF9AA8','#C8173F'],['Hồng mâm xôi','#F48FB1','#B0175F'],['Vàng nắng','#F6C945','#8A6100'],['Bạc hà','#9FE0C9','#17765C'],['Mòng két','#80CBC4','#00707A'],['Tím lavender','#B39DDB','#5E35B1'],['San hô','#FF9E8F','#C0392B'],['Xanh baby','#9EC5F5','#2F5FB3']];
+  var POP_COLORS = {'#F29A8F':'#FF9AA8','#A3151C':'#C8173F','#6DBB5E':'#F48FB1','#1E7B34':'#B0175F','#F2C84B':'#F6C945','#8A6100':'#8A6100','#C8CF55':'#9FE0C9','#5E6B12':'#17765C','#7FC8B8':'#80CBC4','#1F6B5C':'#00707A','#B9A2E0':'#B39DDB','#5B3F99':'#5E35B1','#F5A962':'#FF9E8F','#B24E0A':'#C0392B','#8DB8F0':'#9EC5F5','#1F4F99':'#2F5FB3'};
+  function popColor(h) { return (h && POP_COLORS[String(h).toUpperCase()]) || h; }
   var draft = false, lastCreated = null;
   function dateIn(cls, o, extra) { return '<input type="date" class="' + cls + '" value="' + (o == null ? '' : ordToDate(o)) + '"' + (extra || '') + '>'; }
-  function palOpts(sel) { return PALETTE.map(function (p, i) { return '<option value="' + i + '"' + (p[1] === sel ? ' selected' : '') + '>' + p[0] + '</option>'; }).join(''); }
+  function palOpts(sel) { sel = popColor(sel); return PALETTE.map(function (p, i) { return '<option value="' + i + '"' + (p[1] === sel ? ' selected' : '') + '>' + p[0] + '</option>'; }).join(''); }
   function cleanGroup(n) { return String(n || '').replace(/^\s*nhóm\s*/i, '').trim(); }
   var P_notes = {};
   function docsBlock(cid, d) {
@@ -213,7 +215,7 @@ input[type=text],input[type=url],textarea{width:100%}
         '<p class="mut" style="margin-top:10px">Sau khi tạo môn, bạn thêm nhiệm vụ ngay trong thẻ của môn đó.</p></div>';
     }
     var courses = BASE.courses.filter(function (c) { return !hid[c.id]; }).map(function (c) { return { id: c.id, name: c.name, base: true, tasks: c.tasks }; })
-      .concat((d.courses || []).map(function (c) { return { id: c.id, name: c.name, base: false, end: c.end, color: c.color }; }));
+      .concat((d.courses || []).map(function (c) { return { id: c.id, name: c.name, base: false, end: c.end, color: popColor(c.color) }; }));
     if (openCourse && !courses.some(function (c) { return c.id === openCourse; })) openCourse = null;
     if (!openCourse) {
       h += '<div class="cgrid">';
@@ -298,7 +300,7 @@ input[type=text],input[type=url],textarea{width:100%}
   }
   function markDirtyIfNeeded() { }
   function srcSess(w) { return []; }
-  function planCourses() { var d = data(), hid = d.hiddenCourses || {}; return BASE.courses.filter(function (c) { return !hid[c.id]; }).map(function (c) { return { id: c.id, name: c.name, color: c.color || '#E5E0CC', gv: '' }; }).concat((d.courses || []).map(function (c) { return { id: c.id, name: c.name, color: c.color || '#E5E0CC', gv: c.gv || '' }; })); }
+  function planCourses() { var d = data(), hid = d.hiddenCourses || {}; return BASE.courses.filter(function (c) { return !hid[c.id]; }).map(function (c) { return { id: c.id, name: c.name, color: c.color || '#E5E0CC', gv: '' }; }).concat((d.courses || []).map(function (c) { return { id: c.id, name: c.name, color: popColor(c.color) || '#E5E0CC', gv: c.gv || '' }; })); }
   function courseColor(k) { var c = planCourses().filter(function (x) { return x.id === k; })[0]; return c ? c.color : '#E5E0CC'; }
   function sessKey(w, x) { return w + '|' + x[0] + '|' + x[1] + '|' + x[2]; }
   function noteKey(w, x) { return w + '-' + x[0] + '-' + x[1] + '-' + x[2]; }
