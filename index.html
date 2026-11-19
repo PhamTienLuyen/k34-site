@@ -123,20 +123,21 @@ button:disabled{cursor:default}
 .hero-btn{min-height:48px;display:flex;align-items:center;padding:0 22px;border:3px solid #111111;box-shadow:4px 4px 0 #111111;text-decoration:none;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:17px}
 .hero-btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #111111}
 .bolt{position:absolute;z-index:2;pointer-events:none}
-.hero-logo{position:absolute;top:14px;right:14px;width:108px;height:108px;object-fit:contain}
 .bolt-l{top:-46px;left:-40px;transform:rotate(-18deg)}
 .bolt-r{bottom:-50px;right:-34px;transform:rotate(24deg)}
 @media (max-width: 760px){
   .hero{padding:36px 14px}
-  .hero-box{padding:72px 14px 30px !important}
-  .hero-logo{top:10px;right:10px;width:56px;height:56px}
+  .hero-box{padding:30px 14px !important}
+  .hero-box{gap:16px !important}
+  .hero-box > div{flex-wrap:nowrap !important;gap:8px !important}
+  .hero-btn{min-height:36px;padding:0 10px;font-size:13px;border-width:2.5px;box-shadow:3px 3px 0 #111111;white-space:nowrap}
   .hero-title{font-size:36px;-webkit-text-stroke:1.5px #111111;text-shadow:-3px 3px 0 #111111}
   .bolt{width:56px;height:72px}
   .bolt-l{top:-26px;left:-10px}.bolt-r{bottom:-28px;right:-4px}
   .win-wrap > div{padding:40px 14px 30px !important}
   .win-wrap > div::before{top:26px;left:0;right:28px;bottom:44px}
   .win::after{width:40px;height:40px;top:-20px;left:-16px}
-  .site-logo{display:none}
+  .site-brand{display:none !important}
   .site-head{justify-content:center !important;padding:8px 6px !important}
   .site-head nav{justify-content:center !important;flex-wrap:nowrap !important;gap:3px !important}
   .site-head nav a.nav-link{font-size:11px !important;padding:0 5px !important;min-height:32px !important;box-shadow:2px 2px 0 #111111;border-width:2px;letter-spacing:0 !important;white-space:nowrap}
@@ -149,7 +150,10 @@ button:disabled{cursor:default}
 <!-- ============ HEADER ============ -->
 <header id="top" style="position: sticky; top: 0; z-index: 40; background: #FFFFFF; border-bottom: 3px solid #111111">
 <div class="site-head" style="max-width: 1240px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap">
-<a href="#top" class="site-logo" aria-label="NAK34 – về đầu trang" style="text-decoration: none"><span class="comic" style="font-size: 28px">NAK34</span></a>
+<div class="site-brand" style="display: flex; align-items: center; gap: 14px">
+<img src="img/logo-dlu.png" alt="Logo Trường Đại học Đà Lạt" width="43" height="43" style="width: 43px; height: 43px; object-fit: contain; flex: none">
+<a href="#top" class="site-logo" aria-label="NAK34 – về đầu trang" style="text-decoration: none; margin-left: 4px"><span class="comic" style="font-size: 28px">NAK34</span></a>
+</div>
 <nav aria-label="{{T.navAria}}" style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 6px">
 <a href="#hub" onClick="{{goHub}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">News</a>
 <a href="#lich-hoc" onClick="{{goLichHoc}}" class="nav-link" style="min-height: 26px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; text-decoration: none; color: #111111; font-weight: 800; font-size: 12px; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase">{{T.navWeek}}</a>
@@ -168,7 +172,6 @@ button:disabled{cursor:default}
 <svg class="bolt bolt-l" width="110" height="140" viewBox="0 0 100 130" aria-hidden="true"><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#111111" transform="translate(-6 5)"></path><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#F6C945" stroke="#111111" stroke-width="5" stroke-linejoin="round"></path></svg>
 <svg class="bolt bolt-r" width="100" height="130" viewBox="0 0 100 130" aria-hidden="true"><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#111111" transform="translate(-6 5)"></path><path d="M58 4 L8 74 L42 74 L26 126 L92 46 L56 46 L74 4 Z" fill="#F6C945" stroke="#111111" stroke-width="5" stroke-linejoin="round"></path></svg>
 <div class="hero-box" style="position: relative; background: #FFFFFF; border: 5px solid #111111; padding: 56px 28px 48px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px">
-<img class="hero-logo" src="img/logo-dlu.png" alt="Logo Trường Đại học Đà Lạt" width="108" height="108">
 <h1 class="comic hero-title" style="margin: 0">NAK34CHA_U</h1>
 <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center">
 <a href="#lich-hoc" onClick="{{goLichHoc}}" class="hero-btn" style="background: #DD227C; color: #FFFFFF">Xem lịch tuần này</a>
